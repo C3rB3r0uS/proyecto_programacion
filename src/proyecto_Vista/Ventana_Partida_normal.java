@@ -33,6 +33,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jButton_Start = new javax.swing.JButton();
         JLabel_Operacion = new javax.swing.JLabel();
         jTextField_Respuesta = new javax.swing.JTextField();
+        jButton_Cerrar = new javax.swing.JButton();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,23 +45,27 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jLabel_Ventana_Actual.setText("RANDOM.MATHS");
         getContentPane().add(jLabel_Ventana_Actual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel_Contador.setFont(new java.awt.Font("Digital Dare", 0, 150)); // NOI18N
+        jLabel_Contador.setFont(new java.awt.Font("Digital Dare", 0, 95)); // NOI18N
         jLabel_Contador.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Contador.setText("59");
-        getContentPane().add(jLabel_Contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, 240, 180));
+        getContentPane().add(jLabel_Contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 170, 90));
 
         jButton_Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_start.png"))); // NOI18N
         jButton_Start.setPreferredSize(new java.awt.Dimension(310, 90));
         getContentPane().add(jButton_Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 640, -1, -1));
 
-        JLabel_Operacion.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
+        JLabel_Operacion.setFont(new java.awt.Font("Digital Dare", 0, 60)); // NOI18N
         JLabel_Operacion.setForeground(new java.awt.Color(255, 255, 255));
         JLabel_Operacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLabel_Operacion.setText("154156 + 145549 * 3 - 454353");
-        getContentPane().add(JLabel_Operacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
+        JLabel_Operacion.setText("154156 + 145549 x 3 - 454353");
+        getContentPane().add(JLabel_Operacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
 
         jTextField_Respuesta.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
-        getContentPane().add(jTextField_Respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 530, 80));
+        getContentPane().add(jTextField_Respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 530, 80));
+
+        jButton_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icon.png"))); // NOI18N
+        jButton_Cerrar.setPreferredSize(new java.awt.Dimension(45, 27));
+        getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, -1, -1));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -106,6 +111,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabel_Operacion;
+    private javax.swing.JButton jButton_Cerrar;
     private javax.swing.JButton jButton_Start;
     private javax.swing.JLabel jLabel_Contador;
     private javax.swing.JLabel jLabel_Fondo;

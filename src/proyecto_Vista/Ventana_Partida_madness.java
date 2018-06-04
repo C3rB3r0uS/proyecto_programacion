@@ -42,6 +42,7 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
         jButton_Delete = new javax.swing.JButton();
         JLabel_Operacion = new javax.swing.JLabel();
         jTextField_Respuesta = new javax.swing.JTextField();
+        jLabel_Contador = new javax.swing.JLabel();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,12 +51,12 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
 
         jButton_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icon.png"))); // NOI18N
         jButton_Cerrar.setPreferredSize(new java.awt.Dimension(45, 27));
-        getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, -1, -1));
+        getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Digital Dare", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("RANDOM.MATHS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jLabel1.setText("RANDOM.MATHS/MADNESS");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, -1));
 
         jButton_Uno.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Uno.setText("1");
@@ -123,14 +124,19 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
         });
         getContentPane().add(jButton_Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 550, 200, 50));
 
-        JLabel_Operacion.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
+        JLabel_Operacion.setFont(new java.awt.Font("Digital Dare", 0, 60)); // NOI18N
         JLabel_Operacion.setForeground(new java.awt.Color(255, 255, 255));
         JLabel_Operacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLabel_Operacion.setText("154156 + 145549 * 3 - 454353");
-        getContentPane().add(JLabel_Operacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
+        getContentPane().add(JLabel_Operacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
 
         jTextField_Respuesta.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
         getContentPane().add(jTextField_Respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 530, 80));
+
+        jLabel_Contador.setFont(new java.awt.Font("Digital Dare", 0, 95)); // NOI18N
+        jLabel_Contador.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Contador.setText("59");
+        getContentPane().add(jLabel_Contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 150, 90));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -206,6 +212,7 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Tres;
     private javax.swing.JButton jButton_Uno;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel_Contador;
     private javax.swing.JLabel jLabel_Fondo;
     private javax.swing.JTextField jTextField_Respuesta;
     // End of variables declaration//GEN-END:variables
