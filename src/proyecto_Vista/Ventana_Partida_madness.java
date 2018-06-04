@@ -38,6 +38,10 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
         jButton_Ocho = new javax.swing.JButton();
         jButton_Nueve = new javax.swing.JButton();
         jButton_Cero = new javax.swing.JButton();
+        jButton_Enter = new javax.swing.JButton();
+        jButton_Delete = new javax.swing.JButton();
+        JLabel_Operacion = new javax.swing.JLabel();
+        jTextField_Respuesta = new javax.swing.JTextField();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,19 +59,24 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
 
         jButton_Uno.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Uno.setText("1");
-        getContentPane().add(jButton_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 50, -1));
+        getContentPane().add(jButton_Uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 70, -1));
 
         jButton_Dos.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Dos.setText("2");
-        getContentPane().add(jButton_Dos, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
+        getContentPane().add(jButton_Dos, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 420, -1, -1));
 
         jButton_Tres.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Tres.setText("3");
-        getContentPane().add(jButton_Tres, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, -1, -1));
+        getContentPane().add(jButton_Tres, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 420, -1, -1));
 
         jButton_Cuatro.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Cuatro.setText("4");
-        getContentPane().add(jButton_Cuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, -1, -1));
+        jButton_Cuatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CuatroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_Cuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, -1, -1));
 
         jButton_Cinco.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Cinco.setText("5");
@@ -76,23 +85,23 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
                 jButton_CincoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton_Cinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, -1, -1));
+        getContentPane().add(jButton_Cinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, -1, -1));
 
-        jButton_Seis.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
+        jButton_Seis.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Seis.setText("6");
-        getContentPane().add(jButton_Seis, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, -1, -1));
+        getContentPane().add(jButton_Seis, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, -1, -1));
 
         jButton_Siete.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Siete.setText("7");
-        getContentPane().add(jButton_Siete, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 530, -1, -1));
+        getContentPane().add(jButton_Siete, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 580, -1, -1));
 
         jButton_Ocho.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Ocho.setText("8");
-        getContentPane().add(jButton_Ocho, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, -1, -1));
+        getContentPane().add(jButton_Ocho, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 580, -1, -1));
 
-        jButton_Nueve.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
+        jButton_Nueve.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Nueve.setText("9");
-        getContentPane().add(jButton_Nueve, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, -1, -1));
+        getContentPane().add(jButton_Nueve, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 580, -1, -1));
 
         jButton_Cero.setFont(new java.awt.Font("Digital Dare", 1, 48)); // NOI18N
         jButton_Cero.setText("0");
@@ -101,7 +110,27 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
                 jButton_CeroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton_Cero, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 590, -1, -1));
+        getContentPane().add(jButton_Cero, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 660, -1, -1));
+
+        jButton_Enter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_enter.png"))); // NOI18N
+        getContentPane().add(jButton_Enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 460, 200, 50));
+
+        jButton_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_delete.png"))); // NOI18N
+        jButton_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_DeleteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 550, 200, 50));
+
+        JLabel_Operacion.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
+        JLabel_Operacion.setForeground(new java.awt.Color(255, 255, 255));
+        JLabel_Operacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLabel_Operacion.setText("154156 + 145549 * 3 - 454353");
+        getContentPane().add(JLabel_Operacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
+
+        jTextField_Respuesta.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
+        getContentPane().add(jTextField_Respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 530, 80));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -116,6 +145,14 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
     private void jButton_CeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_CeroActionPerformed
+
+    private void jButton_CuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CuatroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_CuatroActionPerformed
+
+    private void jButton_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_DeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,11 +191,14 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JLabel_Operacion;
     private javax.swing.JButton jButton_Cero;
     private javax.swing.JButton jButton_Cerrar;
     private javax.swing.JButton jButton_Cinco;
     private javax.swing.JButton jButton_Cuatro;
+    private javax.swing.JButton jButton_Delete;
     private javax.swing.JButton jButton_Dos;
+    private javax.swing.JButton jButton_Enter;
     private javax.swing.JButton jButton_Nueve;
     private javax.swing.JButton jButton_Ocho;
     private javax.swing.JButton jButton_Seis;
@@ -167,5 +207,6 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Uno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_Fondo;
+    private javax.swing.JTextField jTextField_Respuesta;
     // End of variables declaration//GEN-END:variables
 }
