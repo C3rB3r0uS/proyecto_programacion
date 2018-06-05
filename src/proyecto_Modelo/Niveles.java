@@ -89,7 +89,7 @@ public class Niveles {
         return tiempo;
     }
     
-    public String aleatorizadorTipoPartida (){
+    public String aleatorizadorTipoNivel (){
         
         Random aleatorio = new Random();
         
