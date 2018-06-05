@@ -42,14 +42,12 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         jCheckBox_restas = new javax.swing.JCheckBox();
         jCheckBox_mult = new javax.swing.JCheckBox();
         jCheckBox_div = new javax.swing.JCheckBox();
-        jCheckBox_porcentaje = new javax.swing.JCheckBox();
         jLabel_incluir = new javax.swing.JLabel();
         jLabel_Digitos = new javax.swing.JLabel();
         jTextField_Sumas = new javax.swing.JTextField();
         jTextField_Restas = new javax.swing.JTextField();
         jTextField_Mult = new javax.swing.JTextField();
         jTextField_Div = new javax.swing.JTextField();
-        jTextField_Porcentaje = new javax.swing.JTextField();
         jLabel_modo_Preferencias = new javax.swing.JLabel();
         jComboBox_Modo_Preferencias = new javax.swing.JComboBox<>();
         jLabel_Fondo = new javax.swing.JLabel();
@@ -149,16 +147,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         });
         getContentPane().add(jCheckBox_div, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 400, 160, 30));
 
-        jCheckBox_porcentaje.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
-        jCheckBox_porcentaje.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox_porcentaje.setText("PORCENTAJES");
-        jCheckBox_porcentaje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox_porcentajeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBox_porcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 400, 160, 30));
-
         jLabel_incluir.setFont(new java.awt.Font("Digital Dare", 0, 18)); // NOI18N
         jLabel_incluir.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_incluir.setText("INCLUIR:");
@@ -197,9 +185,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField_Div, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 450, 110, 30));
-
-        jTextField_Porcentaje.setFont(new java.awt.Font("Digital Dare", 1, 18)); // NOI18N
-        getContentPane().add(jTextField_Porcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 450, 110, 30));
 
         jLabel_modo_Preferencias.setFont(new java.awt.Font("Digital Dare", 1, 18)); // NOI18N
         jLabel_modo_Preferencias.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,10 +238,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
     private void jCheckBox_divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_divActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox_divActionPerformed
-
-    private void jCheckBox_porcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_porcentajeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox_porcentajeActionPerformed
 
     private void jTextField_SumasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_SumasActionPerformed
         // TODO add your handling code here:
@@ -315,7 +296,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Jugar;
     private javax.swing.JCheckBox jCheckBox_div;
     private javax.swing.JCheckBox jCheckBox_mult;
-    private javax.swing.JCheckBox jCheckBox_porcentaje;
     private javax.swing.JCheckBox jCheckBox_restas;
     private javax.swing.JCheckBox jCheckBox_sumas;
     private javax.swing.JComboBox<String> jComboBox_Dificultad;
@@ -331,7 +311,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_modo_Preferencias;
     private javax.swing.JTextField jTextField_Div;
     private javax.swing.JTextField jTextField_Mult;
-    private javax.swing.JTextField jTextField_Porcentaje;
     private javax.swing.JTextField jTextField_Restas;
     private javax.swing.JTextField jTextField_Sumas;
     // End of variables declaration//GEN-END:variables
