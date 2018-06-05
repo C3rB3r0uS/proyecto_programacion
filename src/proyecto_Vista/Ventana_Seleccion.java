@@ -37,19 +37,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         jLabel_Dificultad = new javax.swing.JLabel();
         jComboBox_Dificultad = new javax.swing.JComboBox<>();
         jButton_Jugar = new javax.swing.JButton();
-        jLabel_Preferencias = new javax.swing.JLabel();
-        jCheckBox_sumas = new javax.swing.JCheckBox();
-        jCheckBox_restas = new javax.swing.JCheckBox();
-        jCheckBox_mult = new javax.swing.JCheckBox();
-        jCheckBox_div = new javax.swing.JCheckBox();
-        jLabel_incluir = new javax.swing.JLabel();
-        jLabel_Digitos = new javax.swing.JLabel();
-        jTextField_Sumas = new javax.swing.JTextField();
-        jTextField_Restas = new javax.swing.JTextField();
-        jTextField_Mult = new javax.swing.JTextField();
-        jTextField_Div = new javax.swing.JTextField();
-        jLabel_modo_Preferencias = new javax.swing.JLabel();
-        jComboBox_Modo_Preferencias = new javax.swing.JComboBox<>();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,130 +62,42 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         jLabel_Ventana_Actual.setText("RANDOM.MATHS/SELECCION de MODO");
         getContentPane().add(jLabel_Ventana_Actual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 570, -1));
 
-        jLabel_modo.setFont(new java.awt.Font("Digital Dare", 1, 36)); // NOI18N
+        jLabel_modo.setFont(new java.awt.Font("Digital Dare", 1, 40)); // NOI18N
         jLabel_modo.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_modo.setText("MODO");
-        getContentPane().add(jLabel_modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 130, 30));
+        getContentPane().add(jLabel_modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 210, 30));
 
-        jComboBox_Modo.setFont(new java.awt.Font("Digital Dare", 0, 18)); // NOI18N
-        jComboBox_Modo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ARCADE", "TIME TRIAL", "STRINGS", "CUSTOM" }));
+        jComboBox_Modo.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
+        jComboBox_Modo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ARCADE", "TIME TRIAL", "STRINGS" }));
         jComboBox_Modo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_ModoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox_Modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 300, 40));
+        getContentPane().add(jComboBox_Modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 400, 100));
 
-        jLabel_Dificultad.setFont(new java.awt.Font("Digital Dare", 1, 36)); // NOI18N
+        jLabel_Dificultad.setFont(new java.awt.Font("Digital Dare", 1, 40)); // NOI18N
         jLabel_Dificultad.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Dificultad.setText("DIFICULTAD");
-        getContentPane().add(jLabel_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, -1, -1));
+        getContentPane().add(jLabel_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, -1, -1));
 
-        jComboBox_Dificultad.setFont(new java.awt.Font("Digital Dare", 0, 18)); // NOI18N
+        jComboBox_Dificultad.setFont(new java.awt.Font("Digital Dare", 0, 60)); // NOI18N
         jComboBox_Dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FACIL", "NORMAL", "DIFICIL" }));
         jComboBox_Dificultad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_DificultadActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, 300, 40));
+        getContentPane().add(jComboBox_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, 400, 100));
 
         jButton_Jugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_jugar.png"))); // NOI18N
         jButton_Jugar.setToolTipText("Juega una partida en uno de los 4 modos disponibles: Arcade, Time Trial, Strings o Custom.");
-        getContentPane().add(jButton_Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 570, 350, 50));
-
-        jLabel_Preferencias.setFont(new java.awt.Font("Digital Dare", 1, 36)); // NOI18N
-        jLabel_Preferencias.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Preferencias.setText("Preferencias (SOLO MODO CUSTOM)");
-        getContentPane().add(jLabel_Preferencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 900, 30));
-
-        jCheckBox_sumas.setFont(new java.awt.Font("Digital Dare", 0, 18)); // NOI18N
-        jCheckBox_sumas.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox_sumas.setText("Sumas");
-        getContentPane().add(jCheckBox_sumas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, 110, 30));
-
-        jCheckBox_restas.setFont(new java.awt.Font("Digital Dare", 0, 18)); // NOI18N
-        jCheckBox_restas.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox_restas.setText("RESTAS");
-        jCheckBox_restas.addActionListener(new java.awt.event.ActionListener() {
+        jButton_Jugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox_restasActionPerformed(evt);
+                jButton_JugarActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox_restas, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 110, 30));
-
-        jCheckBox_mult.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
-        jCheckBox_mult.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox_mult.setText("MULTIPLICACIONES");
-        jCheckBox_mult.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox_multActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBox_mult, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 190, 30));
-
-        jCheckBox_div.setFont(new java.awt.Font("Digital Dare", 0, 18)); // NOI18N
-        jCheckBox_div.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox_div.setText("DIVISIONES");
-        jCheckBox_div.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox_divActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBox_div, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 400, 160, 30));
-
-        jLabel_incluir.setFont(new java.awt.Font("Digital Dare", 0, 18)); // NOI18N
-        jLabel_incluir.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_incluir.setText("INCLUIR:");
-        getContentPane().add(jLabel_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, -1, -1));
-
-        jLabel_Digitos.setFont(new java.awt.Font("Digital Dare", 0, 18)); // NOI18N
-        jLabel_Digitos.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Digitos.setText("Digitos:");
-        getContentPane().add(jLabel_Digitos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, -1, -1));
-
-        jTextField_Sumas.setFont(new java.awt.Font("Digital Dare", 1, 18)); // NOI18N
-        jTextField_Sumas.setToolTipText("");
-        jTextField_Sumas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_SumasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField_Sumas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 110, 30));
-
-        jTextField_Restas.setFont(new java.awt.Font("Digital Dare", 1, 18)); // NOI18N
-        jTextField_Restas.setToolTipText("");
-        getContentPane().add(jTextField_Restas, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, 110, 30));
-
-        jTextField_Mult.setFont(new java.awt.Font("Digital Dare", 1, 18)); // NOI18N
-        jTextField_Mult.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_MultActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField_Mult, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 110, 30));
-
-        jTextField_Div.setFont(new java.awt.Font("Digital Dare", 1, 18)); // NOI18N
-        jTextField_Div.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_DivActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField_Div, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 450, 110, 30));
-
-        jLabel_modo_Preferencias.setFont(new java.awt.Font("Digital Dare", 1, 18)); // NOI18N
-        jLabel_modo_Preferencias.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_modo_Preferencias.setText("MODO:");
-        getContentPane().add(jLabel_modo_Preferencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 80, 30));
-
-        jComboBox_Modo_Preferencias.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
-        jComboBox_Modo_Preferencias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ARCADE", "TIME TRIAL", "STRINGS" }));
-        jComboBox_Modo_Preferencias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_Modo_PreferenciasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox_Modo_Preferencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 110, 40));
+        getContentPane().add(jButton_Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 380, 90));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -227,33 +126,9 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox_DificultadActionPerformed
 
-    private void jCheckBox_restasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_restasActionPerformed
+    private void jButton_JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_JugarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox_restasActionPerformed
-
-    private void jCheckBox_multActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_multActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox_multActionPerformed
-
-    private void jCheckBox_divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_divActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox_divActionPerformed
-
-    private void jTextField_SumasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_SumasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_SumasActionPerformed
-
-    private void jTextField_DivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_DivActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_DivActionPerformed
-
-    private void jTextField_MultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_MultActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_MultActionPerformed
-
-    private void jComboBox_Modo_PreferenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_Modo_PreferenciasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox_Modo_PreferenciasActionPerformed
+    }//GEN-LAST:event_jButton_JugarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,24 +169,11 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Cerrar;
     private javax.swing.JButton jButton_Jugar;
-    private javax.swing.JCheckBox jCheckBox_div;
-    private javax.swing.JCheckBox jCheckBox_mult;
-    private javax.swing.JCheckBox jCheckBox_restas;
-    private javax.swing.JCheckBox jCheckBox_sumas;
     private javax.swing.JComboBox<String> jComboBox_Dificultad;
     private javax.swing.JComboBox<String> jComboBox_Modo;
-    private javax.swing.JComboBox<String> jComboBox_Modo_Preferencias;
     private javax.swing.JLabel jLabel_Dificultad;
-    private javax.swing.JLabel jLabel_Digitos;
     private javax.swing.JLabel jLabel_Fondo;
-    private javax.swing.JLabel jLabel_Preferencias;
     private javax.swing.JLabel jLabel_Ventana_Actual;
-    private javax.swing.JLabel jLabel_incluir;
     private javax.swing.JLabel jLabel_modo;
-    private javax.swing.JLabel jLabel_modo_Preferencias;
-    private javax.swing.JTextField jTextField_Div;
-    private javax.swing.JTextField jTextField_Mult;
-    private javax.swing.JTextField jTextField_Restas;
-    private javax.swing.JTextField jTextField_Sumas;
     // End of variables declaration//GEN-END:variables
 }

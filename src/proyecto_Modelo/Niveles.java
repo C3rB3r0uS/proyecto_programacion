@@ -93,7 +93,7 @@ public class Niveles {
         
         Random aleatorio = new Random();
         
-        int num = aleatorio.nextInt(10);
+        int num = aleatorio.nextInt(10-1)+1;
         
         if(num <= 2){
             
