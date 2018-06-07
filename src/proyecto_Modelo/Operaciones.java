@@ -195,7 +195,6 @@ public class Operaciones {
         ScriptEngine engine = sem.getEngineByName("JavaScript");
         
         String cadenaOperacion = "";
-        String cadenaAux = "";
         int resultado = 0;
         int operando1 = 0;
         int operando2 = 0;
@@ -243,7 +242,7 @@ public class Operaciones {
                       
                         break;
                         
-                    case "NORMAL":
+                    case "NORMAL": case "DIFICIL":
                         
                         aleatorio = aux.nextInt(4);
                         
@@ -256,7 +255,7 @@ public class Operaciones {
                                     operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
                                     operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion = operando1 + " + " + operando2;
-//                                  
+                                 
                           
                                     break;
                                     
@@ -267,7 +266,7 @@ public class Operaciones {
                                     operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
                                     operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion = operando1 + " - " + operando2;
-//                                 
+                               
                                     break;
                                     
                                 // Multiplicación    
@@ -286,7 +285,7 @@ public class Operaciones {
                                     dificultad NORMAL y DIFICIL se debe a que Java 
                                     generaba un número aleatorio entre 1 y el valor máximo establecido de acuerdo a su modo, 
                                     dificultad y nivel, y ese número es asignado a operando1. Cuando casualmente el valor 
-                                    generado es primo, y tras haberse generado y asignado un número aleatorio limitado a valores 
+                                    generado es un número primo, y tras haberse generado y asignado un número aleatorio limitado a valores 
                                     entre 2 y 10 a operando2, el programa entra en un loop sin fin
                                     al entrar en el bucle do-while del correspondiente switch*/
                                     
@@ -301,65 +300,12 @@ public class Operaciones {
                                    
                                    cadenaOperacion = auxiliar + " / " + operando2;
 
-                                    break;
+                                   break;
     
                             }
                         
                         break;
-                        
-                    case "DIFICIL":
-                        
-                        aleatorio = aux.nextInt(4);
-                            
-                            switch(aleatorio){
-                                
-                                // Suma   
-                                
-                                case 0:
-                                    
-                                    // Con +1 -1 se consigue que el valor 1 entre dentro del rango de los números generados
-                                    
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    cadenaOperacion = operando1 + " + " + operando2;
-                                    
-                                    break;
-                                    
-                                // Resta    
-                                 
-                                case 1:
-                                    
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    cadenaOperacion = operando1 + " - " + operando2;
-                               
-                                    break;
-                                    
-                                // Multiplicación    
-                                    
-                                case 2:
-                                    
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*9)+1;
-                                    cadenaOperacion = operando1 + " * " + operando2;
 
-                                    break;
-                                    
-                                // División
-                                    
-                                case 3:
-                                    
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel) ) /10 ) + 1;
-                                    operando2 = (int)(Math.random()*9)+1;
-                                    auxiliar = operando1 * operando2;
-                                    cadenaOperacion = auxiliar + " / " + operando2;
-
-                                    break;
-    
-                            }
-                        
-                        break;
- 
                 }
                 
                 resultado = (int) engine.eval(cadenaOperacion);
@@ -412,52 +358,43 @@ public class Operaciones {
                                    
                         break;
                         
-                    case "NORMAL":
+                    case "NORMAL": case "DIFICIL":
+                        
+                         operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                         cadenaOperacion = "" + operando1;
 
                       do{
                             
-//                            aleatorio = aux.nextInt(4);
-                              aleatorio = 0;
+                          if(contador != 3){
+                              
+                            aleatorio = aux.nextInt(4);
                             
+                          }else{
+                              
+                              aleatorio = aux.nextInt(2);
+                              
+                          }
+
                             switch(aleatorio){
                                 
                                 // Suma   
 
                                 case 0:
-                                    
-                                    if(contador != 2){
                                 
                                     operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    
-                                    cadenaOperacion += operando1 + " + " + operando2 + " + ";
-                                    
-                                    }else{
-                                        
-                                        operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                        cadenaOperacion += " + " + operando1;
-                                        
-                                    }
-                                    
+                                    cadenaOperacion += " + " + operando1 ;
+                                    contador += 1;
+                        
                                     break;
                                     
                                 // Resta    
                                  
                                 case 1:
-                                    
-                                      if(contador != 2){
-                                
+                                 
                                     operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    cadenaOperacion += " " + operando1 + " - " + operando2 + " ";
-                                    
-                                    }else{
-                                        
-                                        operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                        cadenaOperacion += operando1;
-                                        
-                                    }
-                                    
+                                    cadenaOperacion += " - " + operando1 ;
+                                    contador += 1;
+                                 
                                     break;
                                     
                                 // Multiplicación    
@@ -466,8 +403,9 @@ public class Operaciones {
                                     
                                     operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
                                     operando2 = (int)(Math.random()*9)+1;
-                                    cadenaOperacion += operando1 + " * " + operando2;
-                                    
+                                    cadenaOperacion += " + " + operando1 + " * " + operando2;
+                                    contador += 2;
+                                   
                                     break;
                                     
                                 // División
@@ -477,74 +415,19 @@ public class Operaciones {
                                     operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel) ) /10 ) + 1;
                                     operando2 = (int)(Math.random()*9)+1;
                                     auxiliar = operando1 * operando2;
+                                    cadenaOperacion += " + " + auxiliar + " / " + operando2;
+                                    contador += 2;
                                    
-                                    cadenaOperacion += auxiliar + " / " + operando2;
-                                    
                                     break;
     
                             }
                             
-                                contador++;
+//                                contador++;
  
-                            }while(contador < 3);            
+                            }while(contador < 4);            
                         
                         break;
-                        
-                    case "DIFICIL":
-
-                      do{
-                            
-                            aleatorio = aux.nextInt(4);
-                            
-                            switch(aleatorio){
-                                
-                                // Suma   
-                                
-                                case 0:
-                            
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    cadenaOperacion += " + " + operando2;
-                                    
-                                    break;
-                                    
-                                // Resta    
-                                 
-                                case 1:
-                                    
-                                    operando2 = (int)Math.floor(Math.random()*(valorMaximo(modo,dificultad,nivel) - 1) + 1);
-                                    cadenaOperacion += " - " + operando2;
-                                    
-                                    break;
-                                    
-                                // Multiplicación    
-                                    
-                                case 2:
-                                    
-                                    operando2 = (int)(Math.random()*9)+2;
-                                    cadenaOperacion += " * " + operando2;
-                                    
-                                    break;
-                                    
-                                // División
-                                    
-                                case 3:
-                               
-                                  
-                                    
-                                    cadenaOperacion += " / " + operando2;
-                                    
-                                    
-                                    break;
-    
-                            }
-                            
-                            contador++;
- 
-                            }while(contador < 3);
-
-                        
-                        break;
-                     
+  
                 }
                 
                 resultado = (int)engine.eval(cadenaOperacion);

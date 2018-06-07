@@ -45,7 +45,12 @@ public class Prueba {
 //        System.out.println("1. " + op.generarOperacion("ARCADE", "NORMAL", 1));
 //        System.out.println("2. " + op.generarOperacion("TIME TRIAL", "NORMAL", 4));
         System.out.println(op.generarOperacion("STRINGS", "NORMAL", 1));
-//        System.out.println("3. " + op.generarOperacion("STRINGS", "NORMAL", 4));
+        System.out.println(op.generarOperacion("STRINGS", "NORMAL", 4));
+
+        // *** DIFICULTAD DIFICIL ***
+        
+//                System.out.println("3. " + op.generarOperacion("STRINGS", "DIFICIL", 1));
+//                System.out.println("3. " + op.generarOperacion("STRINGS", "DIFICIL", 4));
               
 
         /*Case 3: division
