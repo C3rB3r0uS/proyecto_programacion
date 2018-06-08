@@ -48,16 +48,6 @@ public class Ventana_Log_in extends javax.swing.JFrame {
 
         jButton_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icon.png"))); // NOI18N
         jButton_Cerrar.setToolTipText("Cierra la aplicación ");
-        jButton_Cerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_CerrarActionPerformed(evt);
-            }
-        });
-        jButton_Cerrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton_CerrarKeyPressed(evt);
-            }
-        });
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 20));
 
         jTextField_NombreUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -73,16 +63,6 @@ public class Ventana_Log_in extends javax.swing.JFrame {
         jButton_Entrar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jButton_Entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_entrar.png"))); // NOI18N
         jButton_Entrar.setToolTipText("Entra en la aplicación");
-        jButton_Entrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_EntrarActionPerformed(evt);
-            }
-        });
-        jButton_Entrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton_EntrarKeyPressed(evt);
-            }
-        });
         getContentPane().add(jButton_Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 610, 200, 50));
         getContentPane().add(jContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, 340, 40));
 
@@ -99,11 +79,6 @@ public class Ventana_Log_in extends javax.swing.JFrame {
         jLabel_Crear_cuenta.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel_Crear_cuenta.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Crear_cuenta.setText("¿ No tienes cuenta ? Haz click en el link");
-        jLabel_Crear_cuenta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel_Crear_cuentaMouseClicked(evt);
-            }
-        });
         getContentPane().add(jLabel_Crear_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 570, 330, -1));
 
         jLabel_Ventana_Actual.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
@@ -117,41 +92,9 @@ public class Ventana_Log_in extends javax.swing.JFrame {
         setBounds(0, 0, 1290, 770);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton_CerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CerrarActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton_CerrarActionPerformed
-
     private void jTextField_NombreUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_NombreUsuarioMouseClicked
         jTextField_NombreUsuario.setText("");
     }//GEN-LAST:event_jTextField_NombreUsuarioMouseClicked
-
-    private void jButton_CerrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton_CerrarKeyPressed
-        
-        if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
-            
-            System.exit(0);
-            
-        }
-    }//GEN-LAST:event_jButton_CerrarKeyPressed
-
-    private void jButton_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EntrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_EntrarActionPerformed
-
-    private void jButton_EntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton_EntrarKeyPressed
-        
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            
-            
-            
-        }
-        
-    }//GEN-LAST:event_jButton_EntrarKeyPressed
-
-    private void jLabel_Crear_cuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Crear_cuentaMouseClicked
-        Ventana_Creacion_Cuenta cc = new Ventana_Creacion_Cuenta ();
-        cc.setVisible(true);
-    }//GEN-LAST:event_jLabel_Crear_cuentaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -190,14 +133,14 @@ public class Ventana_Log_in extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_Cerrar;
-    private javax.swing.JButton jButton_Entrar;
-    private javax.swing.JPasswordField jContraseña;
-    private javax.swing.JLabel jLabel_Contrasenia;
-    private javax.swing.JLabel jLabel_Crear_cuenta;
-    private javax.swing.JLabel jLabel_Fondo;
-    private javax.swing.JLabel jLabel_Nombre_usuario;
-    private javax.swing.JLabel jLabel_Ventana_Actual;
-    private javax.swing.JTextField jTextField_NombreUsuario;
+    public javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Entrar;
+    public javax.swing.JPasswordField jContraseña;
+    public javax.swing.JLabel jLabel_Contrasenia;
+    public javax.swing.JLabel jLabel_Crear_cuenta;
+    public javax.swing.JLabel jLabel_Fondo;
+    public javax.swing.JLabel jLabel_Nombre_usuario;
+    public javax.swing.JLabel jLabel_Ventana_Actual;
+    public javax.swing.JTextField jTextField_NombreUsuario;
     // End of variables declaration//GEN-END:variables
 }

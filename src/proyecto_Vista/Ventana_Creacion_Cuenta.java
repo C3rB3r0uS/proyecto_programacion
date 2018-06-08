@@ -45,6 +45,7 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
         jTextField_nombre_ingame = new javax.swing.JTextField();
         jButton_crear_cuenta = new javax.swing.JButton();
         jLabel_Ventana_Actual = new javax.swing.JLabel();
+        jButton_Volver = new javax.swing.JButton();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,16 +54,6 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
 
         jButton_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icon.png"))); // NOI18N
         jButton_Cerrar.setToolTipText("Cierra la aplicación ");
-        jButton_Cerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_CerrarActionPerformed(evt);
-            }
-        });
-        jButton_Cerrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton_CerrarKeyPressed(evt);
-            }
-        });
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 20));
 
         jLabel_Nom_ape1.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
@@ -122,31 +113,21 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
         jButton_crear_cuenta.setBackground(new java.awt.Color(255, 255, 255));
         jButton_crear_cuenta.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton_crear_cuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_crear_cuenta.png"))); // NOI18N
-        getContentPane().add(jButton_crear_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 570, 310, 90));
+        getContentPane().add(jButton_crear_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 580, 240, 75));
 
         jLabel_Ventana_Actual.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_Ventana_Actual.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Ventana_Actual.setText("RANDOM.MATHS/CREAR CUENTA");
         getContentPane().add(jLabel_Ventana_Actual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_volver.png"))); // NOI18N
+        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 240, 75));
+
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton_CerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CerrarActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton_CerrarActionPerformed
-
-    private void jButton_CerrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton_CerrarKeyPressed
-
-        if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
-
-            System.exit(0);
-
-        }
-    }//GEN-LAST:event_jButton_CerrarKeyPressed
 
     private void jTextField_nom_apeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_nom_apeActionPerformed
         // TODO add your handling code here:
@@ -196,6 +177,7 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Volver;
     private javax.swing.JButton jButton_crear_cuenta;
     private javax.swing.JComboBox<String> jComboBox_Pais;
     private javax.swing.JLabel jLabel_Fondo;

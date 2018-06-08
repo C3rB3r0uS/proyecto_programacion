@@ -40,26 +40,15 @@ public class Ventana_Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1300, 780));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icon.png"))); // NOI18N
         jButton_Cerrar.setToolTipText("Cierra la aplicación ");
-        jButton_Cerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_CerrarActionPerformed(evt);
-            }
-        });
-        jButton_Cerrar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton_CerrarKeyPressed(evt);
-            }
-        });
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 20));
 
         jButton_Jugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_jugar.png"))); // NOI18N
         jButton_Jugar.setToolTipText("Juega una partida en uno de los 4 modos disponibles: Arcade, Time Trial, Strings o Custom.");
-        getContentPane().add(jButton_Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 350, 50));
+        getContentPane().add(jButton_Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, 350, 70));
 
         jButton_Historial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_historial.png"))); // NOI18N
         jButton_Historial.setToolTipText("Muestra el historial de tus partidas más recientes.");
@@ -67,11 +56,6 @@ public class Ventana_Menu extends javax.swing.JFrame {
 
         jButton_Ranking.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_ranking.png"))); // NOI18N
         jButton_Ranking.setToolTipText("Muestra las puntuaciones más altas en este juego, agrupadas por modo y dificultad.");
-        jButton_Ranking.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_RankingActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButton_Ranking, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, 350, 50));
 
         jButton_Cerrar_Sesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_cerrarSesion.png"))); // NOI18N
@@ -88,23 +72,6 @@ public class Ventana_Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton_CerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CerrarActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton_CerrarActionPerformed
-
-    private void jButton_CerrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton_CerrarKeyPressed
-
-        if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
-
-            System.exit(0);
-
-        }
-    }//GEN-LAST:event_jButton_CerrarKeyPressed
-
-    private void jButton_RankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RankingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_RankingActionPerformed
 
     /**
      * @param args the command line arguments
