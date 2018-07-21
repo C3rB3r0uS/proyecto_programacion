@@ -102,21 +102,18 @@ public class Prueba {
 
         ClaseDAO d = new ClaseDAO();
         
-        System.out.println("Resultado disponibilidad de nombre usuario: " + d.consultarDisponibilidadNombreUsuario("random"));
-         System.out.println("Resultado disponibilidad de nombre ingame: " + d.consultarDisponibilidadNombreIngame("random"));
-        
-        System.out.println("Resultado disponibilidad de nombre usuario: " + d.consultarDisponibilidadNombreUsuario("PEDROB"));
-         System.out.println("Resultado disponibilidad de nombre ingame: " + d.consultarDisponibilidadNombreIngame("C3RB3R0US"));
+//        System.out.println("Resultado disponibilidad de nombre usuario: " + d.consultarDisponibilidadNombreUsuario("random"));
+//         System.out.println("Resultado disponibilidad de nombre ingame: " + d.consultarDisponibilidadNombreIngame("random"));
+//        
+//        System.out.println("Resultado disponibilidad de nombre usuario: " + d.consultarDisponibilidadNombreUsuario("PEDROB"));
+//         System.out.println("Resultado disponibilidad de nombre ingame: " + d.consultarDisponibilidadNombreIngame("C3RB3R0US"));
   
         
 //        boolean respuesta = d.ConsultarUserPass("PEDROB", "A4B7C899091");
 //        System.out.println("La respuesta es: " + respuesta);
 
-//      d.insertarEnTabla(60, "RANDOOOOOOOOOM", "PERIN");
-
-
-//    Ventana_Creacion_Cuenta vcc = new Ventana_Creacion_Cuenta ();
-//    Controlador_creacion_cuenta ccc = new Controlador_creacion_cuenta (vcc);
+            Jugador j = d.obtenerDatosJugador("PEDROB", "A4B7C899091");
+            System.out.println(j);
 
     
       

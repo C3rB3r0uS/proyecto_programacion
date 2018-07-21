@@ -7,6 +7,7 @@ package proyecto_Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 import proyecto_Modelo.ClaseDAO;
 import proyecto_Vista.Ventana_Creacion_Cuenta;
@@ -117,10 +118,10 @@ public class Controlador_creacion_cuenta implements ActionListener {
                 
             }
             
-            if(String.valueOf(this.v.jPasswordField_contrasenia.getPassword()).equals(String.valueOf(this.v.jPasswordField_confirmacion_contrasenia.getPassword())) ){
+            if( !Arrays.equals(v.jPasswordField_contrasenia.getPassword(),v.jPasswordField_confirmacion_contrasenia.getPassword()) ){
                 
-                errores += "-Las contraseñas introducidas no coinciden entre sí \n";
-                
+//                 errores += "-Las contraseñas introducidas no coinciden entre sí. \n";
+
             }else{
                 
                 cont = cont + 1;
@@ -130,10 +131,12 @@ public class Controlador_creacion_cuenta implements ActionListener {
             if(cont == 7){
                 
                 d.crearCuenta(v.jTextField_nom_usuario.getText(), v.jTextField_nombre_ingame.getText(), String.valueOf(this.v.jPasswordField_contrasenia.getPassword()), v.jTextField_nom_ape.getText(), this.v.jComboBox_Pais.getSelectedItem().toString());
+                JOptionPane.showMessageDialog(null, "La cuenta ha sido creada correctamente");
                 
             }else{
                 
                 JOptionPane.showMessageDialog(null, errores);
+                errores = "";
                 
             }
                    

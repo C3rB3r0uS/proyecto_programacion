@@ -65,4 +65,9 @@ public class Jugador {
         this.pais = pais;
     }
 
+    @Override
+    public String toString() {
+        return "Jugador{" + "nombre_usuario=" + nombre_usuario + ", nombre_jugador=" + nombre_jugador + ", contrasenia=" + contrasenia + ", nom_apellidos=" + nom_apellidos + ", pais=" + pais + '}';
+    }
+    
 }

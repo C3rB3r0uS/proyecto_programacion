@@ -79,6 +79,36 @@ public class ClaseDAO {
 
        }
     
+    public Jugador obtenerDatosJugador (String nombreUser, String passUser){
+        
+        Connection accesoBD = conexion.getConexion();
+        Jugador j = null;
+        
+        try{
+            
+            Statement s = accesoBD.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_USUARIO = " + "'" + nombreUser + "'" + " AND CONTRASENIA = " + "'" + passUser + "'" );
+            
+            if(rs.next()){
+                
+                j = new Jugador (rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+                
+            }else{
+                
+                System.out.println("El usuario indicado no existe");
+                
+            }
+            
+        }catch(SQLException e){
+            
+            System.out.println("Error al obtener los datos del jugador: " + e.getMessage());
+            
+        }
+        
+        return j;
+        
+    }
+    
     
     // VENTANA CREACIÓN DE CUENTA
     

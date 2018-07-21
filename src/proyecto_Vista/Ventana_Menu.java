@@ -110,10 +110,10 @@ public class Ventana_Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Cerrar;
-    private javax.swing.JButton jButton_Cerrar_Sesion;
-    private javax.swing.JButton jButton_Historial;
-    private javax.swing.JButton jButton_Jugar;
-    private javax.swing.JButton jButton_Ranking;
+    public javax.swing.JButton jButton_Cerrar_Sesion;
+    public javax.swing.JButton jButton_Historial;
+    public javax.swing.JButton jButton_Jugar;
+    public javax.swing.JButton jButton_Ranking;
     private javax.swing.JLabel jLabel_Fondo;
     private javax.swing.JLabel jLabel_Ventana_Actual;
     // End of variables declaration//GEN-END:variables

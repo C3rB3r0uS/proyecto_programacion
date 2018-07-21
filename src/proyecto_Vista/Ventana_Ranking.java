@@ -166,9 +166,9 @@ public class Ventana_Ranking extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Cerrar;
     private javax.swing.JButton jButton_Mostrar_datos;
     public javax.swing.JButton jButton_Volver;
-    private javax.swing.JComboBox<String> jComboBox_Dificultad;
-    private javax.swing.JComboBox<String> jComboBox_Filtro;
-    private javax.swing.JComboBox<String> jComboBox_Modo;
+    public javax.swing.JComboBox<String> jComboBox_Dificultad;
+    public javax.swing.JComboBox<String> jComboBox_Filtro;
+    public javax.swing.JComboBox<String> jComboBox_Modo;
     private javax.swing.JLabel jLabel_Dificultad;
     private javax.swing.JLabel jLabel_Filtro;
     private javax.swing.JLabel jLabel_Ventana_Actual;
