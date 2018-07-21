@@ -39,6 +39,7 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         jLabel_Ventana_Actual = new javax.swing.JLabel();
         jComboBox_Filtro = new javax.swing.JComboBox<>();
         jLabel_Filtro = new javax.swing.JLabel();
+        jButton_Volver = new javax.swing.JButton();
         JFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,6 +99,9 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         jLabel_Filtro.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Filtro.setText("Filtro\n");
         getContentPane().add(jLabel_Filtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
+
+        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver_small.png"))); // NOI18N
+        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 480, 170, 50));
 
         JFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(JFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -161,6 +165,7 @@ public class Ventana_Ranking extends javax.swing.JFrame {
     private javax.swing.JLabel JFondo;
     private javax.swing.JButton jButton_Cerrar;
     private javax.swing.JButton jButton_Mostrar_datos;
+    public javax.swing.JButton jButton_Volver;
     private javax.swing.JComboBox<String> jComboBox_Dificultad;
     private javax.swing.JComboBox<String> jComboBox_Filtro;
     private javax.swing.JComboBox<String> jComboBox_Modo;

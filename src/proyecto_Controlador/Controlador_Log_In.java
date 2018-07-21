@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JOptionPane;
+import proyecto_Modelo.ClaseDAO;
 import proyecto_Vista.Ventana_Creacion_Cuenta;
 import proyecto_Vista.Ventana_Log_in;
 import proyecto_Vista.Ventana_Menu;
@@ -20,8 +22,6 @@ import proyecto_Vista.Ventana_Menu;
 public class Controlador_Log_In implements ActionListener, MouseListener{
     
     Ventana_Log_in log;
-    private String nombre;
-    private String contrasenia;
     
     public Controlador_Log_In (Ventana_Log_in log){
         
@@ -41,12 +41,24 @@ public class Controlador_Log_In implements ActionListener, MouseListener{
         
         if(ae.getSource() == this.log.jButton_Entrar){
             
+            ClaseDAO d = new ClaseDAO();
+            
             String nombreIntroducido = log.jTextField_NombreUsuario.getText();
-            String contraseniaIntroducida = log.jContraseña.getSelectedText();
+            String contraseniaIntroducida = log.jContraseña.getText();
+  
+            if(d.ConsultarUserPass(nombreIntroducido, contraseniaIntroducida) == true){
+                
+                JOptionPane.showMessageDialog(null, "Datos introducidos válidos");
 
                 Ventana_Menu vm = new Ventana_Menu();
                 vm.setVisible(true);
-                log.setVisible(false);
+                log.dispose();
+                
+            }else{
+                
+                JOptionPane.showMessageDialog(null, "Datos introducidos inválidos");
+                
+            }
   
         }
         
@@ -61,8 +73,9 @@ public class Controlador_Log_In implements ActionListener, MouseListener{
          if(me.getSource() == this.log.jLabel_Crear_cuenta){
             
             Ventana_Creacion_Cuenta vcc = new Ventana_Creacion_Cuenta();
+            Controlador_creacion_cuenta ccc = new Controlador_creacion_cuenta (vcc);
             vcc.setVisible(true);
-            log.setVisible(false);
+            log.dispose();
             
         }
     }

@@ -25,6 +25,152 @@ public class ClaseDAO {
         
     }
     
+//    public void insertarEnTabla (int deptno, String dname, String loc){
+//        
+//        Connection accesoBD = conexion.getConexion();
+//        
+//        try{
+//            
+//            Statement s = accesoBD.createStatement();
+//            s.executeUpdate("INSERT INTO DEPT VALUES ("+deptno+",'"+dname+"','"+loc+"')");
+//            
+//        }catch(SQLException e){
+//            
+//            System.out.println("Excepción SQL al insertar en tabla: " + e.getMessage());
+//            
+//        }
+//        
+//    }
+    
+    //LOG IN
+    
+    public boolean ConsultarUserPass(String nombreUser, String passUser){
+        
+        Connection accesoBD = conexion.getConexion();
+        boolean resultado = false;
+
+        try{
+
+           Statement s = accesoBD.createStatement();
+           ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_USUARIO = " + "'" + nombreUser + "'" + " AND CONTRASENIA = " + "'" + passUser + "'" );
+            
+           int cont = 0;
+           
+           if(rs.next()){
+               
+               resultado = true;
+
+           }else{
+           
+//           while(rs.next()){
+// 
+//               cont = cont + 1;
+//                     
+//                }
+           
+           }
+  
+        }catch(SQLException e){
+            
+            System.out.println("Excepción al consultar User/Pass: " + e.getMessage());
+            }
+        
+            return resultado;
+
+       }
+    
+    
+    // VENTANA CREACIÓN DE CUENTA
+    
+    public boolean consultarDisponibilidadNombreUsuario (String nombreUsuario){
+        
+        Connection accesoBD = conexion.getConexion();
+        boolean resultado = true;
+
+        try{
+
+           Statement s = accesoBD.createStatement();
+           ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_USUARIO = " + "'" + nombreUsuario + "'");
+            
+//           int cont = 0;
+           
+           if(rs.next()){
+               
+               resultado = false;
+
+           }else{
+           
+//           while(rs.next()){
+// 
+//               cont = cont + 1;
+//                     
+//                }
+           
+           }
+  
+        }catch(SQLException e){
+            
+            System.out.println("Excepción al consultar disponibilidad nombre usuario: " + e.getMessage());
+            }
+        
+            return resultado;
+   
+        }
+    
+     public boolean consultarDisponibilidadNombreIngame (String nombreIngame){
+        
+        Connection accesoBD = conexion.getConexion();
+        boolean resultado = true;
+
+        try{
+
+           Statement s = accesoBD.createStatement();
+           ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_JUGADOR = " + "'" + nombreIngame + "'");
+            
+//           int cont = 0;
+           
+           if(rs.next()){
+               
+               resultado = false;
+
+           }else{
+           
+//           while(rs.next()){
+// 
+//               cont = cont + 1;
+//                     
+//                }
+           
+           }
+  
+        }catch(SQLException e){
+            
+            System.out.println("Excepción al consultar disponibilidad nombre ingame: " + e.getMessage());
+            }
+        
+            return resultado;
+   
+        }
+     
+         public void crearCuenta (String nombreUsuario, String nombreJugador, String contrasenia,String nom_apellidos, String pais){
+        
+        Connection accesoBD = conexion.getConexion();
+        
+        try{
+            
+            Statement s = accesoBD.createStatement();
+            s.executeUpdate("INSERT INTO JUGADOR VALUES ("+nombreUsuario+",'"+nombreJugador+"','"+contrasenia+"','"+nom_apellidos+"','"+pais+"')");
+            
+        }catch(SQLException e){
+            
+            System.out.println("Excepción SQL al insertar en tabla: " + e.getMessage());
+            
+        }
+        
+    }
+     
+     
+    
     public int consultarCodigoPartida(){
         
         Connection accesoBD = conexion.getConexion();
@@ -38,7 +184,7 @@ public class ClaseDAO {
             conexion.closeConexion(accesoBD);
             
         }catch(SQLException e){
-            System.out.println("Excepción SQL. consultarCodigo: " + e.getMessage());
+            System.out.println("Excepción SQL al consultar CodigoPartida: " + e.getMessage());
         }
         
         return codigo;
@@ -58,7 +204,7 @@ public class ClaseDAO {
             conexion.closeConexion(accesoBD);
             
         }catch(SQLException e){
-            System.out.println("Excepción SQL. consultarCodigo: " + e.getMessage());
+            System.out.println("Excepción SQL al consultar CodigoNiveles: " + e.getMessage());
         }
         
         return codigo;
@@ -79,7 +225,7 @@ public class ClaseDAO {
             conexion.closeConexion(accesoBD);
             
         }catch(SQLException e){
-            System.out.println("Excepción SQL. consultarCodigo: " + e.getMessage());
+            System.out.println("Excepción SQL al consultar CodigoOperaciones: " + e.getMessage());
         }
 
         return codigo;

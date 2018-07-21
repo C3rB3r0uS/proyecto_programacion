@@ -28,7 +28,7 @@ public class Conexion {
             try{
                 
                 Class.forName("oracle.jdbc.OracleDriver");
-                conn = DriverManager.getConnection("jdbc:oracle:thin:random/random@localhost:1521:XE");
+                conn = DriverManager.getConnection("jdbc:oracle:thin:PROYECTO/proyecto@localhost:1521:XE");
                  
             }catch(SQLException e){
                 

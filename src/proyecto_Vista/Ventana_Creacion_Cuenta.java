@@ -113,7 +113,7 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
         jButton_crear_cuenta.setBackground(new java.awt.Color(255, 255, 255));
         jButton_crear_cuenta.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton_crear_cuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_crear_cuenta.png"))); // NOI18N
-        getContentPane().add(jButton_crear_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 580, 240, 75));
+        getContentPane().add(jButton_crear_cuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, 240, 75));
 
         jLabel_Ventana_Actual.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_Ventana_Actual.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,8 +178,8 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Cerrar;
     public javax.swing.JButton jButton_Volver;
-    private javax.swing.JButton jButton_crear_cuenta;
-    private javax.swing.JComboBox<String> jComboBox_Pais;
+    public javax.swing.JButton jButton_crear_cuenta;
+    public javax.swing.JComboBox<String> jComboBox_Pais;
     private javax.swing.JLabel jLabel_Fondo;
     private javax.swing.JLabel jLabel_Nom_ape1;
     private javax.swing.JLabel jLabel_Ventana_Actual;
@@ -188,10 +188,10 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_nombre_usuario;
     private javax.swing.JLabel jLabel_pais;
     private javax.swing.JLabel jLabel_password;
-    private javax.swing.JPasswordField jPasswordField_confirmacion_contrasenia;
-    private javax.swing.JPasswordField jPasswordField_contrasenia;
-    private javax.swing.JTextField jTextField_nom_ape;
-    private javax.swing.JTextField jTextField_nom_usuario;
-    private javax.swing.JTextField jTextField_nombre_ingame;
+    public javax.swing.JPasswordField jPasswordField_confirmacion_contrasenia;
+    public javax.swing.JPasswordField jPasswordField_contrasenia;
+    public javax.swing.JTextField jTextField_nom_ape;
+    public javax.swing.JTextField jTextField_nom_usuario;
+    public javax.swing.JTextField jTextField_nombre_ingame;
     // End of variables declaration//GEN-END:variables
 }

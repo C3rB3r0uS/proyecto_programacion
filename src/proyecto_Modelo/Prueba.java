@@ -9,6 +9,8 @@ import java.util.Random;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import proyecto_Controlador.Controlador_creacion_cuenta;
+import proyecto_Vista.Ventana_Creacion_Cuenta;
 
 /**
  *
@@ -44,8 +46,8 @@ public class Prueba {
         
 //        System.out.println("1. " + op.generarOperacion("ARCADE", "NORMAL", 1));
 //        System.out.println("2. " + op.generarOperacion("TIME TRIAL", "NORMAL", 4));
-        System.out.println(op.generarOperacion("STRINGS", "DIFICIL", 1));
-        System.out.println(op.generarOperacion("STRINGS", "NORMAL", 4));
+//        System.out.println(op.generarOperacion("STRINGS", "DIFICIL", 1));
+//        System.out.println(op.generarOperacion("STRINGS", "NORMAL", 4));
 
         // *** DIFICULTAD DIFICIL ***
         
@@ -98,6 +100,26 @@ public class Prueba {
 //        System.out.println(operacion);
         
 
+        ClaseDAO d = new ClaseDAO();
+        
+        System.out.println("Resultado disponibilidad de nombre usuario: " + d.consultarDisponibilidadNombreUsuario("random"));
+         System.out.println("Resultado disponibilidad de nombre ingame: " + d.consultarDisponibilidadNombreIngame("random"));
+        
+        System.out.println("Resultado disponibilidad de nombre usuario: " + d.consultarDisponibilidadNombreUsuario("PEDROB"));
+         System.out.println("Resultado disponibilidad de nombre ingame: " + d.consultarDisponibilidadNombreIngame("C3RB3R0US"));
+  
+        
+//        boolean respuesta = d.ConsultarUserPass("PEDROB", "A4B7C899091");
+//        System.out.println("La respuesta es: " + respuesta);
+
+//      d.insertarEnTabla(60, "RANDOOOOOOOOOM", "PERIN");
+
+
+//    Ventana_Creacion_Cuenta vcc = new Ventana_Creacion_Cuenta ();
+//    Controlador_creacion_cuenta ccc = new Controlador_creacion_cuenta (vcc);
+
+    
+      
 
     }
     

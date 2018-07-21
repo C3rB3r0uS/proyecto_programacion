@@ -37,6 +37,7 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         jLabel_Dificultad = new javax.swing.JLabel();
         jComboBox_Dificultad = new javax.swing.JComboBox<>();
         jButton_Jugar = new javax.swing.JButton();
+        jButton_Volver = new javax.swing.JButton();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,7 +60,7 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
 
         jLabel_Ventana_Actual.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_Ventana_Actual.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Ventana_Actual.setText("RANDOM.MATHS/SELECCION de MODO");
+        jLabel_Ventana_Actual.setText("RANDOM.MATHS/SELECCION DE MODO");
         getContentPane().add(jLabel_Ventana_Actual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 570, -1));
 
         jLabel_modo.setFont(new java.awt.Font("Digital Dare", 1, 40)); // NOI18N
@@ -97,7 +98,16 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
                 jButton_JugarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton_Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 380, 90));
+        getContentPane().add(jButton_Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 490, 380, 90));
+
+        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver_big.png"))); // NOI18N
+        jButton_Volver.setToolTipText("Juega una partida en uno de los 4 modos disponibles: Arcade, Time Trial, Strings o Custom.");
+        jButton_Volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_VolverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 610, 380, 90));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -129,6 +139,10 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
     private void jButton_JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_JugarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_JugarActionPerformed
+
+    private void jButton_VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_VolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +183,7 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Cerrar;
     private javax.swing.JButton jButton_Jugar;
+    private javax.swing.JButton jButton_Volver;
     private javax.swing.JComboBox<String> jComboBox_Dificultad;
     private javax.swing.JComboBox<String> jComboBox_Modo;
     private javax.swing.JLabel jLabel_Dificultad;

@@ -33,6 +33,7 @@ public class Ventana_Historial extends javax.swing.JFrame {
         jButton_Cerrar = new javax.swing.JButton();
         jLabel_Ventana_Actual = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton_Volver = new javax.swing.JButton();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,6 +63,9 @@ public class Ventana_Historial extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("RESULTADOS DE LAS ULTIMAS 10 PARTIDAS ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
+
+        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_volver.png"))); // NOI18N
+        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 600, 240, 75));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -119,6 +123,7 @@ public class Ventana_Historial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Volver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_Fondo;
     private javax.swing.JLabel jLabel_Ventana_Actual;
