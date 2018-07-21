@@ -7,7 +7,12 @@ package proyecto_Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import proyecto_Modelo.Jugador;
+import proyecto_Modelo.Partida;
+import proyecto_Vista.Ventana_Menu;
+import proyecto_Vista.Ventana_Partida_madness;
+import proyecto_Vista.Ventana_Partida_normal;
 import proyecto_Vista.Ventana_Seleccion;
 
 /**
@@ -18,6 +23,7 @@ public class Controlador_seleccion implements ActionListener {
     
     Ventana_Seleccion vs;
     Jugador j;
+    Partida p;
     
     public Controlador_seleccion(Ventana_Seleccion vs, Jugador j){
         
@@ -31,11 +37,36 @@ public class Controlador_seleccion implements ActionListener {
         vs.jComboBox_Modo.addActionListener(this);
         
     }
-    
-    
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+        
+         if(ae.getSource() == this.vs.jButton_Cerrar){
+            
+             int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
+           
+           if(respuesta == JOptionPane.YES_OPTION){
+                System.exit(0);
+           }
+        }
+         
+         if(ae.getSource() == this.vs.jButton_Volver){
+             
+             Ventana_Menu vm = new Ventana_Menu();
+             Controlador_menu cm = new Controlador_menu(vm,this.j);
+             vm.setVisible(true);
+             vs.dispose();
+             
+         }
+         
+         if(ae.getSource() == this.vs.jButton_Jugar){
+
+            Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
+             vpn.setVisible(true);
+             vs.dispose();
+             
+         }
+         
         
     }
     

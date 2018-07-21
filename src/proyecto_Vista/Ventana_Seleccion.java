@@ -34,8 +34,8 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         jLabel_Ventana_Actual = new javax.swing.JLabel();
         jLabel_modo = new javax.swing.JLabel();
         jComboBox_Modo = new javax.swing.JComboBox<>();
-        jLabel_Dificultad = new javax.swing.JLabel();
         jComboBox_Dificultad = new javax.swing.JComboBox<>();
+        jLabel_Dificultad = new javax.swing.JLabel();
         jButton_Jugar = new javax.swing.JButton();
         jButton_Volver = new javax.swing.JButton();
         jLabel_Fondo = new javax.swing.JLabel();
@@ -56,7 +56,7 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
                 jButton_CerrarKeyPressed(evt);
             }
         });
-        getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 20));
+        getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 10, 40, 20));
 
         jLabel_Ventana_Actual.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_Ventana_Actual.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,11 +77,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox_Modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 400, 100));
 
-        jLabel_Dificultad.setFont(new java.awt.Font("Digital Dare", 1, 40)); // NOI18N
-        jLabel_Dificultad.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Dificultad.setText("DIFICULTAD");
-        getContentPane().add(jLabel_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, -1, -1));
-
         jComboBox_Dificultad.setFont(new java.awt.Font("Digital Dare", 0, 60)); // NOI18N
         jComboBox_Dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FACIL", "NORMAL", "DIFICIL" }));
         jComboBox_Dificultad.addActionListener(new java.awt.event.ActionListener() {
@@ -91,8 +86,13 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, 400, 100));
 
+        jLabel_Dificultad.setFont(new java.awt.Font("Digital Dare", 1, 40)); // NOI18N
+        jLabel_Dificultad.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Dificultad.setText("DIFICULTAD");
+        getContentPane().add(jLabel_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, -1, -1));
+
         jButton_Jugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_jugar.png"))); // NOI18N
-        jButton_Jugar.setToolTipText("Juega una partida en uno de los 4 modos disponibles: Arcade, Time Trial, Strings o Custom.");
+        jButton_Jugar.setToolTipText("");
         jButton_Jugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_JugarActionPerformed(evt);
@@ -101,7 +101,7 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         getContentPane().add(jButton_Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 490, 380, 90));
 
         jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver_big.png"))); // NOI18N
-        jButton_Volver.setToolTipText("Juega una partida en uno de los 4 modos disponibles: Arcade, Time Trial, Strings o Custom.");
+        jButton_Volver.setToolTipText("");
         jButton_Volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_VolverActionPerformed(evt);

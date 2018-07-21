@@ -35,6 +35,15 @@ public class Controlador_creacion_cuenta implements ActionListener {
         
         ClaseDAO d = new ClaseDAO ();
         
+           if(ae.getSource() == this.v.jButton_Cerrar){
+            
+             int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
+           
+           if(respuesta == JOptionPane.YES_OPTION){
+                System.exit(0);
+           }
+        }
+        
         if(ae.getSource() == this.v.jButton_Volver){
             
             Ventana_Log_in log = new Ventana_Log_in ();

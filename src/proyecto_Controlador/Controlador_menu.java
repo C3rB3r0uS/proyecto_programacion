@@ -51,6 +51,7 @@ public class Controlador_menu implements ActionListener {
         if(ae.getSource() == this.vm.jButton_Jugar) {
             
             Ventana_Seleccion vs = new Ventana_Seleccion();
+            Controlador_seleccion cs = new Controlador_seleccion(vs, j);
             vs.setVisible(true);
             vm.dispose();
             

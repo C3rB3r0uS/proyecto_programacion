@@ -5,6 +5,8 @@
  */
 package proyecto_Modelo;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -115,7 +117,17 @@ public class Prueba {
             Jugador j = d.obtenerDatosJugador("PEDROB", "A4B7C899091");
             System.out.println(j);
 
-    
+//        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        LocalDate ld = LocalDate.now();
+//        
+//        System.out.println("La fecha actual es: " + dtf.format(ld));
+//
+//            for (int i = 1; i < 10; i++) {
+//                
+//                int random = (int)(Math.random()*10)+1;
+//                System.out.println("random = " + random);
+//            
+//        }
       
 
     }

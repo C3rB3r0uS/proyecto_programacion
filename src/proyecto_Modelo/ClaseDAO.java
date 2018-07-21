@@ -197,9 +197,10 @@ public class ClaseDAO {
         }
         
     }
+         
+         
      
      
-    
     public int consultarCodigoPartida(){
         
         Connection accesoBD = conexion.getConexion();
@@ -209,7 +210,17 @@ public class ClaseDAO {
             
             Statement s = accesoBD.createStatement();
             ResultSet rs = s.executeQuery("SELECT COD_PARTIDA FROM PARTIDA WHERE COD_PARTIDA = (SELECT MAX(COD_PARTIDA) FROM PARTIDA)");
-            codigo = rs.getInt(1);
+            
+            if(rs.next()){
+                
+                codigo = rs.getInt(1);
+                
+            }else{
+                
+                codigo = 1;
+                
+            }
+
             conexion.closeConexion(accesoBD);
             
         }catch(SQLException e){
@@ -230,6 +241,17 @@ public class ClaseDAO {
             Statement s = accesoBD.createStatement();
             ResultSet rs = s.executeQuery("SELECT COD_NIVEL FROM NIVELES WHERE COD_OPERACION = (SELECT MAX(COD_NIVEL) FROM NIVELES)");
             codigo = rs.getInt(1);
+            
+            if(rs.next()){
+                
+                codigo = rs.getInt(1);
+                
+            }else{
+                
+                codigo = 1;
+                
+            }
+         
             conexion.closeConexion(accesoBD);
             
         }catch(SQLException e){
@@ -250,7 +272,17 @@ public class ClaseDAO {
             
             Statement s = accesoBD.createStatement();
             ResultSet rs = s.executeQuery("SELECT COD_OPERACION FROM OPERACIONES WHERE COD_OPERACION = (SELECT MAX(COD_OPERACION) FROM OPERACIONES)");
-            codigo = rs.getInt(1);
+           
+            if(rs.next()){
+                
+                codigo = rs.getInt(1);
+                
+            }else{
+                
+                codigo = 1;
+                
+            }
+
             conexion.closeConexion(accesoBD);
             
         }catch(SQLException e){
