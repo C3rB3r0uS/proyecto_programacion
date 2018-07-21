@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import proyecto_Modelo.Jugador;
+import proyecto_Modelo.Niveles;
+import proyecto_Modelo.Operaciones;
 import proyecto_Modelo.Partida;
 import proyecto_Vista.Ventana_Menu;
 import proyecto_Vista.Ventana_Partida_madness;
@@ -24,6 +26,8 @@ public class Controlador_seleccion implements ActionListener {
     Ventana_Seleccion vs;
     Jugador j;
     Partida p;
+    Niveles n;
+    Operaciones o;
     
     public Controlador_seleccion(Ventana_Seleccion vs, Jugador j){
         
@@ -64,6 +68,7 @@ public class Controlador_seleccion implements ActionListener {
                if(this.vs.jComboBox_Modo.getSelectedItem().toString().equals("TIME TRIAL")){
                    
                         Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
+                        Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n, o);
                         vpn.setVisible(true);
                         vs.dispose();
                    
@@ -74,6 +79,7 @@ public class Controlador_seleccion implements ActionListener {
                         if(random <= 8){
                             
                                 Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
+                                Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n, o);
                                 vpn.setVisible(true);
                                 vs.dispose();
                             

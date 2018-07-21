@@ -422,8 +422,6 @@ public class Operaciones {
     
                             }
                             
-//                                contador++;
- 
                             }while(contador < 4);            
                         
                         break;

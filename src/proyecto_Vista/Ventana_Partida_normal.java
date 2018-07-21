@@ -36,6 +36,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jTextField_Respuesta = new javax.swing.JTextField();
         jButton_Cerrar = new javax.swing.JButton();
         jButton_Volver = new javax.swing.JButton();
+        jButton_Enter = new javax.swing.JButton();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,7 +60,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
 
         jButton_Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_start.png"))); // NOI18N
         jButton_Start.setPreferredSize(new java.awt.Dimension(310, 90));
-        getContentPane().add(jButton_Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 560, -1, -1));
+        getContentPane().add(jButton_Start, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 660, 240, 70));
 
         JLabel_Operacion.setFont(new java.awt.Font("Digital Dare", 0, 60)); // NOI18N
         JLabel_Operacion.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,7 +76,10 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, -1, -1));
 
         jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_volver.png"))); // NOI18N
-        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 690, 240, 75));
+        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 240, 70));
+
+        jButton_Enter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/intro.png"))); // NOI18N
+        getContentPane().add(jButton_Enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 240, 70));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -122,6 +126,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel JLabel_Operacion;
     public javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Enter;
     public javax.swing.JButton jButton_Start;
     public javax.swing.JButton jButton_Volver;
     public javax.swing.JLabel jLabel_ContadorPuntuacion;

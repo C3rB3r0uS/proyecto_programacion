@@ -137,8 +137,6 @@ public class Prueba {
         Controlador_seleccion cs = new Controlador_seleccion (vs, j);
         vs.setVisible(true);
 
-
-
     }
     
 }

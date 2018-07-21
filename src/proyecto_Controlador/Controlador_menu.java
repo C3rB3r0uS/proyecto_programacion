@@ -76,6 +76,7 @@ public class Controlador_menu implements ActionListener {
         if(ae.getSource() == this.vm.jButton_Cerrar_Sesion){
             
             Ventana_Log_in vli = new Ventana_Log_in ();
+            Controlador_Log_In cli = new Controlador_Log_In(vli);
             vli.setVisible(true);
             vm.dispose();
             
