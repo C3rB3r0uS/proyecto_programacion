@@ -12,7 +12,9 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import proyecto_Controlador.Controlador_creacion_cuenta;
+import proyecto_Controlador.Controlador_seleccion;
 import proyecto_Vista.Ventana_Creacion_Cuenta;
+import proyecto_Vista.Ventana_Seleccion;
 
 /**
  *
@@ -103,7 +105,9 @@ public class Prueba {
         
 
         ClaseDAO d = new ClaseDAO();
-        
+//        System.out.println("Código de partida: " + d.ConsultarCodigoPartida());
+//        System.out.println("Código de nivel: " + d.ConsultarCodigoNiveles());
+//        System.out.println("Código de operación: " + d.consultarCodigoOperaciones());
 //        System.out.println("Resultado disponibilidad de nombre usuario: " + d.consultarDisponibilidadNombreUsuario("random"));
 //         System.out.println("Resultado disponibilidad de nombre ingame: " + d.consultarDisponibilidadNombreIngame("random"));
 //        
@@ -115,7 +119,7 @@ public class Prueba {
 //        System.out.println("La respuesta es: " + respuesta);
 
             Jugador j = d.obtenerDatosJugador("PEDROB", "A4B7C899091");
-            System.out.println(j);
+//            System.out.println(j);
 
 //        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
 //        LocalDate ld = LocalDate.now();
@@ -128,7 +132,12 @@ public class Prueba {
 //                System.out.println("random = " + random);
 //            
 //        }
-      
+        
+        Ventana_Seleccion vs = new Ventana_Seleccion ();
+        Controlador_seleccion cs = new Controlador_seleccion (vs, j);
+        vs.setVisible(true);
+
+
 
     }
     

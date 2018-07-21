@@ -61,13 +61,35 @@ public class Controlador_seleccion implements ActionListener {
          
          if(ae.getSource() == this.vs.jButton_Jugar){
 
-            Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
-             vpn.setVisible(true);
-             vs.dispose();
-             
-         }
-         
-        
-    }
+               if(this.vs.jComboBox_Modo.getSelectedItem().toString().equals("TIME TRIAL")){
+                   
+                        Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
+                        vpn.setVisible(true);
+                        vs.dispose();
+                   
+               }else{
+                   
+                        int random = (int)(Math.random()*10)+1;
+                        
+                        if(random <= 8){
+                            
+                                Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
+                                vpn.setVisible(true);
+                                vs.dispose();
+                            
+                        }else{
+                            
+                                Ventana_Partida_madness vpm = new Ventana_Partida_madness();
+                                vpm.setVisible(true);
+                                vs.dispose();
+                            
+                            
+                                }
+ 
+                        }
+
+                }
+                
+        }
     
 }

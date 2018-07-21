@@ -199,9 +199,9 @@ public class ClaseDAO {
     }
          
          
+     // Obtención de los códigos que identifican a cada partida, nivel u operación
      
-     
-    public int consultarCodigoPartida(){
+    public int ConsultarCodigoPartida(){
         
         Connection accesoBD = conexion.getConexion();
         int codigo = 0;
@@ -239,8 +239,7 @@ public class ClaseDAO {
         try{
             
             Statement s = accesoBD.createStatement();
-            ResultSet rs = s.executeQuery("SELECT COD_NIVEL FROM NIVELES WHERE COD_OPERACION = (SELECT MAX(COD_NIVEL) FROM NIVELES)");
-            codigo = rs.getInt(1);
+            ResultSet rs = s.executeQuery("SELECT COD_NIVEL FROM NIVELES WHERE COD_NIVEL = (SELECT MAX(COD_NIVEL) FROM NIVELES)");
             
             if(rs.next()){
                 

@@ -43,23 +43,23 @@ public class Ventana_Menu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icon.png"))); // NOI18N
-        jButton_Cerrar.setToolTipText("Cierra la aplicación ");
+        jButton_Cerrar.setToolTipText("");
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 20));
 
         jButton_Jugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_jugar.png"))); // NOI18N
-        jButton_Jugar.setToolTipText("Juega una partida en uno de los 4 modos disponibles: Arcade, Time Trial, Strings o Custom.");
+        jButton_Jugar.setToolTipText("");
         getContentPane().add(jButton_Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, 350, 70));
 
         jButton_Historial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_historial.png"))); // NOI18N
-        jButton_Historial.setToolTipText("Muestra el historial de tus partidas más recientes.");
+        jButton_Historial.setToolTipText("");
         getContentPane().add(jButton_Historial, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 350, 50));
 
         jButton_Ranking.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_ranking.png"))); // NOI18N
-        jButton_Ranking.setToolTipText("Muestra las puntuaciones más altas en este juego, agrupadas por modo y dificultad.");
+        jButton_Ranking.setToolTipText("");
         getContentPane().add(jButton_Ranking, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, 350, 50));
 
         jButton_Cerrar_Sesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_cerrarSesion.png"))); // NOI18N
-        jButton_Cerrar_Sesion.setToolTipText("Cierra la sesión del usuario actual.");
+        jButton_Cerrar_Sesion.setToolTipText("");
         getContentPane().add(jButton_Cerrar_Sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 640, 350, 50));
 
         jLabel_Ventana_Actual.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
