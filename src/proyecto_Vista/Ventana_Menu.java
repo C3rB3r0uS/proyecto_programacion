@@ -109,7 +109,7 @@ public class Ventana_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Cerrar;
     public javax.swing.JButton jButton_Cerrar_Sesion;
     public javax.swing.JButton jButton_Historial;
     public javax.swing.JButton jButton_Jugar;

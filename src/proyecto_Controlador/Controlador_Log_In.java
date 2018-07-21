@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import proyecto_Modelo.ClaseDAO;
+import proyecto_Modelo.Jugador;
 import proyecto_Vista.Ventana_Creacion_Cuenta;
 import proyecto_Vista.Ventana_Log_in;
 import proyecto_Vista.Ventana_Menu;
@@ -50,16 +51,22 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
         if(ae.getSource() == this.log.jButton_Entrar){
             
             ClaseDAO d = new ClaseDAO();
+            Jugador j = null;
             
             String nombreIntroducido = log.jTextField_NombreUsuario.getText();
             String contraseniaIntroducida = String.valueOf(this.log.jContraseña.getPassword());
   
             if(d.ConsultarUserPass(nombreIntroducido, contraseniaIntroducida) == true){
-                
+
                 JOptionPane.showMessageDialog(null, "Datos introducidos válidos");
 
+                // Obtiene los datos del jugador cuyo nombre de usuario y contraseña son los introducidos
+                // Esos datos se transfieren a la siguiente ventana como argumento
+                
+                j = d.obtenerDatosJugador(nombreIntroducido, nombreIntroducido);
+                
                 Ventana_Menu vm = new Ventana_Menu();
-                Controlador_menu cm = new Controlador_menu(vm);
+                Controlador_menu cm = new Controlador_menu(vm,j);
                 vm.setVisible(true);
                 log.dispose();
                 
@@ -113,7 +120,7 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
         
         System.out.println("Code: " + code);
    
-       if(code == KeyEvent.VK_ASTERISK){
+       if(code == KeyEvent.VK_ESCAPE){
            
            int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
            

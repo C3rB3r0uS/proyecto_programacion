@@ -7,6 +7,8 @@ package proyecto_Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import proyecto_Modelo.Jugador;
 import proyecto_Vista.Ventana_Historial;
 import proyecto_Vista.Ventana_Log_in;
 import proyecto_Vista.Ventana_Menu;
@@ -20,19 +22,31 @@ import proyecto_Vista.Ventana_Seleccion;
 public class Controlador_menu implements ActionListener {
     
     Ventana_Menu vm;
+    Jugador j;
     
-    public Controlador_menu(Ventana_Menu vm){
+    public Controlador_menu(Ventana_Menu vm, Jugador j){
         
         this.vm = vm;
+        this.j = j;
         vm.jButton_Jugar.addActionListener(this);
         vm.jButton_Historial.addActionListener(this);
         vm.jButton_Ranking.addActionListener(this);
         vm.jButton_Cerrar_Sesion.addActionListener(this);
+        vm.jButton_Cerrar.addActionListener(this);
         
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+        
+            if(ae.getSource() == this.vm.jButton_Cerrar){
+            
+             int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
+           
+           if(respuesta == JOptionPane.YES_OPTION){
+                System.exit(0);
+           }
+        }
         
         if(ae.getSource() == this.vm.jButton_Jugar) {
             

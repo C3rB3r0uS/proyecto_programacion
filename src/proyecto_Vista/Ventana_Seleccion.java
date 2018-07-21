@@ -181,9 +181,9 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_Cerrar;
-    private javax.swing.JButton jButton_Jugar;
-    private javax.swing.JButton jButton_Volver;
+    public javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Jugar;
+    public javax.swing.JButton jButton_Volver;
     public javax.swing.JComboBox<String> jComboBox_Dificultad;
     public javax.swing.JComboBox<String> jComboBox_Modo;
     private javax.swing.JLabel jLabel_Dificultad;

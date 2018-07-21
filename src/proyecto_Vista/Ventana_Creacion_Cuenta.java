@@ -176,7 +176,7 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Cerrar;
     public javax.swing.JButton jButton_Volver;
     public javax.swing.JButton jButton_crear_cuenta;
     public javax.swing.JComboBox<String> jComboBox_Pais;

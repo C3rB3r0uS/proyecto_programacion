@@ -26,6 +26,7 @@ public class Controlador_creacion_cuenta implements ActionListener {
         this.v = v;
         v.jButton_crear_cuenta.addActionListener(this);
         v.jButton_Volver.addActionListener(this);
+        v.jButton_Cerrar.addActionListener(this);
         
     }    
 
