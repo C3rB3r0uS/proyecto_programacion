@@ -59,7 +59,7 @@ public class Controlador_creacion_cuenta implements ActionListener {
             
             if(this.v.jTextField_nom_ape.getText().equals("")){
                 
-                errores += "-Campo Nombre y Apellidos obligatorio \n";
+                errores += "-Todos los campos son obligatorios \n";
                 
             }else{
                 
@@ -128,13 +128,13 @@ public class Controlador_creacion_cuenta implements ActionListener {
                 
             }
             
-            if( !Arrays.equals(v.jPasswordField_contrasenia.getPassword(),v.jPasswordField_confirmacion_contrasenia.getPassword()) ){
+            if(this.v.jPasswordField_contrasenia.getText().equals(this.v.jPasswordField_confirmacion_contrasenia.getText())){
                 
-//                 errores += "-Las contraseñas introducidas no coinciden entre sí. \n";
+                 cont = cont + 1;
 
             }else{
                 
-                cont = cont + 1;
+                errores += "-Las contraseñas introducidas no coinciden entre sí. \n";
                 
             }
             

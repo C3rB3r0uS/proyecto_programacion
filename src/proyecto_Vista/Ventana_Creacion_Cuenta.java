@@ -61,7 +61,7 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
         jLabel_Nom_ape1.setText("Nombre y Apellidos");
         getContentPane().add(jLabel_Nom_ape1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, -1));
 
-        jTextField_nom_ape.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField_nom_ape.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jTextField_nom_ape.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_nom_apeActionPerformed(evt);
@@ -74,7 +74,7 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
         jLabel_pais.setText("Pais de residencia");
         getContentPane().add(jLabel_pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, -1, -1));
 
-        jComboBox_Pais.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jComboBox_Pais.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jComboBox_Pais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Afganistán", "Albania", "Alemania", "Andorra", "Angola", "Antigua y Barbuda", "Arabia Saudita", "Argelia", "Argentina", "Armenia", "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bangladés", "Barbados", "Baréin", "Bélgica", "Belice", "Benín", "Bielorrusia", "Birmania", "Bolivia", "Bosnia y Herzegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi", "Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Catar", "Chad", "Chile", "China", "Chipre", "Ciudad del Vaticano", "Colombia", "Comoras", "Corea del Norte", "Corea del Sur", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "Dinamarca", "Dominica", "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Eritrea", "Eslovaquia", "Eslovenia", "España", "Estados Unidos", "Estonia", "Etiopía", "Filipinas", "Finlandia", "Fiyi", "Francia", "Gabón", "Gambia", "Georgia", "Ghana", "Granada", "Grecia", "Guatemala", "Guyana", "Guinea", "Guinea ecuatorial", "Guinea-Bisáu", "Haití", "Honduras", "Hungría", "India", "Indonesia", "Irak", "Irán", "Irlanda", "Islandia", "Islas Marshall", "Islas Salomón", "Israel", "Italia", "Jamaica", "Japón", "Jordania", "Kazajistán", "Kenia", "Kirguistán", "Kiribati", "Kuwait", "Laos", "Lesoto", "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Madagascar", "Malasia", "Malaui", "Maldivas", "Malí", "Malta", "Marruecos", "Mauricio", "Mauritania", "México", "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montenegro", "Mozambique", "Namibia", "Nauru", "Nepal", "Nicaragua", "Níger", "Nigeria", "Noruega", "Nueva Zelanda", "Omán", "Países Bajos", "Pakistán", "Palaos", "Panamá", "Papúa Nueva Guinea", "Paraguay", "Perú", "Polonia", "Portugal", "Reino Unido", "República Centroafricana", "República Checa", "República de Macedonia", "República del Congo", "República Democrática del Congo", "República Dominicana", "República Sudafricana", "Ruanda", "Rumanía", "Rusia", "Samoa", "San Cristóbal y Nieves", "San Marino", "San Vicente y las Granadinas", "Santa Lucía", "Santo Tomé y Príncipe", "Senegal", "Serbia", "Seychelles", "Sierra Leona", "Singapur", "Siria", "Somalia", "Sri Lanka", "Suazilandia", "Sudán", "Sudán del Sur", "Suecia", "Suiza", "Surinam", "Tailandia", "Tanzania", "Tayikistán", "Timor Oriental", "Togo", "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Yibuti", "Zambia", "Zimbabue" }));
         getContentPane().add(jComboBox_Pais, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 400, 40));
 
@@ -83,7 +83,7 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
         jLabel_nombre_usuario.setText("Nombre de usuario");
         getContentPane().add(jLabel_nombre_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 310, -1));
 
-        jTextField_nom_usuario.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField_nom_usuario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         getContentPane().add(jTextField_nom_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 400, 40));
 
         jLabel_password.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
@@ -108,6 +108,8 @@ public class Ventana_Creacion_Cuenta extends javax.swing.JFrame {
         jLabel_nombre_jugador.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_nombre_jugador.setText("Nombre ingame");
         getContentPane().add(jLabel_nombre_jugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 320, -1, -1));
+
+        jTextField_nombre_ingame.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         getContentPane().add(jTextField_nombre_ingame, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 360, 400, 40));
 
         jButton_crear_cuenta.setBackground(new java.awt.Color(255, 255, 255));

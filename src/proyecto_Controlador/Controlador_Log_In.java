@@ -24,11 +24,11 @@ import proyecto_Vista.Ventana_Menu;
  */
 public class Controlador_Log_In implements ActionListener, MouseListener, KeyListener{
     
-    Ventana_Log_in log;
+    Ventana_Log_in login;
     
     public Controlador_Log_In (Ventana_Log_in log){
         
-        this.log = log;
+        this.login = log;
         log.jButton_Cerrar.addActionListener(this);
         log.jButton_Entrar.addActionListener(this);
         log.jLabel_Crear_cuenta.addMouseListener(this);
@@ -39,7 +39,7 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        if(ae.getSource() == this.log.jButton_Cerrar){
+        if(ae.getSource() == this.login.jButton_Cerrar){
             
              int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
            
@@ -48,13 +48,13 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
            }
         }
         
-        if(ae.getSource() == this.log.jButton_Entrar){
+        if(ae.getSource() == this.login.jButton_Entrar){
             
             ClaseDAO d = new ClaseDAO();
             Jugador j = null;
             
-            String nombreIntroducido = log.jTextField_NombreUsuario.getText();
-            String contraseniaIntroducida = String.valueOf(this.log.jContraseña.getPassword());
+            String nombreIntroducido = this.login.jTextField_NombreUsuario.getText();
+            String contraseniaIntroducida = this.login.jContraseña.getText();
   
             if(d.ConsultarUserPass(nombreIntroducido, contraseniaIntroducida) == true){
 
@@ -63,12 +63,12 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
                 // Obtiene los datos del jugador cuyo nombre de usuario y contraseña son los introducidos
                 // Esos datos se transfieren a la siguiente ventana como argumento
                 
-                j = d.obtenerDatosJugador(nombreIntroducido, nombreIntroducido);
+                j = d.obtenerDatosJugador(nombreIntroducido, contraseniaIntroducida);
                 
                 Ventana_Menu vm = new Ventana_Menu();
                 Controlador_menu cm = new Controlador_menu(vm,j);
                 vm.setVisible(true);
-                log.dispose();
+                login.setVisible(false);
                 
             }else{
                 
@@ -86,12 +86,12 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
 
     @Override
     public void mousePressed(MouseEvent me) {
-         if(me.getSource() == this.log.jLabel_Crear_cuenta){
+         if(me.getSource() == this.login.jLabel_Crear_cuenta){
             
             Ventana_Creacion_Cuenta vcc = new Ventana_Creacion_Cuenta();
             Controlador_creacion_cuenta ccc = new Controlador_creacion_cuenta (vcc);
             vcc.setVisible(true);
-            log.dispose();
+            login.dispose();
             
         }
     }
@@ -134,8 +134,8 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
         
            ClaseDAO d = new ClaseDAO();
             
-            String nombreIntroducido = log.jTextField_NombreUsuario.getText();
-            String contraseniaIntroducida = String.valueOf(this.log.jContraseña.getPassword());
+            String nombreIntroducido = login.jTextField_NombreUsuario.getText();
+            String contraseniaIntroducida = String.valueOf(this.login.jContraseña.getPassword());
   
             if(d.ConsultarUserPass(nombreIntroducido, contraseniaIntroducida) == true){
                 
@@ -143,7 +143,7 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
 
                 Ventana_Menu vm = new Ventana_Menu();
                 vm.setVisible(true);
-                log.dispose();
+                login.dispose();
                 
             }else{
                 

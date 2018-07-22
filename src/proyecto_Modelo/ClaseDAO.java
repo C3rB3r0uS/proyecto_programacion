@@ -23,24 +23,7 @@ public class ClaseDAO {
         conexion = new Conexion();
         
     }
-    
-//    public void insertarEnTabla (int deptno, String dname, String loc){
-//        
-//        Connection accesoBD = conexion.getConexion();
-//        
-//        try{
-//            
-//            Statement s = accesoBD.createStatement();
-//            s.executeUpdate("INSERT INTO DEPT VALUES ("+deptno+",'"+dname+"','"+loc+"')");
-//            
-//        }catch(SQLException e){
-//            
-//            System.out.println("Excepción SQL al insertar en tabla: " + e.getMessage());
-//            
-//        }
-//        
-//    }
-    
+      
     //LOG IN
     
     public boolean ConsultarUserPass(String nombreUser, String passUser){
@@ -60,13 +43,7 @@ public class ClaseDAO {
                resultado = true;
 
            }else{
-           
-//           while(rs.next()){
-// 
-//               cont = cont + 1;
-//                     
-//                }
-           
+                    
            }
   
         }catch(SQLException e){
@@ -86,7 +63,7 @@ public class ClaseDAO {
         try{
             
             Statement s = accesoBD.createStatement();
-            ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_USUARIO = " + "'" + nombreUser + "'" + " AND CONTRASENIA = " + "'" + passUser + "'" );
+            ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_USUARIO = '" + nombreUser + "' AND CONTRASENIA = '" + passUser + "'");
             
             if(rs.next()){
                 
@@ -95,6 +72,8 @@ public class ClaseDAO {
             }else{
                 
                 System.out.println("El usuario indicado no existe");
+                System.out.println("NombreUser consultado: " + nombreUser);
+                System.out.println("PassUser consultada: " + passUser);
                 
             }
             
@@ -108,7 +87,6 @@ public class ClaseDAO {
         
     }
     
-    
     // VENTANA CREACIÓN DE CUENTA
     
     public boolean consultarDisponibilidadNombreUsuario (String nombreUsuario){
@@ -119,22 +97,14 @@ public class ClaseDAO {
         try{
 
            Statement s = accesoBD.createStatement();
-           ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_USUARIO = " + "'" + nombreUsuario + "'");
-            
-//           int cont = 0;
+           ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_USUARIO = " + "'" + nombreUsuario + "'");          
            
            if(rs.next()){
                
                resultado = false;
 
            }else{
-           
-//           while(rs.next()){
-// 
-//               cont = cont + 1;
-//                     
-//                }
-           
+                    
            }
   
         }catch(SQLException e){
@@ -155,20 +125,12 @@ public class ClaseDAO {
 
            Statement s = accesoBD.createStatement();
            ResultSet rs = s.executeQuery("SELECT * FROM JUGADOR WHERE NOMBRE_JUGADOR = " + "'" + nombreIngame + "'");
-            
-//           int cont = 0;
-           
+
            if(rs.next()){
                
                resultado = false;
 
            }else{
-           
-//           while(rs.next()){
-// 
-//               cont = cont + 1;
-//                     
-//                }
            
            }
   
@@ -188,7 +150,7 @@ public class ClaseDAO {
         try{
             
             Statement s = accesoBD.createStatement();
-            s.executeUpdate("INSERT INTO JUGADOR VALUES ("+nombreUsuario+",'"+nombreJugador+"','"+contrasenia+"','"+nom_apellidos+"','"+pais+"')");
+            s.executeUpdate("INSERT INTO JUGADOR (NOMBRE_USUARIO,NOMBRE_JUGADOR,CONTRASENIA,NOM_APELLIDOS,PAIS) VALUES ('"+nombreUsuario+"','"+nombreJugador+"','"+contrasenia+"','"+nom_apellidos+"','"+pais+"')");
             
         }catch(SQLException e){
             

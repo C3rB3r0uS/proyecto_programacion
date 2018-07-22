@@ -11,9 +11,11 @@ import java.util.Random;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import proyecto_Controlador.Controlador_Log_In;
 import proyecto_Controlador.Controlador_creacion_cuenta;
 import proyecto_Controlador.Controlador_seleccion;
 import proyecto_Vista.Ventana_Creacion_Cuenta;
+import proyecto_Vista.Ventana_Log_in;
 import proyecto_Vista.Ventana_Seleccion;
 
 /**
@@ -133,9 +135,17 @@ public class Prueba {
 //            
 //        }
         
-        Ventana_Seleccion vs = new Ventana_Seleccion ();
-        Controlador_seleccion cs = new Controlador_seleccion (vs, j);
-        vs.setVisible(true);
+//        Ventana_Seleccion vs = new Ventana_Seleccion ();
+//        Controlador_seleccion cs = new Controlador_seleccion (vs, j);
+//        vs.setVisible(true);
+
+//    Ventana_Creacion_Cuenta vcc = new Ventana_Creacion_Cuenta();
+//    Controlador_creacion_cuenta crc = new Controlador_creacion_cuenta(vcc);
+//    vcc.setVisible(true);
+
+        Ventana_Log_in vli = new Ventana_Log_in();
+        Controlador_Log_In cli = new Controlador_Log_In(vli);
+        vli.setVisible(true);
 
     }
     
