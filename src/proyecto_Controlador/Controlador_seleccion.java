@@ -25,9 +25,10 @@ public class Controlador_seleccion implements ActionListener {
     
     Ventana_Seleccion vs;
     Jugador j;
+    
     Partida p;
     Niveles n;
-    Operaciones o;
+    int random;
     
     public Controlador_seleccion(Ventana_Seleccion vs, Jugador j){
         
@@ -58,32 +59,48 @@ public class Controlador_seleccion implements ActionListener {
              
              Ventana_Menu vm = new Ventana_Menu();
              Controlador_menu cm = new Controlador_menu(vm,this.j);
+             vm.jLabel_LogAs.setText("LOG:" + this.j.getNombre_jugador());
              vm.setVisible(true);
              vs.dispose();
              
          }
          
          if(ae.getSource() == this.vs.jButton_Jugar){
-
-               if(this.vs.jComboBox_Modo.getSelectedItem().toString().equals("TIME TRIAL")){
+             
+                String seleccionModo = this.vs.jComboBox_Modo.getSelectedItem().toString();
+                String seleccionDificultad = this.vs.jComboBox_Modo.getSelectedItem().toString();
+                Jugador aux = this.j;
+             
+               if(seleccionModo.equals("TIME TRIAL")){
+                        
+                        p = new Partida (seleccionModo,seleccionDificultad,aux.getNombre_usuario(),aux.getNombre_jugador());
+                        n = new Niveles (p.getCod_partida(),"NORMAL");
                    
                         Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
-                        Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n, o);
+                        Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, this.j, p, n);
+                        vpn.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
                         vpn.setVisible(true);
                         vs.dispose();
                    
                }else{
                    
-                        int random = (int)(Math.random()*10)+1;
+                        random = (int)(Math.random()*10)+1;
                         
                         if(random <= 8){
                             
+                                n = new Niveles (p.getCod_partida(),"NORMAL");
+                                p = new Partida (seleccionModo,seleccionDificultad,this.j.getNombre_usuario(),this.j.getNombre_jugador());
+                            
                                 Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
-                                Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n, o);
+                                Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n);
+                                vpn.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
                                 vpn.setVisible(true);
                                 vs.dispose();
                             
                         }else{
+                            
+                                n = new Niveles (p.getCod_partida(),"MADNESS");
+                                p = new Partida (seleccionModo, seleccionDificultad,this.j.getNombre_usuario(),this.j.getNombre_jugador());
                             
                                 Ventana_Partida_madness vpm = new Ventana_Partida_madness();
                                 vpm.setVisible(true);

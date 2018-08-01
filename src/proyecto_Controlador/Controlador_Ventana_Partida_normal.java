@@ -31,13 +31,12 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     Timer t;
     int inicio;
 
-    public Controlador_Ventana_Partida_normal(Ventana_Partida_normal vpn, Jugador j, Partida p, Niveles n, Operaciones o) {
+    public Controlador_Ventana_Partida_normal(Ventana_Partida_normal vpn, Jugador j, Partida p, Niveles n) {
         
         this.vpn = vpn;
         this.j = j;
         this.p = p;
         this.n = n;
-        this.o = o;
         this.vpn.jButton_Start.addActionListener(this);
         this.vpn.jButton_Volver.addActionListener(this);
         this.vpn.jButton_Enter.addActionListener(this);

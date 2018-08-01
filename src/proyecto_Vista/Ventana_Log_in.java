@@ -50,7 +50,7 @@ public class Ventana_Log_in extends javax.swing.JFrame {
         jButton_Cerrar.setToolTipText("Cierra la aplicación ");
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 20));
 
-        jTextField_NombreUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextField_NombreUsuario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jTextField_NombreUsuario.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField_NombreUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -64,6 +64,8 @@ public class Ventana_Log_in extends javax.swing.JFrame {
         jButton_Entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_entrar.png"))); // NOI18N
         jButton_Entrar.setToolTipText("Entra en la aplicación");
         getContentPane().add(jButton_Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 610, 200, 50));
+
+        jContraseña.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         getContentPane().add(jContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, 340, 40));
 
         jLabel_Nombre_usuario.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N

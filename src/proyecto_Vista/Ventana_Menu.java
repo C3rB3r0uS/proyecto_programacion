@@ -71,7 +71,7 @@ public class Ventana_Menu extends javax.swing.JFrame {
         jLabel_LogAs.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_LogAs.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_LogAs.setText("LOG: ");
-        getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, 290, -1));
+        getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, 560, -1));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PantallaPrincipal.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));

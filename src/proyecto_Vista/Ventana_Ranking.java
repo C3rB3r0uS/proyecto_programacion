@@ -107,7 +107,7 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         jLabel_LogAs.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_LogAs.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_LogAs.setText("LOG: ");
-        getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, 260, -1));
+        getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, 460, -1));
 
         JFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(JFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));

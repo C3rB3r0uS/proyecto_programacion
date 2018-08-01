@@ -43,7 +43,7 @@ public class Controlador_menu implements ActionListener {
             
              int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
            
-           if(respuesta == JOptionPane.YES_OPTION){
+                if(respuesta == JOptionPane.YES_OPTION){
                 System.exit(0);
            }
         }
@@ -51,7 +51,8 @@ public class Controlador_menu implements ActionListener {
         if(ae.getSource() == this.vm.jButton_Jugar) {
             
             Ventana_Seleccion vs = new Ventana_Seleccion();
-            Controlador_seleccion cs = new Controlador_seleccion(vs, j);
+            Controlador_seleccion cs = new Controlador_seleccion(vs, this.j);
+            vs.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
             vs.setVisible(true);
             vm.dispose();
             
@@ -75,11 +76,18 @@ public class Controlador_menu implements ActionListener {
         
         if(ae.getSource() == this.vm.jButton_Cerrar_Sesion){
             
-            Ventana_Log_in vli = new Ventana_Log_in ();
-            Controlador_Log_In cli = new Controlador_Log_In(vli);
-            vli.setVisible(true);
-            vm.dispose();
-            
+            int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar su sesión?");
+           
+                if(respuesta == JOptionPane.YES_OPTION){
+                
+                        Ventana_Log_in vli = new Ventana_Log_in ();
+                        Controlador_Log_In cli = new Controlador_Log_In(vli);
+                        vli.setVisible(true);
+                        vm.dispose();
+                    
+                    
+                }
+  
         }
            
     }
