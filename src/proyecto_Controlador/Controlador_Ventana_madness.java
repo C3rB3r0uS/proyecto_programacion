@@ -14,15 +14,18 @@ import proyecto_Modelo.Niveles;
 import proyecto_Modelo.Operaciones;
 import proyecto_Modelo.Partida;
 import proyecto_Vista.Ventana_Menu;
-import proyecto_Vista.Ventana_Partida_normal;
+import proyecto_Vista.Ventana_Partida_madness;
 
 /**
  *
  * @author Equipo
  */
-public class Controlador_Ventana_Partida_normal implements ActionListener {
+public class Controlador_Ventana_madness implements ActionListener {
     
-    Ventana_Partida_normal vpn;
+    // Para no hacer directamente editable jtextfield => No editable
+    
+    Ventana_Partida_madness vpm;
+    
     Jugador j;
     Partida p;
     Niveles n;
@@ -30,34 +33,49 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     
     Timer t;
     int inicio;
-
-    public Controlador_Ventana_Partida_normal(Ventana_Partida_normal vpn, Jugador j, Partida p, Niveles n) {
+    
+    public Controlador_Ventana_madness (Ventana_Partida_madness vpm, Jugador j, Partida p, Niveles n, Operaciones o){
         
-        this.vpn = vpn;
+        this.vpm = vpm;
         this.j = j;
         this.p = p;
         this.n = n;
-        this.vpn.jButton_Start.addActionListener(this);
-        this.vpn.jButton_Volver.addActionListener(this);
-        this.vpn.jButton_Enter.addActionListener(this);
-        this.vpn.jButton_Cerrar.addActionListener(this);
+        this.o = o;
+        
+        this.vpm.jButton_Cero.addActionListener(this);
+        this.vpm.jButton_Uno.addActionListener(this);
+        this.vpm.jButton_Dos.addActionListener(this);
+        this.vpm.jButton_Tres.addActionListener(this);
+        this.vpm.jButton_Cuatro.addActionListener(this);
+        this.vpm.jButton_Cinco.addActionListener(this);
+        this.vpm.jButton_Seis.addActionListener(this);
+        this.vpm.jButton_Siete.addActionListener(this);
+        this.vpm.jButton_Ocho.addActionListener(this);
+        this.vpm.jButton_Nueve.addActionListener(this);
+        
+        this.vpm.jButton_Start.addActionListener(this);
+        this.vpm.jButton_Volver.addActionListener(this);
+        this.vpm.jButton_Enter.addActionListener(this);
+        this.vpm.jButton_Delete.addActionListener(this);
+        
+        this.vpm.jButton_Cerrar.addActionListener(this);
         
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-            if(ae.getSource() == this.vpn.jButton_Cerrar){
+         if(ae.getSource() == this.vpm.jButton_Cerrar){
             
              int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
            
            if(respuesta == JOptionPane.YES_OPTION){
                 System.exit(0);
-           }
-        }
-            
-            
-            if(ae.getSource() == this.vpn.jButton_Volver){
+                
+                }
+            }
+         
+           if(ae.getSource() == this.vpm.jButton_Volver){
                 
                 int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea volver al menú?");
                 
@@ -67,13 +85,13 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                      Controlador_menu cm = new Controlador_menu(vm, j);
                      vm.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
                      vm.setVisible(true);
-                     vpn.dispose();
+                     vpm.dispose();
                      
-                                }
+                        }
                 
                 }
-            
-            if(ae.getSource() == this.vpn.jButton_Start){
+           
+           if(ae.getSource() == this.vpm.jButton_Start){
                 
                 inicio = 59;
              
@@ -81,9 +99,9 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
                         public void actionPerformed(ActionEvent e){
                             
-                                vpn.jButton_Start.setVisible(false);
+                                vpm.jButton_Start.setVisible(false);
 
-                                vpn.jLabel_ContadorTiempo.setText(Integer.toString(inicio)); 
+                                vpm.jLabel_ContadorTiempo.setText(Integer.toString(inicio)); 
                 
                                 inicio--;
  
@@ -96,15 +114,13 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                         while(inicio > 0){
 
                         }
+                        
+                        
+                        
                 
                 }
-            
-            
-            
-            
-            
-            
-            
+         
+         
         
     }
     

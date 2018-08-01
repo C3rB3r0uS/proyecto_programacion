@@ -147,14 +147,25 @@ public class Prueba {
 //        Controlador_Log_In cli = new Controlador_Log_In(vli);
 //        vli.setVisible(true);
 
-    Partida p = new Partida ("TIME TRIAL","FACIL","PEDROB", "C3RB3R0US");
-        System.out.println("Cod partida: " + p.getCod_partida());
-        System.out.println("Modo de juego: " + p.getModo_de_juego());
-        System.out.println("Dificultad: " + p.getModo_de_juego());
-        System.out.println("Fecha realizacion: " + p.getFecha_realizacion());
-        System.out.println("Puntuacion: " + p.getPuntuacion());
-        System.out.println("Nombre usuario: " + p.getNombre_usuario());
-        System.out.println("Nombre jugador: " + p.getNombre_jugador());
+//    Partida p = new Partida ("TIME TRIAL","FACIL","PEDROB", "C3RB3R0US");
+//        System.out.println("Cod partida: " + p.getCod_partida());
+//        System.out.println("Modo de juego: " + p.getModo_de_juego());
+//        System.out.println("Dificultad: " + p.getModo_de_juego());
+//        System.out.println("Fecha realizacion: " + p.getFecha_realizacion());
+//        System.out.println("Puntuacion: " + p.getPuntuacion());
+//        System.out.println("Nombre usuario: " + p.getNombre_usuario());
+//        System.out.println("Nombre jugador: " + p.getNombre_jugador());
+
+    Operaciones o = new Operaciones (1,1);
+    System.out.println("Tiempo nivel 1: " + o.getTiempoMaximo(1));
+    System.out.println("Tiempo nivel 2: " + o.getTiempoMaximo(2));
+    System.out.println("Tiempo nivel 3: " + o.getTiempoMaximo(3));
+        System.out.println("Tiempo nivel 4: " + o.getTiempoMaximo(4));
+        
+        System.out.println("Tiempo nivel 5: " + o.getTiempoMaximo(5));
+    System.out.println("Tiempo nivel 6: " + o.getTiempoMaximo(6));
+    System.out.println("Tiempo nivel 7: " + o.getTiempoMaximo(7));
+        System.out.println("Tiempo nivel 8: " + o.getTiempoMaximo(8));
 
     }
     

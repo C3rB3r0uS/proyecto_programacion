@@ -23,7 +23,7 @@ public class Operaciones {
     private int resultado;
     private String estado;
     
-    ClaseDAO d;
+    ClaseDAO d = new ClaseDAO();
 
     public Operaciones(int cod_nivel, int cod_partida) {
         
@@ -84,7 +84,40 @@ public class Operaciones {
         this.estado = estado;
     }
     
-    public int valorMaximo (String modo, String dificultad, int nivel){
+    public int getTiempoMaximo (int nivel){
+        
+        int tiempo = 0;
+        
+        if(nivel == 1){
+            
+            tiempo = 60;
+            
+        }
+        
+        if(nivel%3 == 0){
+            
+            tiempo = 50;
+            
+        }
+        
+        if((nivel+1)%3 == 0){
+            
+            tiempo = 55;
+            
+        }
+        
+        if(nivel != 1 && (nivel-1)%3 == 0){
+            
+            tiempo = 60;
+            
+        }
+        
+        
+        return tiempo;
+        
+    }
+    
+    public int getValorMaximo (String modo, String dificultad, int nivel){
         
         int maximo = 0;
         
@@ -224,8 +257,8 @@ public class Operaciones {
                                 
                                 case 0:
                                     
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando2 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion = operando1 + " + " + operando2;
                                  
                                     break;
@@ -234,8 +267,8 @@ public class Operaciones {
                                  
                                 case 1:
                                     
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando2 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion = operando1 + " - " + operando2;
                                     
                                     break;
@@ -254,8 +287,8 @@ public class Operaciones {
                                 
                                 case 0:
 
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando2 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion = operando1 + " + " + operando2;
                                  
                           
@@ -265,8 +298,8 @@ public class Operaciones {
                                  
                                 case 1:
                                     
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando2 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion = operando1 + " - " + operando2;
                                
                                     break;
@@ -275,7 +308,7 @@ public class Operaciones {
                                     
                                 case 2:
                                     
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     operando2 = (int)(Math.random()*9)+1; // Número aleatorio entre 2 y 10
                                     cadenaOperacion = operando1 + " * " + operando2;
                                     
@@ -296,7 +329,7 @@ public class Operaciones {
                                     
                                 case 3:
                                     
-                                   operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel) ) /10 ) + 1;
+                                   operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel) ) /10 ) + 1;
                                    operando2 = (int)(Math.random()*9)+1; // Genera un valor entre 1 y 9
                                    auxiliar = operando1 * operando2;
                                    
@@ -322,7 +355,7 @@ public class Operaciones {
               
                     case "FACIL":
                         
-                        operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                        operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                         cadenaOperacion = "" + operando1;
 
                         do{
@@ -335,7 +368,7 @@ public class Operaciones {
                                 
                                 case 0:
                                     
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando2 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion += " + " + operando2;
                                     
                                  
@@ -345,7 +378,7 @@ public class Operaciones {
                                  
                                 case 1:
                                     
-                                    operando2 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando2 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion += " - " + operando2;
                                     
                                     break;
@@ -360,7 +393,7 @@ public class Operaciones {
                         
                     case "NORMAL": case "DIFICIL":
                         
-                         operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                         operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                          cadenaOperacion = "" + operando1;
 
                       do{
@@ -381,7 +414,7 @@ public class Operaciones {
 
                                 case 0:
                                 
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion += " + " + operando1 ;
                                     contador += 1;
                         
@@ -391,7 +424,7 @@ public class Operaciones {
                                  
                                 case 1:
                                  
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     cadenaOperacion += " - " + operando1 ;
                                     contador += 1;
                                  
@@ -401,7 +434,7 @@ public class Operaciones {
                                     
                                 case 2:
                                     
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel))) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel))) + 1;
                                     operando2 = (int)(Math.random()*9)+1;
                                     cadenaOperacion += " + " + operando1 + " * " + operando2;
                                     contador += 2;
@@ -412,7 +445,7 @@ public class Operaciones {
                                     
                                 case 3:
                                     
-                                    operando1 = (int)(Math.random()*(valorMaximo(modo,dificultad,nivel) ) /10 ) + 1;
+                                    operando1 = (int)(Math.random()*(getValorMaximo(modo,dificultad,nivel) ) /10 ) + 1;
                                     operando2 = (int)(Math.random()*9)+1;
                                     auxiliar = operando1 * operando2;
                                     cadenaOperacion += " + " + auxiliar + " / " + operando2;
@@ -436,7 +469,7 @@ public class Operaciones {
 
     }
     
-       public int obtenerResultado (String operacion){
+       public int getResultado (String operacion){
         
         ScriptEngineManager sem = new ScriptEngineManager();
         ScriptEngine engine = sem.getEngineByName("JavaScript");

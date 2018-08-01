@@ -42,7 +42,7 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
         jButton_Delete = new javax.swing.JButton();
         JLabel_Operacion = new javax.swing.JLabel();
         jTextField_Respuesta = new javax.swing.JTextField();
-        jLabel_Contador = new javax.swing.JLabel();
+        jLabel_ContadorTiempo = new javax.swing.JLabel();
         jButton_Start = new javax.swing.JButton();
         jButton_Volver = new javax.swing.JButton();
         jLabel_LogAs = new javax.swing.JLabel();
@@ -136,10 +136,10 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
         jTextField_Respuesta.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
         getContentPane().add(jTextField_Respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 530, 80));
 
-        jLabel_Contador.setFont(new java.awt.Font("Digital Dare", 0, 95)); // NOI18N
-        jLabel_Contador.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Contador.setText("59");
-        getContentPane().add(jLabel_Contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 150, 90));
+        jLabel_ContadorTiempo.setFont(new java.awt.Font("Digital Dare", 0, 95)); // NOI18N
+        jLabel_ContadorTiempo.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_ContadorTiempo.setText("59");
+        getContentPane().add(jLabel_ContadorTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 150, 90));
 
         jButton_Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_start.png"))); // NOI18N
         jButton_Start.setPreferredSize(new java.awt.Dimension(310, 90));
@@ -212,26 +212,26 @@ public class Ventana_Partida_madness extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLabel_Operacion;
-    private javax.swing.JButton jButton_Cero;
-    private javax.swing.JButton jButton_Cerrar;
-    private javax.swing.JButton jButton_Cinco;
-    private javax.swing.JButton jButton_Cuatro;
-    private javax.swing.JButton jButton_Delete;
-    private javax.swing.JButton jButton_Dos;
-    private javax.swing.JButton jButton_Enter;
-    private javax.swing.JButton jButton_Nueve;
-    private javax.swing.JButton jButton_Ocho;
-    private javax.swing.JButton jButton_Seis;
-    private javax.swing.JButton jButton_Siete;
+    public javax.swing.JLabel JLabel_Operacion;
+    public javax.swing.JButton jButton_Cero;
+    public javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Cinco;
+    public javax.swing.JButton jButton_Cuatro;
+    public javax.swing.JButton jButton_Delete;
+    public javax.swing.JButton jButton_Dos;
+    public javax.swing.JButton jButton_Enter;
+    public javax.swing.JButton jButton_Nueve;
+    public javax.swing.JButton jButton_Ocho;
+    public javax.swing.JButton jButton_Seis;
+    public javax.swing.JButton jButton_Siete;
     public javax.swing.JButton jButton_Start;
-    private javax.swing.JButton jButton_Tres;
-    private javax.swing.JButton jButton_Uno;
+    public javax.swing.JButton jButton_Tres;
+    public javax.swing.JButton jButton_Uno;
     public javax.swing.JButton jButton_Volver;
-    private javax.swing.JLabel jLabel_Contador;
+    public javax.swing.JLabel jLabel_ContadorTiempo;
     private javax.swing.JLabel jLabel_Fondo;
     public javax.swing.JLabel jLabel_LogAs;
     private javax.swing.JLabel jLabel_Ventana_Actual;
-    private javax.swing.JTextField jTextField_Respuesta;
+    public javax.swing.JTextField jTextField_Respuesta;
     // End of variables declaration//GEN-END:variables
 }
