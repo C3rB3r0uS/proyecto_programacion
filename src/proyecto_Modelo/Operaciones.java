@@ -22,12 +22,17 @@ public class Operaciones {
     private String op_generada;
     private int resultado;
     private String estado;
+    
+    ClaseDAO d;
 
-    public Operaciones(int cod_operacion, int cod_nivel, int cod_partida) {
+    public Operaciones(int cod_nivel, int cod_partida) {
         
-        this.cod_operacion = cod_operacion;
+        this.cod_operacion = d.consultarCodigoOperaciones();
         this.cod_nivel = cod_nivel;
         this.cod_partida = cod_partida;
+        this.op_generada = "";
+        this.resultado = 0;
+        this.estado = "NO RESUELTA";
  
     }
 
@@ -185,17 +190,14 @@ public class Operaciones {
         return maximo;
 
     }
-    
-    public String generarOperacion (String modo, String dificultad, int nivel) throws ScriptException{
+      
+    public String generarOperacion (String modo, String dificultad, int nivel){
         
         // https://stackoverflow.com/questions/3422673/evaluating-a-math-expression-given-in-string-form
         
         Random aux = new Random ();
-        ScriptEngineManager sem = new ScriptEngineManager();
-        ScriptEngine engine = sem.getEngineByName("JavaScript");
-        
+     
         String cadenaOperacion = "";
-        int resultado = 0;
         int operando1 = 0;
         int operando2 = 0;
         int auxiliar = 0;
@@ -307,9 +309,7 @@ public class Operaciones {
                         break;
 
                 }
-                
-                resultado = (int) engine.eval(cadenaOperacion);
-                
+            
                 break;
                 
             // ***STRINGS*** Supera las 3 cadenas de operaciones (compuestas por 5 operadores cada una) para superar el nivel
@@ -427,17 +427,34 @@ public class Operaciones {
                         break;
   
                 }
-                
-                resultado = (int)engine.eval(cadenaOperacion);
-                
+
                 break;
 
         }
-        
-        System.out.println("El resultado es: " + resultado);
-
+ 
         return cadenaOperacion;
 
+    }
+    
+       public int obtenerResultado (String operacion){
+        
+        ScriptEngineManager sem = new ScriptEngineManager();
+        ScriptEngine engine = sem.getEngineByName("JavaScript");
+        
+        int resultado = 0;
+        
+        try{
+            
+            resultado = (int)engine.eval(operacion);
+            
+        }catch(ScriptException se){
+            
+            System.out.println("Imposible evaluar string: " + se.getMessage());
+            
+        }
+ 
+        return resultado;
+        
     }
     
 }

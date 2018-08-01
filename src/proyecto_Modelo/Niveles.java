@@ -18,13 +18,16 @@ public class Niveles {
     private String tipo;
     private int nro_nivel;
     private String estado;
+    
+    ClaseDAO d;
 
-    public Niveles(int cod_nivel, int cod_partida, String tipo, int nro_nivel, String estado) {
-        this.cod_nivel = cod_nivel;
+    public Niveles(int cod_partida, String tipo) {
+       
+        this.cod_nivel = d.ConsultarCodigoNiveles();
         this.cod_partida = cod_partida;
         this.tipo = tipo;
-        this.nro_nivel = nro_nivel;
-        this.estado = estado;
+        this.nro_nivel = 1;
+        this.estado = "NO SUPERADO";
        
     }
 

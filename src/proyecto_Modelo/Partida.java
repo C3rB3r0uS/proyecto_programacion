@@ -6,6 +6,7 @@
 package proyecto_Modelo;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -16,17 +17,22 @@ public class Partida {
     private static int cod_partida;
     private String modo_de_juego;
     private String dificultad;
-    private LocalDate fecha_realizacion;
+    private final String fecha_realizacion;
     private int puntuacion;
     private String nombre_usuario;
     private String nombre_jugador;
+    
+    ClaseDAO d;
+     LocalDate fechaActual = LocalDate.now();
+     DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public Partida(int cod_partida, String modo_de_juego, String dificultad, LocalDate fecha_realizacion, int puntuacion, String nombre_usuario, String nombre_jugador) {
-        this.cod_partida = cod_partida;
+    public Partida(String modo_de_juego, String dificultad, String nombre_usuario, String nombre_jugador) {
+        
+        this.cod_partida = d.ConsultarCodigoPartida();
         this.modo_de_juego = modo_de_juego;
         this.dificultad = dificultad;
-        this.fecha_realizacion = fecha_realizacion;
-        this.puntuacion = puntuacion;
+        this.fecha_realizacion = (fechaActual).format(dtf);
+        this.puntuacion = 0;
         this.nombre_usuario = nombre_usuario;
         this.nombre_jugador = nombre_jugador;
       
@@ -55,15 +61,7 @@ public class Partida {
     public void setDificultad(String dificultad) {
         this.dificultad = dificultad;
     }
-
-    public LocalDate getFecha_realizacion() {
-        return fecha_realizacion;
-    }
-
-    public void setFecha_realizacion(LocalDate fecha_realizacion) {
-        this.fecha_realizacion = fecha_realizacion;
-    }
-
+    
     public int getPuntuacion() {
         return puntuacion;
     }

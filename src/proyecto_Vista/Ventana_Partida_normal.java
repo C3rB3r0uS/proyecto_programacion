@@ -37,6 +37,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jButton_Cerrar = new javax.swing.JButton();
         jButton_Volver = new javax.swing.JButton();
         jButton_Enter = new javax.swing.JButton();
+        jLabel_LogAs = new javax.swing.JLabel();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,6 +81,11 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
 
         jButton_Enter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/intro.png"))); // NOI18N
         getContentPane().add(jButton_Enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 240, 70));
+
+        jLabel_LogAs.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
+        jLabel_LogAs.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_LogAs.setText("LOG: ");
+        getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, 260, -1));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -132,6 +138,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel_ContadorPuntuacion;
     public javax.swing.JLabel jLabel_ContadorTiempo;
     private javax.swing.JLabel jLabel_Fondo;
+    public javax.swing.JLabel jLabel_LogAs;
     private javax.swing.JLabel jLabel_Ventana_Actual;
     public javax.swing.JTextField jTextField_Respuesta;
     // End of variables declaration//GEN-END:variables

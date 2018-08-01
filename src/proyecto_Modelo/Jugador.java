@@ -18,11 +18,13 @@ public class Jugador {
     private String pais;
 
     public Jugador(String nombre_usuario, String nombre_jugador, String contrasenia, String nom_apellidos, String pais) {
+        
         this.nombre_usuario = nombre_usuario;
         this.nombre_jugador = nombre_jugador;
         this.contrasenia = contrasenia;
         this.nom_apellidos = nom_apellidos;
         this.pais = pais;
+        
     }
 
     public String getNombre_usuario() {

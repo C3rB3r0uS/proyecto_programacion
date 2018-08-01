@@ -175,7 +175,7 @@ public class ClaseDAO {
             
             if(rs.next()){
                 
-                codigo = rs.getInt(1);
+                codigo = rs.getInt(1) + 1;
                 
             }else{
                 
@@ -205,7 +205,7 @@ public class ClaseDAO {
             
             if(rs.next()){
                 
-                codigo = rs.getInt(1);
+                codigo = rs.getInt(1) + 1;
                 
             }else{
                 
@@ -236,7 +236,7 @@ public class ClaseDAO {
            
             if(rs.next()){
                 
-                codigo = rs.getInt(1);
+                codigo = rs.getInt(1) + 1;
                 
             }else{
                 

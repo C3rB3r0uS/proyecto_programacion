@@ -24,9 +24,7 @@ import proyecto_Vista.Ventana_Seleccion;
  */
 public class Prueba {
     
-    public static void main(String[] args) throws ScriptException {
-        
-        Operaciones op = new Operaciones (1,1,1);
+    public static void main(String[] args) throws ScriptException {     
               
 //        System.out.println("1. " + op.valorMaximo("STRINGS", "FACIL", 1)); // 10
 //        System.out.println("2. " + op.valorMaximo("STRINGS", "FACIL", 4)); // 100
@@ -120,13 +118,15 @@ public class Prueba {
 //        boolean respuesta = d.ConsultarUserPass("PEDROB", "A4B7C899091");
 //        System.out.println("La respuesta es: " + respuesta);
 
-            Jugador j = d.obtenerDatosJugador("PEDROB", "A4B7C899091");
+//            Jugador j = d.obtenerDatosJugador("PEDROB", "A4B7C899091");
 //            System.out.println(j);
 
-//        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//        LocalDate ld = LocalDate.now();
-//        
-//        System.out.println("La fecha actual es: " + dtf.format(ld));
+        LocalDate fechaActual = LocalDate.now();
+        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        String format = (fechaActual).format(dtf);
+
+        System.out.println("La fecha actual es: " + format);
 //
 //            for (int i = 1; i < 10; i++) {
 //                
@@ -143,9 +143,9 @@ public class Prueba {
 //    Controlador_creacion_cuenta crc = new Controlador_creacion_cuenta(vcc);
 //    vcc.setVisible(true);
 
-        Ventana_Log_in vli = new Ventana_Log_in();
-        Controlador_Log_In cli = new Controlador_Log_In(vli);
-        vli.setVisible(true);
+//        Ventana_Log_in vli = new Ventana_Log_in();
+//        Controlador_Log_In cli = new Controlador_Log_In(vli);
+//        vli.setVisible(true);
 
     }
     

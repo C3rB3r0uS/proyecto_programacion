@@ -36,6 +36,7 @@ public class Ventana_Menu extends javax.swing.JFrame {
         jButton_Ranking = new javax.swing.JButton();
         jButton_Cerrar_Sesion = new javax.swing.JButton();
         jLabel_Ventana_Actual = new javax.swing.JLabel();
+        jLabel_LogAs = new javax.swing.JLabel();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,6 +67,11 @@ public class Ventana_Menu extends javax.swing.JFrame {
         jLabel_Ventana_Actual.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Ventana_Actual.setText("RANDOM.MATHS/MENU");
         getContentPane().add(jLabel_Ventana_Actual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 370, 50));
+
+        jLabel_LogAs.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
+        jLabel_LogAs.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_LogAs.setText("LOG: ");
+        getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, 290, -1));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PantallaPrincipal.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -115,6 +121,7 @@ public class Ventana_Menu extends javax.swing.JFrame {
     public javax.swing.JButton jButton_Jugar;
     public javax.swing.JButton jButton_Ranking;
     private javax.swing.JLabel jLabel_Fondo;
+    public javax.swing.JLabel jLabel_LogAs;
     private javax.swing.JLabel jLabel_Ventana_Actual;
     // End of variables declaration//GEN-END:variables
 }
