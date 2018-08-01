@@ -19,7 +19,7 @@ public class Niveles {
     private int nro_nivel;
     private String estado;
     
-    ClaseDAO d;
+    ClaseDAO d = new ClaseDAO();
 
     public Niveles(int cod_partida, String tipo) {
        

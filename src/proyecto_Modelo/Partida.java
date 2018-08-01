@@ -17,12 +17,12 @@ public class Partida {
     private static int cod_partida;
     private String modo_de_juego;
     private String dificultad;
-    private final String fecha_realizacion;
+    private String fecha_realizacion;
     private int puntuacion;
     private String nombre_usuario;
     private String nombre_jugador;
     
-    ClaseDAO d;
+    ClaseDAO d = new ClaseDAO();
      LocalDate fechaActual = LocalDate.now();
      DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -38,6 +38,14 @@ public class Partida {
       
     }
 
+    public String getFecha_realizacion() {
+        return fecha_realizacion;
+    }
+
+    public void setFecha_realizacion(String fecha_realizacion) {
+        this.fecha_realizacion = fecha_realizacion;
+    }
+    
     public int getCod_partida() {
         return cod_partida;
     }
@@ -86,4 +94,6 @@ public class Partida {
         this.nombre_jugador = nombre_jugador;
     }
 
+    
+    
 }

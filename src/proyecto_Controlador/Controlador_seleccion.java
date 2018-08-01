@@ -30,6 +30,11 @@ public class Controlador_seleccion implements ActionListener {
     Niveles n;
     int random;
     
+    String modoSeleccionado;
+    String dificultadSeleccionada;
+    
+    int codigo;
+    
     public Controlador_seleccion(Ventana_Seleccion vs, Jugador j){
         
         this.vs = vs;
@@ -41,8 +46,24 @@ public class Controlador_seleccion implements ActionListener {
         vs.jComboBox_Dificultad.addActionListener(this);
         vs.jComboBox_Modo.addActionListener(this);
         
+        vs.jComboBox_Modo.addItem("TIME TRIAL");
+        vs.jComboBox_Modo.addItem("ARCADE");
+        vs.jComboBox_Modo.addItem("STRINGS");
+        
+        vs.jComboBox_Dificultad.addItem("FACIL");
+        vs.jComboBox_Dificultad.addItem("NORMAL");
+        vs.jComboBox_Dificultad.addItem("DIFICIL");
+        
     }
 
+    public Jugador getJ() {
+        return j;
+    }
+
+    public void setJ(Jugador j) {
+        this.j = j;
+    }
+    
     @Override
     public void actionPerformed(ActionEvent ae) {
         
@@ -67,17 +88,17 @@ public class Controlador_seleccion implements ActionListener {
          
          if(ae.getSource() == this.vs.jButton_Jugar){
              
-                String seleccionModo = this.vs.jComboBox_Modo.getSelectedItem().toString();
-                String seleccionDificultad = this.vs.jComboBox_Modo.getSelectedItem().toString();
-                Jugador aux = this.j;
-             
-               if(seleccionModo.equals("TIME TRIAL")){
-                        
-                        p = new Partida (seleccionModo,seleccionDificultad,aux.getNombre_usuario(),aux.getNombre_jugador());
-                        n = new Niveles (p.getCod_partida(),"NORMAL");
-                   
+                modoSeleccionado = this.vs.jComboBox_Modo.getSelectedItem().toString();
+                dificultadSeleccionada = this.vs.jComboBox_Dificultad.getSelectedItem().toString();
+
+                p = new Partida (modoSeleccionado,dificultadSeleccionada,this.getJ().getNombre_usuario(), this.getJ().getNombre_jugador());
+                codigo = p.getCod_partida();
+                n = new Niveles (codigo,"NORMAL");
+
+               if(modoSeleccionado.equals("TIME TRIAL")){
+                                   
                         Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
-                        Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, this.j, p, n);
+                        Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n);
                         vpn.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
                         vpn.setVisible(true);
                         vs.dispose();
@@ -88,24 +109,23 @@ public class Controlador_seleccion implements ActionListener {
                         
                         if(random <= 8){
                             
-                                n = new Niveles (p.getCod_partida(),"NORMAL");
-                                p = new Partida (seleccionModo,seleccionDificultad,this.j.getNombre_usuario(),this.j.getNombre_jugador());
-                            
+                                this.p = new Partida (this.vs.jComboBox_Modo.getSelectedItem().toString(),this.vs.jComboBox_Dificultad.getSelectedItem().toString(),this.j.getNombre_usuario(),this.j.getNombre_jugador());
+                                this.n = new Niveles (p.getCod_partida(),"NORMAL");
+                                
                                 Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
-                                Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n);
+                                Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, this.j, this.p, this.n);
                                 vpn.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
                                 vpn.setVisible(true);
-                                vs.dispose();
+                                vs.setVisible(false);
                             
                         }else{
                             
-                                n = new Niveles (p.getCod_partida(),"MADNESS");
-                                p = new Partida (seleccionModo, seleccionDificultad,this.j.getNombre_usuario(),this.j.getNombre_jugador());
+                                this.p = new Partida (this.vs.jComboBox_Modo.getSelectedItem().toString(),this.vs.jComboBox_Dificultad.getSelectedItem().toString(),this.j.getNombre_usuario(),this.j.getNombre_jugador());
+                                this.n = new Niveles (p.getCod_partida(),"MADNESS");
                             
                                 Ventana_Partida_madness vpm = new Ventana_Partida_madness();
                                 vpm.setVisible(true);
-                                vs.dispose();
-                            
+                                vs.setVisible(false);
                             
                                 }
  

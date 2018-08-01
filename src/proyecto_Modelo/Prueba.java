@@ -121,12 +121,12 @@ public class Prueba {
 //            Jugador j = d.obtenerDatosJugador("PEDROB", "A4B7C899091");
 //            System.out.println(j);
 
-        LocalDate fechaActual = LocalDate.now();
-        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        
-        String format = (fechaActual).format(dtf);
-
-        System.out.println("La fecha actual es: " + format);
+//        LocalDate fechaActual = LocalDate.now();
+//        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        
+//        String format = (fechaActual).format(dtf);
+//
+//        System.out.println("La fecha actual es: " + format);
 //
 //            for (int i = 1; i < 10; i++) {
 //                
@@ -146,6 +146,15 @@ public class Prueba {
 //        Ventana_Log_in vli = new Ventana_Log_in();
 //        Controlador_Log_In cli = new Controlador_Log_In(vli);
 //        vli.setVisible(true);
+
+    Partida p = new Partida ("TIME TRIAL","FACIL","PEDROB", "C3RB3R0US");
+        System.out.println("Cod partida: " + p.getCod_partida());
+        System.out.println("Modo de juego: " + p.getModo_de_juego());
+        System.out.println("Dificultad: " + p.getModo_de_juego());
+        System.out.println("Fecha realizacion: " + p.getFecha_realizacion());
+        System.out.println("Puntuacion: " + p.getPuntuacion());
+        System.out.println("Nombre usuario: " + p.getNombre_usuario());
+        System.out.println("Nombre jugador: " + p.getNombre_jugador());
 
     }
     

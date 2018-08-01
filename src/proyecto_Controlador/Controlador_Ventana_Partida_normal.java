@@ -65,8 +65,9 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                 
                      Ventana_Menu vm = new Ventana_Menu();
                      Controlador_menu cm = new Controlador_menu(vm, j);
+                     vm.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
                      vm.setVisible(true);
-                     vpn.setVisible(false);
+                     vpn.dispose();
                      
                                 }
                 
@@ -93,11 +94,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                         t.start();
                         
                         while(inicio > 0){
-                            
-                            
-                            
-                            
-                            
+
                         }
                 
                 }

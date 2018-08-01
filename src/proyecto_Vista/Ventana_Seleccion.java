@@ -70,7 +70,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         getContentPane().add(jLabel_modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 210, 30));
 
         jComboBox_Modo.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
-        jComboBox_Modo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ARCADE", "TIME TRIAL", "STRINGS" }));
         jComboBox_Modo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_ModoActionPerformed(evt);
@@ -79,7 +78,6 @@ public class Ventana_Seleccion extends javax.swing.JFrame {
         getContentPane().add(jComboBox_Modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 400, 100));
 
         jComboBox_Dificultad.setFont(new java.awt.Font("Digital Dare", 0, 60)); // NOI18N
-        jComboBox_Dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FACIL", "NORMAL", "DIFICIL" }));
         jComboBox_Dificultad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_DificultadActionPerformed(evt);

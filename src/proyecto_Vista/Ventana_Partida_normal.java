@@ -76,10 +76,10 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jButton_Cerrar.setPreferredSize(new java.awt.Dimension(45, 27));
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, -1, -1));
 
-        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_volver.png"))); // NOI18N
+        jButton_Volver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Equipo\\Documents\\NetBeansProjects\\proyecto_programacion\\src\\imagenes\\volver_normal.png")); // NOI18N
         getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 240, 70));
 
-        jButton_Enter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/intro.png"))); // NOI18N
+        jButton_Enter.setIcon(new javax.swing.ImageIcon("C:\\Users\\Equipo\\Documents\\NetBeansProjects\\proyecto_programacion\\src\\imagenes\\intro.png")); // NOI18N
         getContentPane().add(jButton_Enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 240, 70));
 
         jLabel_LogAs.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
