@@ -16,7 +16,7 @@ import javax.script.ScriptException;
  */
 public class Operaciones {
     
-    private static int cod_operacion;
+    private int cod_operacion;
     private int cod_nivel;
     private int cod_partida;
     private String op_generada;
@@ -83,38 +83,6 @@ public class Operaciones {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-//    public int getTiempoMaximo (int nivel){
-//        
-//        int tiempo = 0;
-//        
-//        if(nivel == 1){
-//            
-//            tiempo = 60;
-//            
-//        }
-//        
-//        if(nivel%3 == 0){
-//            
-//            tiempo = 50;
-//            
-//        }
-//        
-//        if((nivel+1)%3 == 0){
-//            
-//            tiempo = 55;
-//            
-//        }
-//        
-//        if(nivel != 1 && (nivel-1)%3 == 0){
-//            
-//            tiempo = 60;
-//            
-//        }
-//            
-//        return tiempo;
-//        
-//    }
     
     public int getValorMaximo (String modo, String dificultad, int nivel){
         

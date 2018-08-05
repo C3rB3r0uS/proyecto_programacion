@@ -26,6 +26,9 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
     
     Ventana_Log_in login;
     
+    ClaseDAO d = new ClaseDAO();
+    Jugador j = null;
+    
     public Controlador_Log_In (Ventana_Log_in log){
         
         this.login = log;
@@ -49,10 +52,7 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
         }
         
         if(ae.getSource() == this.login.jButton_Entrar){
-            
-            ClaseDAO d = new ClaseDAO();
-            Jugador j = null;
-            
+          
             String nombreIntroducido = this.login.jTextField_NombreUsuario.getText();
             String contraseniaIntroducida = this.login.jContraseña.getText();
   
@@ -63,7 +63,7 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
                 // Obtiene los datos del jugador cuyo nombre de usuario y contraseña son los introducidos
                 // Esos datos se transfieren a la siguiente ventana como argumento
                 
-                j = d.obtenerDatosJugador(nombreIntroducido, contraseniaIntroducida);
+                this.j = d.obtenerDatosJugador(nombreIntroducido, contraseniaIntroducida);
                 
                 Ventana_Menu vm = new Ventana_Menu();
                 vm.jLabel_LogAs.setText("LOG: " + j.getNombre_jugador());
@@ -117,42 +117,42 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
     @Override
     public void keyPressed(KeyEvent ke) {
         
-        int code = (int)ke.getKeyChar();
-        
-        System.out.println("Code: " + code);
-   
-       if(code == KeyEvent.VK_ESCAPE){
-           
-           int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
-           
-           if(respuesta == JOptionPane.YES_OPTION){
-                System.exit(0);
-           }
-
-       }
-       
-       if(code == KeyEvent.VK_ENTER){
-        
-           ClaseDAO d = new ClaseDAO();
-            
-            String nombreIntroducido = login.jTextField_NombreUsuario.getText();
-            String contraseniaIntroducida = String.valueOf(this.login.jContraseña.getPassword());
-  
-            if(d.ConsultarUserPass(nombreIntroducido, contraseniaIntroducida) == true){
-                
-                JOptionPane.showMessageDialog(null, "Datos introducidos válidos");
-
-                Ventana_Menu vm = new Ventana_Menu();
-                vm.setVisible(true);
-                login.dispose();
-                
-            }else{
-                
-                JOptionPane.showMessageDialog(null, "Datos introducidos inválidos");
-                
-            }
-
-       }
+//        int code = (int)ke.getKeyChar();
+//        
+//        System.out.println("Code: " + code);
+//   
+//       if(code == KeyEvent.VK_ESCAPE){
+//           
+//           int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
+//           
+//           if(respuesta == JOptionPane.YES_OPTION){
+//                System.exit(0);
+//           }
+//
+//       }
+//       
+//       if(code == KeyEvent.VK_ENTER){
+//        
+//           ClaseDAO d = new ClaseDAO();
+//            
+//            String nombreIntroducido = login.jTextField_NombreUsuario.getText();
+//            String contraseniaIntroducida = String.valueOf(this.login.jContraseña.getPassword());
+//  
+//            if(d.ConsultarUserPass(nombreIntroducido, contraseniaIntroducida) == true){
+//                
+//                JOptionPane.showMessageDialog(null, "Datos introducidos válidos");
+//
+//                Ventana_Menu vm = new Ventana_Menu();
+//                vm.setVisible(true);
+//                login.dispose();
+//                
+//            }else{
+//                
+//                JOptionPane.showMessageDialog(null, "Datos introducidos inválidos");
+//                
+//            }
+//
+//       }
 
     }
 

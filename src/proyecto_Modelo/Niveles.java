@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Niveles {
     
-    private static int cod_nivel;
+    private int cod_nivel;
     private int cod_partida;
     private String tipo;
     private int nro_nivel;
@@ -70,6 +70,11 @@ public class Niveles {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    
+        @Override
+    public String toString() {
+        return "Niveles{" + "cod_nivel=" + cod_nivel + ", cod_partida=" + cod_partida + ", tipo=" + tipo + ", nro_nivel=" + nro_nivel + ", estado=" + estado + '}';
+    }
  
     public int getTiempo(int nivel){
         
@@ -91,7 +96,7 @@ public class Niveles {
         
         return tiempo;
     }
-    
+
     public String aleatorizadorTipoNivel (){
         
         Random aleatorio = new Random();

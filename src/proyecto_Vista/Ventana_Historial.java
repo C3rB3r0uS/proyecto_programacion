@@ -34,7 +34,10 @@ public class Ventana_Historial extends javax.swing.JFrame {
         jLabel_Ventana_Actual = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton_Volver = new javax.swing.JButton();
+        jButton_Consultar = new javax.swing.JButton();
         jLabel_LogAs = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tabla = new javax.swing.JTable();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,15 +66,39 @@ public class Ventana_Historial extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("RESULTADOS DE LAS ULTIMAS 10 PARTIDAS ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
 
         jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_volver.png"))); // NOI18N
-        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 600, 240, 75));
+        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 570, 240, 75));
+
+        jButton_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_consultar.png"))); // NOI18N
+        getContentPane().add(jButton_Consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 570, 240, 75));
 
         jLabel_LogAs.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_LogAs.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_LogAs.setText("LOG:");
         getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 730, 500, 40));
+
+        Tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(Tabla);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 550, 190));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -128,11 +155,14 @@ public class Ventana_Historial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JTable Tabla;
+    public javax.swing.JButton jButton_Cerrar;
+    private javax.swing.JButton jButton_Consultar;
     public javax.swing.JButton jButton_Volver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_Fondo;
     public javax.swing.JLabel jLabel_LogAs;
     private javax.swing.JLabel jLabel_Ventana_Actual;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

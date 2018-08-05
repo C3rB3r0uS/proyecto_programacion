@@ -45,6 +45,8 @@ public class ClaseDAO {
            }else{
                     
            }
+           
+           conexion.closeConexion(accesoBD);
   
         }catch(SQLException e){
             
@@ -77,6 +79,8 @@ public class ClaseDAO {
                 
             }
             
+            conexion.closeConexion(accesoBD);
+            
         }catch(SQLException e){
             
             System.out.println("Error al obtener los datos del jugador: " + e.getMessage());
@@ -106,6 +110,8 @@ public class ClaseDAO {
            }else{
                     
            }
+           
+           conexion.closeConexion(accesoBD);
   
         }catch(SQLException e){
             
@@ -133,6 +139,8 @@ public class ClaseDAO {
            }else{
            
            }
+           
+           conexion.closeConexion(accesoBD);
   
         }catch(SQLException e){
             
@@ -151,6 +159,8 @@ public class ClaseDAO {
             
             Statement s = accesoBD.createStatement();
             s.executeUpdate("INSERT INTO JUGADOR (NOMBRE_USUARIO,NOMBRE_JUGADOR,CONTRASENIA,NOM_APELLIDOS,PAIS) VALUES ('"+nombreUsuario+"','"+nombreJugador+"','"+contrasenia+"','"+nom_apellidos+"','"+pais+"')");
+            
+            conexion.closeConexion(accesoBD);
             
         }catch(SQLException e){
             

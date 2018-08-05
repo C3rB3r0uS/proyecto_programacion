@@ -189,8 +189,15 @@ public class Prueba {
 
     Partida p = new Partida ("NORMAL", "PEDROB","PEDROB");
     
-        System.out.println(p.toString());
+//        System.out.println(p.toString());
 
+        
+      Niveles n = new Niveles (1);
+      
+      Operaciones o = new Operaciones (1,1);
+      
+        System.out.println(o.generarOperacion("TIME TRIAL", "NORMAL", 1));
+        
     }
     
 }

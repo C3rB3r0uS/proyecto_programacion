@@ -22,14 +22,21 @@ import proyecto_Vista.Ventana_Partida_normal;
  */
 public class Controlador_Ventana_Partida_normal implements ActionListener {
     
-    Ventana_Partida_normal vpn;
-    Jugador j;
-    Partida p;
-    Niveles n;
-    Operaciones o;
+    private Ventana_Partida_normal vpn;
+    private Jugador j;
+    private Partida p;
+    private Niveles n;
+    private Operaciones o;
     
-    Timer t;
-    int inicio;
+    private Timer t;
+    private int inicio;
+    
+    private int fallos;
+    private String operacionGenerada;
+    private int resultadoCorrecto;
+    private int respuesta;
+    private int codNivel;
+    private int codPartida;
 
     public Controlador_Ventana_Partida_normal(Ventana_Partida_normal vpn, Jugador j, Partida p, Niveles n) {
         
@@ -86,7 +93,13 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                                 vpn.jLabel_ContadorTiempo.setText(Integer.toString(inicio)); 
 
                                 inicio--;
- 
+                                
+                                if(inicio == -1){
+                                    
+                                    t.stop();
+                                    
+                                }
+        
                                 /*CODIGO
                                   /* while(inicio > 0){         
                                 si fallo menor que 3
@@ -94,46 +107,53 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                                     si resultado = acierto entonces fallo = 0 y contador puntacion +1
                                     si no fallo +1
                                 }*/  
-              }
+                                
+                                }
   
                         });
         
                         t.start();
-                        
-                        int fallos = 0;
-                        String operacionGenerada = "";
-                        int resultadoCorrecto = 0;
-                        int respuesta = 0;
-                         
-                                while(inicio > 0){
-                                    
-                                    operacionGenerada = o.generarOperacion(p.getModo_de_juego(), p.getDificultad(), n.getNro_nivel());
-                                    resultadoCorrecto = o.getResultado(operacionGenerada);
-                                    
-                                    vpn.JLabel_Operacion.setText(operacionGenerada);
-                                    
-                                        if(ae.getSource() == vpn.jButton_Enter){
-                                          
-                                                    try{
-                                                        
-                                                        respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
-                                                        
-                                                    }catch(NumberFormatException nfe){
-                                                    
-                                                        vpn.jTextField_Respuesta.setText("");
-                                                        fallos++;
-                                                    
-                                                    }
-                                                    
-                                                    if(respuesta != resultadoCorrecto){
-                                                        
-                                                        fallos++;
-                                                        
-                                                    }
-                                            
-                                                }
-                                        
-                                        }
+                                
+                                fallos = 0;
+                                operacionGenerada = "";
+                                resultadoCorrecto = 0;
+                                respuesta = 0;
+                                
+                                codNivel = n.getCod_nivel();
+                                codPartida = p.getCod_partida();
+  
+//                                while(inicio > 0){
+//                          
+//                                    o = new Operaciones (1, 1);
+//                                
+//                                    operacionGenerada = o.generarOperacion(p.getModo_de_juego(), p.getDificultad(), n.getNro_nivel());
+//    
+//                                    resultadoCorrecto = o.getResultado(operacionGenerada);
+//                                    
+//                                    vpn.JLabel_Operacion.setText(operacionGenerada);
+//                                    
+//                                        if(ae.getSource() == vpn.jButton_Enter){
+//                                          
+//                                                    try{
+//                                                        
+//                                                        respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
+//                                                        
+//                                                    }catch(NumberFormatException nfe){
+//                                                    
+//                                                        vpn.jTextField_Respuesta.setText("");
+//                                                        fallos++;
+//                                                    
+//                                                    }
+//                                                    
+//                                                    if(respuesta != resultadoCorrecto){
+//                                                        
+//                                                        fallos++;
+//                                                        
+//                                                    }
+//                                            
+//                                                }
+//                                        
+//                                        }
                           
                 }
             

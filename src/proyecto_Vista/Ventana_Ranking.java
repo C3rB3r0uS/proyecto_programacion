@@ -35,12 +35,12 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         jLabel_Dificultad = new javax.swing.JLabel();
         jComboBox_Dificultad = new javax.swing.JComboBox<>();
         jButton_Cerrar = new javax.swing.JButton();
-        jButton_Mostrar_datos = new javax.swing.JButton();
+        jButton_Consultar = new javax.swing.JButton();
         jLabel_Ventana_Actual = new javax.swing.JLabel();
-        jComboBox_Filtro = new javax.swing.JComboBox<>();
-        jLabel_Filtro = new javax.swing.JLabel();
         jButton_Volver = new javax.swing.JButton();
         jLabel_LogAs = new javax.swing.JLabel();
+        Tabla = new javax.swing.JScrollPane();
+        Tabla_Ranking = new javax.swing.JTable();
         JFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,15 +50,15 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         jLabel_modo.setFont(new java.awt.Font("Digital Dare", 1, 36)); // NOI18N
         jLabel_modo.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_modo.setText("MODO");
-        getContentPane().add(jLabel_modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 170, 30));
+        getContentPane().add(jLabel_modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 170, 30));
 
         jComboBox_Modo.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
-        getContentPane().add(jComboBox_Modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 300, 40));
+        getContentPane().add(jComboBox_Modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 300, 40));
 
         jLabel_Dificultad.setFont(new java.awt.Font("Digital Dare", 1, 36)); // NOI18N
         jLabel_Dificultad.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Dificultad.setText("DIFICULTAD");
-        getContentPane().add(jLabel_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
+        getContentPane().add(jLabel_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, -1, -1));
 
         jComboBox_Dificultad.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
         jComboBox_Dificultad.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +66,7 @@ public class Ventana_Ranking extends javax.swing.JFrame {
                 jComboBox_DificultadActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 300, 40));
+        getContentPane().add(jComboBox_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 300, 40));
 
         jButton_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icon.png"))); // NOI18N
         jButton_Cerrar.setToolTipText("Cierra la aplicación ");
@@ -82,29 +82,47 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         });
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 20));
 
-        jButton_Mostrar_datos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_mostrar_datos.png"))); // NOI18N
-        getContentPane().add(jButton_Mostrar_datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 390, 170, 50));
+        jButton_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_consultar.png"))); // NOI18N
+        getContentPane().add(jButton_Consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 600, 240, 75));
 
         jLabel_Ventana_Actual.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_Ventana_Actual.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Ventana_Actual.setText("RANDOM.MATHS/RANKING");
         getContentPane().add(jLabel_Ventana_Actual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, -1));
 
-        jComboBox_Filtro.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
-        getContentPane().add(jComboBox_Filtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 300, 40));
-
-        jLabel_Filtro.setFont(new java.awt.Font("Digital Dare", 1, 36)); // NOI18N
-        jLabel_Filtro.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Filtro.setText("Filtro\n");
-        getContentPane().add(jLabel_Filtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
-
-        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver_small.png"))); // NOI18N
-        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 480, 170, 50));
+        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_volver.png"))); // NOI18N
+        jButton_Volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_VolverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 600, 240, 75));
 
         jLabel_LogAs.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_LogAs.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_LogAs.setText("LOG: ");
         getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, 460, -1));
+
+        Tabla_Ranking.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        Tabla.setViewportView(Tabla_Ranking);
+
+        getContentPane().add(Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 740, 190));
 
         JFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(JFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -128,6 +146,10 @@ public class Ventana_Ranking extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jButton_CerrarKeyPressed
+
+    private void jButton_VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_VolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,14 +188,14 @@ public class Ventana_Ranking extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JFondo;
-    private javax.swing.JButton jButton_Cerrar;
-    private javax.swing.JButton jButton_Mostrar_datos;
+    private javax.swing.JScrollPane Tabla;
+    public javax.swing.JTable Tabla_Ranking;
+    public javax.swing.JButton jButton_Cerrar;
+    public javax.swing.JButton jButton_Consultar;
     public javax.swing.JButton jButton_Volver;
     public javax.swing.JComboBox<String> jComboBox_Dificultad;
-    public javax.swing.JComboBox<String> jComboBox_Filtro;
     public javax.swing.JComboBox<String> jComboBox_Modo;
     private javax.swing.JLabel jLabel_Dificultad;
-    private javax.swing.JLabel jLabel_Filtro;
     public javax.swing.JLabel jLabel_LogAs;
     private javax.swing.JLabel jLabel_Ventana_Actual;
     private javax.swing.JLabel jLabel_modo;

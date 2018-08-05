@@ -61,6 +61,8 @@ public class Controlador_menu implements ActionListener {
         if(ae.getSource() == this.vm.jButton_Historial){
             
             Ventana_Historial vh = new Ventana_Historial();
+            Controlador_Historial ch = new Controlador_Historial(this.j,vh);
+            vh.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
             vh.setVisible(true);
             vm.dispose();
             

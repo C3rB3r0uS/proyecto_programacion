@@ -97,6 +97,8 @@ public class Controlador_seleccion implements ActionListener {
 
                if(modoSeleccionado.equals("TIME TRIAL")){
                    
+//                        JOptionPane.showMessageDialog(null, "Modo seleccionado: " + modoSeleccionado + " dificultad seleccionada: " + dificultadSeleccionada);
+                   
                         this.p = new Partida (dificultadSeleccionada,this.getJ().getNombre_usuario(), this.getJ().getNombre_jugador());
                         this.n = new Niveles (this.p.getCod_partida());
                                    

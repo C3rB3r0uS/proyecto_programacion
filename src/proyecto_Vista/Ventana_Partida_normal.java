@@ -53,7 +53,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jLabel_ContadorTiempo.setFont(new java.awt.Font("Digital Dare", 0, 95)); // NOI18N
         jLabel_ContadorTiempo.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_ContadorTiempo.setText("59");
-        getContentPane().add(jLabel_ContadorTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 170, 90));
+        getContentPane().add(jLabel_ContadorTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 150, 90));
 
         jLabel_ContadorPuntuacion.setFont(new java.awt.Font("Digital Dare", 1, 60)); // NOI18N
         jLabel_ContadorPuntuacion.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,8 +72,8 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         JLabel_Operacion.setFont(new java.awt.Font("Digital Dare", 0, 60)); // NOI18N
         JLabel_Operacion.setForeground(new java.awt.Color(255, 255, 255));
         JLabel_Operacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLabel_Operacion.setText("  --- presione start --- ");
-        getContentPane().add(JLabel_Operacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
+        JLabel_Operacion.setText("123+123");
+        getContentPane().add(JLabel_Operacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 600, -1));
 
         jTextField_Respuesta.setFont(new java.awt.Font("Digital Dare", 0, 48)); // NOI18N
         getContentPane().add(jTextField_Respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 530, 80));
