@@ -57,7 +57,7 @@ public class Controlador_creacion_cuenta implements ActionListener {
             String errores = "Los siguientes errores han ocurrido: \n";
              int cont = 0;
             
-            if(this.v.jTextField_nom_ape.getText().equals("")){
+            if(this.v.jTextField_nom_ape.getText().equals("") || this.v.jTextField_nom_usuario.getText().equals("") || this.v.jTextField_nombre_ingame.getText().equals("") || this.v.jPasswordField_contrasenia.getText().equals("") || this.v.jPasswordField_confirmacion_contrasenia.getText().equals("")){
                 
                 errores += "-Todos los campos son obligatorios \n";
                 
@@ -69,7 +69,7 @@ public class Controlador_creacion_cuenta implements ActionListener {
             
             // COMPROBACIONES NOMBRE USUARIO
             
-            if(d.consultarDisponibilidadNombreUsuario(this.v.jTextField_nom_usuario.getText()) == false ){
+            if(d.consultarDisponibilidadNombreUsuario(this.v.jTextField_nom_usuario.getText()) == false){
                 
                 v.jTextField_nom_usuario.setText("");
 
@@ -94,7 +94,7 @@ public class Controlador_creacion_cuenta implements ActionListener {
             
             // COMPROBACIONES NOMBRE INGAME
             
-             if(d.consultarDisponibilidadNombreUsuario(this.v.jTextField_nombre_ingame.getText()) == false ){
+             if(d.consultarDisponibilidadNombreUsuario(this.v.jTextField_nombre_ingame.getText()) == false){
                 
                 v.jTextField_nombre_ingame.setText("");
                 errores += "-El nombre de jugador elegido ya se encuentra registrado. Por favor, pruebe con otro nombre. \n";

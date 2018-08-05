@@ -47,8 +47,8 @@ public class Controlador_seleccion implements ActionListener {
         vs.jComboBox_Modo.addActionListener(this);
         
         vs.jComboBox_Modo.addItem("TIME TRIAL");
-        vs.jComboBox_Modo.addItem("ARCADE");
-        vs.jComboBox_Modo.addItem("STRINGS");
+//        vs.jComboBox_Modo.addItem("ARCADE");
+//        vs.jComboBox_Modo.addItem("STRINGS");
         
         vs.jComboBox_Dificultad.addItem("FACIL");
         vs.jComboBox_Dificultad.addItem("NORMAL");
@@ -91,11 +91,14 @@ public class Controlador_seleccion implements ActionListener {
                 modoSeleccionado = this.vs.jComboBox_Modo.getSelectedItem().toString();
                 dificultadSeleccionada = this.vs.jComboBox_Dificultad.getSelectedItem().toString();
 
-                p = new Partida (modoSeleccionado,dificultadSeleccionada,this.getJ().getNombre_usuario(), this.getJ().getNombre_jugador());
-                codigo = p.getCod_partida();
-                n = new Niveles (codigo,"NORMAL");
+//                p = new Partida (modoSeleccionado,dificultadSeleccionada,this.getJ().getNombre_usuario(), this.getJ().getNombre_jugador());
+//                codigo = p.getCod_partida();
+//                n = new Niveles (codigo,"NORMAL");
 
                if(modoSeleccionado.equals("TIME TRIAL")){
+                   
+                        this.p = new Partida (dificultadSeleccionada,this.getJ().getNombre_usuario(), this.getJ().getNombre_jugador());
+                        this.n = new Niveles (this.p.getCod_partida());
                                    
                         Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
                         Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n);
@@ -103,33 +106,34 @@ public class Controlador_seleccion implements ActionListener {
                         vpn.setVisible(true);
                         vs.dispose();
                    
-               }else{
-                   
-                        random = (int)(Math.random()*10)+1;
-                        
-                        if(random <= 8){
-                            
-                                this.p = new Partida (this.vs.jComboBox_Modo.getSelectedItem().toString(),this.vs.jComboBox_Dificultad.getSelectedItem().toString(),this.j.getNombre_usuario(),this.j.getNombre_jugador());
-                                this.n = new Niveles (p.getCod_partida(),"NORMAL");
-                                
-                                Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
-                                Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, this.j, this.p, this.n);
-                                vpn.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
-                                vpn.setVisible(true);
-                                vs.setVisible(false);
-                            
-                        }else{
-                            
-                                this.p = new Partida (this.vs.jComboBox_Modo.getSelectedItem().toString(),this.vs.jComboBox_Dificultad.getSelectedItem().toString(),this.j.getNombre_usuario(),this.j.getNombre_jugador());
-                                this.n = new Niveles (p.getCod_partida(),"MADNESS");
-                            
-                                Ventana_Partida_madness vpm = new Ventana_Partida_madness();
-                                vpm.setVisible(true);
-                                vs.setVisible(false);
-                            
-                                }
- 
-                        }
+               }
+//               }else{
+//                   
+//                        random = (int)(Math.random()*10)+1;
+//                        
+//                        if(random <= 8){
+//                            
+//                                this.p = new Partida (this.vs.jComboBox_Modo.getSelectedItem().toString(),this.vs.jComboBox_Dificultad.getSelectedItem().toString(),this.j.getNombre_usuario(),this.j.getNombre_jugador());
+//                                this.n = new Niveles (this.p.getCod_partida(),"NORMAL");
+//                                
+//                                Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
+//                                Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, this.j, this.p, this.n);
+//                                vpn.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
+//                                vpn.setVisible(true);
+//                                vs.dispose();
+//                            
+//                        }else{
+//                            
+//                                this.p = new Partida (this.vs.jComboBox_Modo.getSelectedItem().toString(),this.vs.jComboBox_Dificultad.getSelectedItem().toString(),this.j.getNombre_usuario(),this.j.getNombre_jugador());
+//                                this.n = new Niveles (this.p.getCod_partida(),"MADNESS");
+//                            
+//                                Ventana_Partida_madness vpm = new Ventana_Partida_madness();
+//                                vpm.setVisible(true);
+//                                vs.dispose();
+//                            
+//                                }
+// 
+//                        }
 
                 }
                 

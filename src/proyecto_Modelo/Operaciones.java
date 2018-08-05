@@ -84,38 +84,37 @@ public class Operaciones {
         this.estado = estado;
     }
     
-    public int getTiempoMaximo (int nivel){
-        
-        int tiempo = 0;
-        
-        if(nivel == 1){
-            
-            tiempo = 60;
-            
-        }
-        
-        if(nivel%3 == 0){
-            
-            tiempo = 50;
-            
-        }
-        
-        if((nivel+1)%3 == 0){
-            
-            tiempo = 55;
-            
-        }
-        
-        if(nivel != 1 && (nivel-1)%3 == 0){
-            
-            tiempo = 60;
-            
-        }
-        
-        
-        return tiempo;
-        
-    }
+//    public int getTiempoMaximo (int nivel){
+//        
+//        int tiempo = 0;
+//        
+//        if(nivel == 1){
+//            
+//            tiempo = 60;
+//            
+//        }
+//        
+//        if(nivel%3 == 0){
+//            
+//            tiempo = 50;
+//            
+//        }
+//        
+//        if((nivel+1)%3 == 0){
+//            
+//            tiempo = 55;
+//            
+//        }
+//        
+//        if(nivel != 1 && (nivel-1)%3 == 0){
+//            
+//            tiempo = 60;
+//            
+//        }
+//            
+//        return tiempo;
+//        
+//    }
     
     public int getValorMaximo (String modo, String dificultad, int nivel){
         

@@ -21,11 +21,11 @@ public class Niveles {
     
     ClaseDAO d = new ClaseDAO();
 
-    public Niveles(int cod_partida, String tipo) {
+    public Niveles(int cod_partida) {
        
         this.cod_nivel = d.ConsultarCodigoNiveles();
         this.cod_partida = cod_partida;
-        this.tipo = tipo;
+        this.tipo = "NORMAL";
         this.nro_nivel = 1;
         this.estado = "NO SUPERADO";
        

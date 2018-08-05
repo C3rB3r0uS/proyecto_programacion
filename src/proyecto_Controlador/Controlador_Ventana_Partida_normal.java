@@ -84,28 +84,60 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                                 vpn.jButton_Start.setVisible(false);
 
                                 vpn.jLabel_ContadorTiempo.setText(Integer.toString(inicio)); 
-                
+
                                 inicio--;
  
-                                }
+                                /*CODIGO
+                                  /* while(inicio > 0){         
+                                si fallo menor que 3
+                                    generarOperacion
+                                    si resultado = acierto entonces fallo = 0 y contador puntacion +1
+                                    si no fallo +1
+                                }*/  
+              }
   
                         });
         
                         t.start();
                         
-                        while(inicio > 0){
-
-                        }
-                
+                        int fallos = 0;
+                        String operacionGenerada = "";
+                        int resultadoCorrecto = 0;
+                        int respuesta = 0;
+                         
+                                while(inicio > 0){
+                                    
+                                    operacionGenerada = o.generarOperacion(p.getModo_de_juego(), p.getDificultad(), n.getNro_nivel());
+                                    resultadoCorrecto = o.getResultado(operacionGenerada);
+                                    
+                                    vpn.JLabel_Operacion.setText(operacionGenerada);
+                                    
+                                        if(ae.getSource() == vpn.jButton_Enter){
+                                          
+                                                    try{
+                                                        
+                                                        respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
+                                                        
+                                                    }catch(NumberFormatException nfe){
+                                                    
+                                                        vpn.jTextField_Respuesta.setText("");
+                                                        fallos++;
+                                                    
+                                                    }
+                                                    
+                                                    if(respuesta != resultadoCorrecto){
+                                                        
+                                                        fallos++;
+                                                        
+                                                    }
+                                            
+                                                }
+                                        
+                                        }
+                          
                 }
             
-            
-            
-            
-            
-            
-            
-        
+           
     }
     
 }

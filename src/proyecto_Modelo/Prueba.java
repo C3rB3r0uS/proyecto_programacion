@@ -156,16 +156,40 @@ public class Prueba {
 //        System.out.println("Nombre usuario: " + p.getNombre_usuario());
 //        System.out.println("Nombre jugador: " + p.getNombre_jugador());
 
-    Operaciones o = new Operaciones (1,1);
-    System.out.println("Tiempo nivel 1: " + o.getTiempoMaximo(1));
-    System.out.println("Tiempo nivel 2: " + o.getTiempoMaximo(2));
-    System.out.println("Tiempo nivel 3: " + o.getTiempoMaximo(3));
-        System.out.println("Tiempo nivel 4: " + o.getTiempoMaximo(4));
-        
-        System.out.println("Tiempo nivel 5: " + o.getTiempoMaximo(5));
-    System.out.println("Tiempo nivel 6: " + o.getTiempoMaximo(6));
-    System.out.println("Tiempo nivel 7: " + o.getTiempoMaximo(7));
-        System.out.println("Tiempo nivel 8: " + o.getTiempoMaximo(8));
+//    Operaciones o = new Operaciones (1,1);
+//    System.out.println("Tiempo nivel 1: " + o.getTiempoMaximo(1));
+//    System.out.println("Tiempo nivel 2: " + o.getTiempoMaximo(2));
+//    System.out.println("Tiempo nivel 3: " + o.getTiempoMaximo(3));
+//        System.out.println("Tiempo nivel 4: " + o.getTiempoMaximo(4));
+//        
+//        System.out.println("Tiempo nivel 5: " + o.getTiempoMaximo(5));
+//    System.out.println("Tiempo nivel 6: " + o.getTiempoMaximo(6));
+//    System.out.println("Tiempo nivel 7: " + o.getTiempoMaximo(7));
+//        System.out.println("Tiempo nivel 8: " + o.getTiempoMaximo(8));
+
+//        String a = "1234";
+//        int b = Integer.parseInt(a);
+//        
+//        String c = "123y";
+//        int g = Integer.parseInt(c);
+//    
+//        System.out.println("El valor de b es: " + b);
+//        System.out.println("El valor de g es: " + g);
+
+//    int inicio = 60;
+//        System.out.println("inicio antes: " + inicio);
+//        
+//        while(inicio > 0){
+//            
+//            inicio--;
+//            
+//        }
+//        
+//        System.out.println("inicio después: " + inicio);
+
+    Partida p = new Partida ("NORMAL", "PEDROB","PEDROB");
+    
+        System.out.println(p.toString());
 
     }
     

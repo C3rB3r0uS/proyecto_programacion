@@ -31,6 +31,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jLabel_Ventana_Actual = new javax.swing.JLabel();
         jLabel_ContadorTiempo = new javax.swing.JLabel();
         jLabel_ContadorPuntuacion = new javax.swing.JLabel();
+        jLabel_ContadorFallos = new javax.swing.JLabel();
         jButton_Start = new javax.swing.JButton();
         JLabel_Operacion = new javax.swing.JLabel();
         jTextField_Respuesta = new javax.swing.JTextField();
@@ -56,8 +57,13 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
 
         jLabel_ContadorPuntuacion.setFont(new java.awt.Font("Digital Dare", 1, 60)); // NOI18N
         jLabel_ContadorPuntuacion.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_ContadorPuntuacion.setText("0/10");
-        getContentPane().add(jLabel_ContadorPuntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 420, -1, -1));
+        jLabel_ContadorPuntuacion.setText("0");
+        getContentPane().add(jLabel_ContadorPuntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 420, -1, -1));
+
+        jLabel_ContadorFallos.setFont(new java.awt.Font("Digital Dare", 1, 60)); // NOI18N
+        jLabel_ContadorFallos.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_ContadorFallos.setText("0");
+        getContentPane().add(jLabel_ContadorFallos, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
 
         jButton_Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_start.png"))); // NOI18N
         jButton_Start.setPreferredSize(new java.awt.Dimension(310, 90));
@@ -135,6 +141,7 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
     public javax.swing.JButton jButton_Enter;
     public javax.swing.JButton jButton_Start;
     public javax.swing.JButton jButton_Volver;
+    private javax.swing.JLabel jLabel_ContadorFallos;
     public javax.swing.JLabel jLabel_ContadorPuntuacion;
     public javax.swing.JLabel jLabel_ContadorTiempo;
     private javax.swing.JLabel jLabel_Fondo;

@@ -69,7 +69,7 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
                 vm.jLabel_LogAs.setText("LOG: " + j.getNombre_jugador());
                 Controlador_menu cm = new Controlador_menu(vm,j);
                 vm.setVisible(true);
-                login.setVisible(false);
+                login.dispose();
                 
             }else{
                 

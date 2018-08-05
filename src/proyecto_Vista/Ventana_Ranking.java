@@ -53,7 +53,6 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         getContentPane().add(jLabel_modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 170, 30));
 
         jComboBox_Modo.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
-        jComboBox_Modo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ARCADE", "TIME TRIAL", "STRINGS" }));
         getContentPane().add(jComboBox_Modo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 300, 40));
 
         jLabel_Dificultad.setFont(new java.awt.Font("Digital Dare", 1, 36)); // NOI18N
@@ -62,7 +61,6 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         getContentPane().add(jLabel_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
 
         jComboBox_Dificultad.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
-        jComboBox_Dificultad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FACIL", "NORMAL", "DIFICIL" }));
         jComboBox_Dificultad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_DificultadActionPerformed(evt);
@@ -93,7 +91,6 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         getContentPane().add(jLabel_Ventana_Actual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, -1));
 
         jComboBox_Filtro.setFont(new java.awt.Font("Digital Dare", 0, 14)); // NOI18N
-        jComboBox_Filtro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SEMANAL", "MENSUAL", "TODOS LOS TIEMPOS" }));
         getContentPane().add(jComboBox_Filtro, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 300, 40));
 
         jLabel_Filtro.setFont(new java.awt.Font("Digital Dare", 1, 36)); // NOI18N

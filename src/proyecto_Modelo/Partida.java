@@ -23,15 +23,20 @@ public class Partida {
     private String nombre_jugador;
     
     ClaseDAO d = new ClaseDAO();
-     LocalDate fechaActual = LocalDate.now();
-     DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
+     LocalDate fechaActual;
+//     DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public Partida(String modo_de_juego, String dificultad, String nombre_usuario, String nombre_jugador) {
+    public Partida(String dificultad, String nombre_usuario, String nombre_jugador) {
         
         this.cod_partida = d.ConsultarCodigoPartida();
-        this.modo_de_juego = modo_de_juego;
+        this.modo_de_juego = "TIME TRIAL";
         this.dificultad = dificultad;
+        
+         LocalDate fechaActual = LocalDate.now();
+        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.fecha_realizacion = (fechaActual).format(dtf);
+        
+        
         this.puntuacion = 0;
         this.nombre_usuario = nombre_usuario;
         this.nombre_jugador = nombre_jugador;
@@ -92,6 +97,11 @@ public class Partida {
 
     public void setNombre_jugador(String nombre_jugador) {
         this.nombre_jugador = nombre_jugador;
+    }
+
+    @Override
+    public String toString() {
+        return "Partida{" + "modo_de_juego=" + modo_de_juego + ", dificultad=" + dificultad + ", fecha_realizacion=" + fecha_realizacion + ", puntuacion=" + puntuacion + ", nombre_usuario=" + nombre_usuario + ", nombre_jugador=" + nombre_jugador + ", fechaActual=" + fechaActual + '}';
     }
 
     
