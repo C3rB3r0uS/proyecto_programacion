@@ -13,14 +13,14 @@ import proyecto_Vista.Ventana_Log_in;
  * @author alumno
  */
 public class Principal {
-    
+
     public static void main(String[] args) {
-        
+
         Ventana_Log_in vli = new Ventana_Log_in();
         Controlador_Log_In clg = new Controlador_Log_In(vli);
-        
+
         vli.setVisible(true);
-        
+
     }
-    
+
 }

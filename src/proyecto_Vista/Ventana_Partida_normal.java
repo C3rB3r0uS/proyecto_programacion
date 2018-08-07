@@ -39,6 +39,8 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jButton_Volver = new javax.swing.JButton();
         jButton_Enter = new javax.swing.JButton();
         jLabel_LogAs = new javax.swing.JLabel();
+        jLabel_Fallos = new javax.swing.JLabel();
+        jLabel_Puntuacion = new javax.swing.JLabel();
         jLabel_Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,15 +57,15 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jLabel_ContadorTiempo.setText("59");
         getContentPane().add(jLabel_ContadorTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 150, 90));
 
-        jLabel_ContadorPuntuacion.setFont(new java.awt.Font("Digital Dare", 1, 60)); // NOI18N
+        jLabel_ContadorPuntuacion.setFont(new java.awt.Font("Digital Dare", 1, 75)); // NOI18N
         jLabel_ContadorPuntuacion.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_ContadorPuntuacion.setText("0");
-        getContentPane().add(jLabel_ContadorPuntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 420, -1, -1));
+        getContentPane().add(jLabel_ContadorPuntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 420, 130, -1));
 
         jLabel_ContadorFallos.setFont(new java.awt.Font("Digital Dare", 1, 60)); // NOI18N
         jLabel_ContadorFallos.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_ContadorFallos.setText("0");
-        getContentPane().add(jLabel_ContadorFallos, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, -1, -1));
+        getContentPane().add(jLabel_ContadorFallos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
 
         jButton_Start.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_start.png"))); // NOI18N
         jButton_Start.setPreferredSize(new java.awt.Dimension(310, 90));
@@ -92,6 +94,16 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
         jLabel_LogAs.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_LogAs.setText("LOG: ");
         getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, 460, -1));
+
+        jLabel_Fallos.setFont(new java.awt.Font("Digital Dare", 0, 30)); // NOI18N
+        jLabel_Fallos.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Fallos.setText("FALLOS");
+        getContentPane().add(jLabel_Fallos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+
+        jLabel_Puntuacion.setFont(new java.awt.Font("Digital Dare", 0, 30)); // NOI18N
+        jLabel_Puntuacion.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Puntuacion.setText("PUNTUACION");
+        getContentPane().add(jLabel_Puntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 380, -1, -1));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));
@@ -141,11 +153,13 @@ public class Ventana_Partida_normal extends javax.swing.JFrame {
     public javax.swing.JButton jButton_Enter;
     public javax.swing.JButton jButton_Start;
     public javax.swing.JButton jButton_Volver;
-    private javax.swing.JLabel jLabel_ContadorFallos;
+    public javax.swing.JLabel jLabel_ContadorFallos;
     public javax.swing.JLabel jLabel_ContadorPuntuacion;
     public javax.swing.JLabel jLabel_ContadorTiempo;
+    public javax.swing.JLabel jLabel_Fallos;
     private javax.swing.JLabel jLabel_Fondo;
     public javax.swing.JLabel jLabel_LogAs;
+    public javax.swing.JLabel jLabel_Puntuacion;
     private javax.swing.JLabel jLabel_Ventana_Actual;
     public javax.swing.JTextField jTextField_Respuesta;
     // End of variables declaration//GEN-END:variables
