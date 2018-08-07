@@ -22,12 +22,12 @@ import proyecto_Vista.Ventana_Seleccion;
 public class Controlador_menu implements ActionListener {
     
     Ventana_Menu vm;
-    Jugador j;
+    Jugador jugador;
     
     public Controlador_menu(Ventana_Menu vm, Jugador j) {
 
         this.vm = vm;
-        this.j = j;
+        this.jugador = j;
         vm.jButton_Jugar.addActionListener(this);
         vm.jButton_Historial.addActionListener(this);
         vm.jButton_Ranking.addActionListener(this);
@@ -51,8 +51,8 @@ public class Controlador_menu implements ActionListener {
         if (ae.getSource() == this.vm.jButton_Jugar) {
 
             Ventana_Seleccion vs = new Ventana_Seleccion();
-            Controlador_seleccion cs = new Controlador_seleccion(vs, this.j);
-            vs.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
+            Controlador_seleccion cs = new Controlador_seleccion(vs, this.jugador);
+            vs.jLabel_LogAs.setText("LOG: " + this.jugador.getNombre_jugador());
             vs.setVisible(true);
             vm.dispose();
 
@@ -61,8 +61,8 @@ public class Controlador_menu implements ActionListener {
         if (ae.getSource() == this.vm.jButton_Historial) {
 
             Ventana_Historial vh = new Ventana_Historial();
-            Controlador_Historial ch = new Controlador_Historial(this.j, vh);
-            vh.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
+            Controlador_Historial ch = new Controlador_Historial(this.jugador, vh);
+            vh.jLabel_LogAs.setText("LOG: " + this.jugador.getNombre_jugador());
             vh.setVisible(true);
             vm.dispose();
 

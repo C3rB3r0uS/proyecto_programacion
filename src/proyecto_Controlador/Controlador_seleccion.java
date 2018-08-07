@@ -24,10 +24,10 @@ import proyecto_Vista.Ventana_Seleccion;
 public class Controlador_seleccion implements ActionListener {
     
     Ventana_Seleccion vs;
-    Jugador j;
+    Jugador jugador;
     
-    Partida p;
-    Niveles n;
+    Partida partida;
+    Niveles nivel;
     int random;
     
     String modoSeleccionado;
@@ -38,7 +38,7 @@ public class Controlador_seleccion implements ActionListener {
     public Controlador_seleccion(Ventana_Seleccion vs, Jugador j){
         
         this.vs = vs;
-        this.j  = j;
+        this.jugador  = j;
         
         vs.jButton_Jugar.addActionListener(this);
         vs.jButton_Volver.addActionListener(this);
@@ -56,12 +56,12 @@ public class Controlador_seleccion implements ActionListener {
         
     }
 
-    public Jugador getJ() {
-        return j;
+    public Jugador getJugador() {
+        return jugador;
     }
 
-    public void setJ(Jugador j) {
-        this.j = j;
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
     }
     
     @Override
@@ -79,8 +79,8 @@ public class Controlador_seleccion implements ActionListener {
          if(ae.getSource() == this.vs.jButton_Volver){
              
              Ventana_Menu vm = new Ventana_Menu();
-             Controlador_menu cm = new Controlador_menu(vm,this.j);
-             vm.jLabel_LogAs.setText("LOG:" + this.j.getNombre_jugador());
+             Controlador_menu cm = new Controlador_menu(vm,this.jugador);
+             vm.jLabel_LogAs.setText("LOG:" + this.jugador.getNombre_jugador());
              vm.setVisible(true);
              vs.dispose();
              
@@ -99,12 +99,12 @@ public class Controlador_seleccion implements ActionListener {
                    
 //                        JOptionPane.showMessageDialog(null, "Modo seleccionado: " + modoSeleccionado + " dificultad seleccionada: " + dificultadSeleccionada);
                    
-                        this.p = new Partida (dificultadSeleccionada,this.getJ().getNombre_usuario(), this.getJ().getNombre_jugador());
-                        this.n = new Niveles (this.p.getCod_partida());
+                        this.partida = new Partida (dificultadSeleccionada,this.getJugador().getNombre_usuario(), this.getJugador().getNombre_jugador());
+                        this.nivel = new Niveles (this.partida.getCod_partida());
                                    
                         Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
-                        Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, j, p, n);
-                        vpn.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
+                        Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, jugador, partida, nivel);
+                        vpn.jLabel_LogAs.setText("LOG: " + this.jugador.getNombre_jugador());
                         vpn.setVisible(true);
                         vs.dispose();
                    

@@ -157,7 +157,7 @@ public class Ventana_Historial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTable Tabla;
     public javax.swing.JButton jButton_Cerrar;
-    private javax.swing.JButton jButton_Consultar;
+    public javax.swing.JButton jButton_Consultar;
     public javax.swing.JButton jButton_Volver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_Fondo;

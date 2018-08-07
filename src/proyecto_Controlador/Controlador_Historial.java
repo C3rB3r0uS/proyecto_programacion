@@ -8,6 +8,7 @@ package proyecto_Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import proyecto_Modelo.ClaseDAO;
 import proyecto_Modelo.Jugador;
 import proyecto_Vista.Ventana_Historial;
@@ -22,6 +23,7 @@ public class Controlador_Historial implements ActionListener {
     private Ventana_Historial vh;
 
     private ClaseDAO dao = new ClaseDAO();
+    DefaultTableModel modeloTabla;
 
     public Controlador_Historial(Jugador j, Ventana_Historial vh) {
 
@@ -30,6 +32,8 @@ public class Controlador_Historial implements ActionListener {
 
         this.vh.jButton_Cerrar.addActionListener(this);
         this.vh.jButton_Volver.addActionListener(this);
+        this.vh.jButton_Consultar.addActionListener(this);
+        this.vh.Tabla.setModel(modeloTabla);
 
     }
 
@@ -46,6 +50,11 @@ public class Controlador_Historial implements ActionListener {
 
             }
 
+        }
+        
+        if(ae.getSource() == this.vh.jButton_Consultar){
+            
+            
         }
 
     }

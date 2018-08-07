@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -261,6 +262,38 @@ public class ClaseDAO {
         }
 
         return codigo;
+        
+    }
+    
+    public String[] obtenerJugadores(){
+       
+         Connection accesoBD = conexion.getConexion();
+         ArrayList <String> jugadores = new ArrayList();
+         
+         try{
+             
+             Statement s = accesoBD.createStatement();
+             ResultSet rs = s.executeQuery("SELECT NOMBRE_JUGADOR, PUNTUACION FROM PARTIDA");
+             
+             while(rs.next()){
+                 
+                 
+                 
+             }
+             
+            
+             
+             
+         }catch(SQLException e){
+             
+             System.out.println("Excepción al obtener jugadores: " + e.getMessage());
+             
+         }
+         
+        
+        
+        return ;
+        
         
     }
     
