@@ -24,16 +24,14 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
     //IThe window
     private Ventana_Partida_normal vpn;
-    
+
     //Ignore these attributes
-    
     private Jugador j;
     private Partida p;
     private Niveles n;
     private Operaciones o;
-    
-    //
 
+    //
     private Timer t;
     private int inicio; // Start. Set as 59
 
@@ -99,7 +97,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
             codPartida = p.getCod_partida();
 
             t = new Timer(1000, new ActionListener() {
-                
+
                 int auxiliar = 0;
 
                 public void actionPerformed(ActionEvent e) {
@@ -110,57 +108,56 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                     vpn.jLabel_ContadorTiempo.setText(Integer.toString(inicio));
 
                     inicio--;
-                    
-                        // All these "if" are used to stop generating operations until the user answers  
 
-                                if(auxiliar == 0){
-                                    
-                                    o = new Operaciones (codNivel, codPartida);
-                                
-                                    operacionGenerada = o.generarOperacion(p.getModo_de_juego(), p.getDificultad(), n.getNro_nivel());
-    
-                                    resultadoCorrecto = o.getResultado(operacionGenerada);
-                                    
-                                    vpn.JLabel_Operacion.setText(operacionGenerada);
-                                    
-                                    auxiliar = auxiliar + 1;
+                    // All these "if" are used to stop generating operations until the user answers  
+                    if (auxiliar == 0) {
 
-                                }
-                                
-                                if(auxiliar == 1){
-                                    
-                                    if (ae.getSource() == vpn.jButton_Enter) {
+                        o = new Operaciones(codNivel, codPartida);
 
-                                        try {
+                        operacionGenerada = o.generarOperacion(p.getModo_de_juego(), p.getDificultad(), n.getNro_nivel());
 
-                                            respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
+                        resultadoCorrecto = o.getResultado(operacionGenerada);
 
-                                        } catch (NumberFormatException nfe) {
+                        vpn.JLabel_Operacion.setText(operacionGenerada);
 
-                                            vpn.jTextField_Respuesta.setText("");
-                                            fallos++;
-                                            vpn.jLabel_ContadorFallos.setText(fallos + "");
+                        auxiliar = auxiliar + 1;
 
-                                        }                   
+                    }
 
-                                        if (respuesta != resultadoCorrecto) {
+                    if (auxiliar == 1) {
 
-                                            fallos++;
-                                            vpn.jLabel_ContadorFallos.setText(fallos + "");
+                        if (ae.getSource() == vpn.jButton_Enter) {
 
-                                        }
-                                        
-                                           if(fallos == 3){
-                                            
-                                            fallos = 0;
-                                            auxiliar = 0;
-                                            vpn.jLabel_ContadorFallos.setText(fallos + "");
-                                            
-                                        }
+                            try {
 
-                                    }
-                                    
-                                }
+                                respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
+
+                            } catch (NumberFormatException nfe) {
+
+                                vpn.jTextField_Respuesta.setText("");
+                                fallos++;
+                                vpn.jLabel_ContadorFallos.setText(fallos + "");
+
+                            }
+
+                            if (respuesta != resultadoCorrecto) {
+
+                                fallos++;
+                                vpn.jLabel_ContadorFallos.setText(fallos + "");
+
+                            }
+
+                            if (fallos == 3) {
+
+                                fallos = 0;
+                                auxiliar = 0;
+                                vpn.jLabel_ContadorFallos.setText(fallos + "");
+
+                            }
+
+                        }
+
+                    }
                     if (inicio == -1) {
 
                         t.stop();
