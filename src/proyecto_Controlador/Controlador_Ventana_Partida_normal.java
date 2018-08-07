@@ -22,32 +22,30 @@ import proyecto_Vista.Ventana_Partida_normal;
  */
 public class Controlador_Ventana_Partida_normal implements ActionListener {
 
-    //IThe window
     private Ventana_Partida_normal vpn;
 
-    //Ignore these attributes
-    private Jugador j;
-    private Partida p;
-    private Niveles n;
-    private Operaciones o;
+    private Jugador jugador;
+    private Partida partida;
+    private Niveles nivel;
+    private Operaciones operaciones;
 
-    //
-    private Timer t;
-    private int inicio; // Start. Set as 59
+    private Timer timer;
+    private Timer genOpe;
+    private int inicio;
 
-    private int fallos; //fails
-    private String operacionGenerada; // generated operation
-    private int resultadoCorrecto; // correct answer
-    private int respuesta; // answer by the user
-    private int codNivel; // ignore this
-    private int codPartida; // ignore this
+    private int fallos;
+    private String operacionGenerada;
+    private int resultadoCorrecto;
+    private int respuesta;
+    private int codNivel;
+    private int codPartida;
 
     public Controlador_Ventana_Partida_normal(Ventana_Partida_normal vpn, Jugador j, Partida p, Niveles n) {
 
         this.vpn = vpn;
-        this.j = j;
-        this.p = p;
-        this.n = n;
+        this.jugador = j;
+        this.partida = p;
+        this.nivel = n;
         this.vpn.jButton_Start.addActionListener(this);
         this.vpn.jButton_Volver.addActionListener(this);
         this.vpn.jButton_Enter.addActionListener(this);
@@ -61,7 +59,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
         if (ae.getSource() == this.vpn.jButton_Cerrar) {
 
-            int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?"); // Close the app
+            int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
 
             if (respuesta == JOptionPane.YES_OPTION) {
                 System.exit(0);
@@ -70,13 +68,13 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
         if (ae.getSource() == this.vpn.jButton_Volver) {
 
-            int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea volver al menú?"); // Go back to a menu
+            int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea volver al menú?");
 
             if (respuesta == JOptionPane.YES_OPTION) {
 
                 Ventana_Menu vm = new Ventana_Menu();
-                Controlador_menu cm = new Controlador_menu(vm, j);
-                vm.jLabel_LogAs.setText("LOG: " + this.j.getNombre_jugador());
+                Controlador_menu cm = new Controlador_menu(vm, jugador);
+                vm.jLabel_LogAs.setText("LOG: " + this.jugador.getNombre_jugador());
                 vm.setVisible(true);
                 vpn.dispose();
 
@@ -84,21 +82,162 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
         }
 
+        if (ae.getSource() == this.vpn.jButton_Enter) {
+
+            if (timer.isRunning() == true) {
+                
+                int auxiliar = 0;
+                    int fallos = 0;
+                    int puntuacion = 0;
+                    String operacionGenerada = "";
+                    int resultadoCorrecto = 0;
+                    int respuesta = 0;
+
+                    int codNivel = nivel.getCod_nivel();
+                    int codPartida = partida.getCod_partida();
+
+                genOpe = new Timer(1000, new ActionListener() {
+
+                    int auxiliar = 0;
+                    int fallos = 0;
+                    int puntuacion = 0;
+                    String operacionGenerada = "";
+                    int resultadoCorrecto = 0;
+                    int respuesta = 0;
+
+                    int codNivel = nivel.getCod_nivel();
+                    int codPartida = partida.getCod_partida();
+
+                    public void actionPerformed(ActionEvent e) {
+                        
+                     if (auxiliar == 0) {
+
+                        operaciones = new Operaciones(codNivel, codPartida);
+
+                        operacionGenerada = operaciones.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), nivel.getNro_nivel());
+
+                        resultadoCorrecto = operaciones.getResultado(operacionGenerada);
+
+                        vpn.JLabel_Operacion.setText(operacionGenerada);
+
+                        auxiliar = auxiliar + 1;
+                        
+                        genOpe.stop();
+
+                    }
+                     
+                        if (auxiliar == 1) {
+
+                                try {
+
+                                    respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
+
+                                } catch (NumberFormatException nfe) {
+
+                                    vpn.jTextField_Respuesta.setText("");
+                                    fallos++;
+                                    vpn.jLabel_ContadorFallos.setText(fallos + "");
+
+                                }
+                                
+                                if (respuesta != resultadoCorrecto) {
+
+                                fallos++;
+                                vpn.jLabel_ContadorFallos.setText(fallos + "");
+
+                            }else{
+                                    
+                                    puntuacion++;
+                                    vpn.jLabel_ContadorPuntuacion.setText(puntuacion + "");
+                                    
+                                }
+
+                            if (fallos == 3) {
+
+                                fallos = 0;
+                                auxiliar = 0;
+                                vpn.jLabel_ContadorFallos.setText(fallos + "");
+                                genOpe.start();
+
+                            }
+             
+                        }
+                        
+                        if(timer.isRunning() == false){
+                            
+                            genOpe.stop();
+                        }
+                
+                    }
+     
+                });
+
+            }
+            
+            genOpe.start();
+
+        }
+
+//        fallos = 0;
+//            operacionGenerada = "";
+//            resultadoCorrecto = 0;
+//            respuesta = 0;
+//
+//            codNivel = nivel.getCod_nivel();
+//            codPartida = partida.getCod_partida();
+//if (auxiliar == 0) {
+//
+//                        operaciones = new Operaciones(codNivel, codPartida);
+//
+//                        operacionGenerada = operaciones.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), nivel.getNro_nivel());
+//
+//                        resultadoCorrecto = operaciones.getResultado(operacionGenerada);
+//
+//                        vpn.JLabel_Operacion.setText(operacionGenerada);
+//
+//                        auxiliar = auxiliar + 1;
+//
+//                    }
+//
+//                    if (auxiliar == 1) {
+//
+//                        if (ae.getSource() == vpn.jButton_Enter) {
+//
+//                            try {
+//
+//                                respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
+//
+//                            } catch (NumberFormatException nfe) {
+//
+//                                vpn.jTextField_Respuesta.setText("");
+//                                fallos++;
+//                                vpn.jLabel_ContadorFallos.setText(fallos + "");
+//
+//                            }
+//
+//                            if (respuesta != resultadoCorrecto) {
+//
+//                                fallos++;
+//                                vpn.jLabel_ContadorFallos.setText(fallos + "");
+//
+//                            }
+//
+//                            if (fallos == 3) {
+//
+//                                fallos = 0;
+//                                auxiliar = 0;
+//                                vpn.jLabel_ContadorFallos.setText(fallos + "");
+//
+//                            }
+//
+//                        }
+//
+//                    }
         if (ae.getSource() == this.vpn.jButton_Start) {
 
             inicio = 59;
 
-            fallos = 0;
-            operacionGenerada = "";
-            resultadoCorrecto = 0;
-            respuesta = 0;
-
-            codNivel = n.getCod_nivel();
-            codPartida = p.getCod_partida();
-
-            t = new Timer(1000, new ActionListener() {
-
-                int auxiliar = 0;
+            timer = new Timer(1000, new ActionListener() {
 
                 public void actionPerformed(ActionEvent e) {
 
@@ -109,58 +248,9 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
                     inicio--;
 
-                    // All these "if" are used to stop generating operations until the user answers  
-                    if (auxiliar == 0) {
-
-                        o = new Operaciones(codNivel, codPartida);
-
-                        operacionGenerada = o.generarOperacion(p.getModo_de_juego(), p.getDificultad(), n.getNro_nivel());
-
-                        resultadoCorrecto = o.getResultado(operacionGenerada);
-
-                        vpn.JLabel_Operacion.setText(operacionGenerada);
-
-                        auxiliar = auxiliar + 1;
-
-                    }
-
-                    if (auxiliar == 1) {
-
-                        if (ae.getSource() == vpn.jButton_Enter) {
-
-                            try {
-
-                                respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
-
-                            } catch (NumberFormatException nfe) {
-
-                                vpn.jTextField_Respuesta.setText("");
-                                fallos++;
-                                vpn.jLabel_ContadorFallos.setText(fallos + "");
-
-                            }
-
-                            if (respuesta != resultadoCorrecto) {
-
-                                fallos++;
-                                vpn.jLabel_ContadorFallos.setText(fallos + "");
-
-                            }
-
-                            if (fallos == 3) {
-
-                                fallos = 0;
-                                auxiliar = 0;
-                                vpn.jLabel_ContadorFallos.setText(fallos + "");
-
-                            }
-
-                        }
-
-                    }
                     if (inicio == -1) {
 
-                        t.stop();
+                        timer.stop();
 
                     }
 
@@ -168,7 +258,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
             });
 
-            t.start();
+            timer.start();
 
         }
 

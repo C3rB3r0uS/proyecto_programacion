@@ -16,39 +16,38 @@ import proyecto_Vista.Ventana_Historial;
  *
  * @author Equipo
  */
-public class Controlador_Historial implements ActionListener{
-    
-    Jugador j;
-    Ventana_Historial vh;
-    
-    ClaseDAO d = new ClaseDAO();
+public class Controlador_Historial implements ActionListener {
+
+    private Jugador jugador;
+    private Ventana_Historial vh;
+
+    private ClaseDAO dao = new ClaseDAO();
 
     public Controlador_Historial(Jugador j, Ventana_Historial vh) {
-        
-        this.j = j;
+
+        this.jugador = j;
         this.vh = vh;
-        
+
         this.vh.jButton_Cerrar.addActionListener(this);
         this.vh.jButton_Volver.addActionListener(this);
-        
+
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
-           if(ae.getSource() == this.vh.jButton_Cerrar){
-            
-             int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
-           
-                if(respuesta == JOptionPane.YES_OPTION){
-                    
-                    System.exit(0);
-                    
-                        }
-                
-                }
-        
-        
+
+        if (ae.getSource() == this.vh.jButton_Cerrar) {
+
+            int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea cerrar el programa?");
+
+            if (respuesta == JOptionPane.YES_OPTION) {
+
+                System.exit(0);
+
+            }
+
+        }
+
     }
-    
+
 }

@@ -15,29 +15,27 @@ import proyecto_Vista.Ventana_Ranking;
  *
  * @author Equipo
  */
-public class Controlador_Ranking implements ActionListener{
-    
-    Jugador j;
+public class Controlador_Ranking implements ActionListener {
+
+    Jugador jugador;
     Ventana_Ranking vr;
-    
-    ClaseDAO d = new ClaseDAO ();
+
+    ClaseDAO d = new ClaseDAO();
 
     public Controlador_Ranking(Jugador j, Ventana_Ranking vr) {
-        
-        this.j = j;
+
+        this.jugador = j;
         this.vr = vr;
-        
+
         this.vr.jButton_Cerrar.addActionListener(this);
         this.vr.jButton_Volver.addActionListener(this);
         this.vr.jButton_Consultar.addActionListener(this);
-        
+
     }
-    
-    
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-       
+
     }
-    
+
 }
