@@ -29,9 +29,10 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     Si el usuario falla la respuesta 3 veces, una nueva operación matemática es generada y mostrada. El contador de fallos se reinicia a 0.
     Por cada acierto, puntuación se incrementa en 1 y es mostrado en la JLABEL correspondiente.
     
-    Por cada operación generada se deberá de crear un objeto OPERACIONES ). Será necesario crear método en claseDAO.
+    Por cada operación generada se deberá de crear un objeto OPERACION. 
     Éste objeto contendrá información sobre esta operación y los datos que almacene serán utilizados como argumento para insertar esta
-    esta información en una bbdd. También contendrá si la operación ha sido resuelta o no (utilizando para ello un boolean).
+    esta información en la tabla "OPERACIONES" de la bbdd. 
+    Uno de esos atributos (String estado) contendrá si la operación ha sido resuelta o no (utilizando para ello un String).
     
      */
     private Ventana_Partida_normal vpn;
