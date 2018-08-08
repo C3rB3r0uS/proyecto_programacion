@@ -132,10 +132,9 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                     this.vpn.jTextField_Respuesta.setText("");
 
                     if (fallos == 3) {
-                        
+
                         //REVISAR
 //                        dao.insertarOperaciones(dao.consultarCodigoOperaciones(), nivel.getCod_nivel(), partida.getCod_partida(), operacionGenerada, resultadoCorrecto, "NO RESUELTA");
-                        
                         operacionGenerada = operacion.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), 1);
                         resultadoCorrecto = operacion.getResultado(operacionGenerada);
                         this.vpn.JLabel_Operacion.setText(operacionGenerada);
@@ -151,10 +150,9 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                     fallos = 0;
                     this.vpn.jLabel_ContadorPuntuacion.setText(puntuacion + "");
                     this.vpn.jLabel_ContadorFallos.setText(fallos + "");
-                    
+
                     // REVISAR
 //                    dao.insertarOperaciones(dao.consultarCodigoOperaciones(), nivel.getCod_nivel(), partida.getCod_partida(), operacionGenerada, resultadoCorrecto, "RESUELTA");
-
                     operacionGenerada = operacion.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), 1);
                     resultadoCorrecto = operacion.getResultado(operacionGenerada);
                     this.vpn.JLabel_Operacion.setText(operacionGenerada);
@@ -171,7 +169,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
             operacion = new Operacion(1, 1);
             vpn.JLabel_Operacion.setText(operacion.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), 1));
-     
+
             inicio = 59;
 
             timer = new Timer(1000, new ActionListener() {
@@ -191,8 +189,8 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                         JOptionPane.showMessageDialog(null, "Insertando usuario con NombreUsuario " + jugador.getNombre_usuario() + " y NombreJugador " + jugador.getNombre_jugador());
                         dao.insertarPartida(partida.getCod_partida(), partida.getModo_de_juego(), partida.getDificultad(), partida.getFecha_realizacion(), Integer.parseInt(vpn.jLabel_ContadorPuntuacion.getText()), jugador.getNombre_usuario(), jugador.getNombre_jugador());
 //                        dao.insertarNiveles(nivel.getCod_nivel(), partida.getCod_partida(), nivel.getTipo(), nivel.getNro_nivel(), nivel.getEstado());
-                        
-                        timer.stop();    
+
+                        timer.stop();
 
                     }
 

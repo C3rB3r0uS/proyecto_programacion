@@ -261,9 +261,8 @@ public class ClaseDAO {
         return codigo;
 
     }
-    
-    // Método usado por ranking
 
+    // Método usado por ranking
     public ArrayList<Partida> obtenerPuntuaciones(String modo, String dificultad) {
 
         Connection accesoBD = conexion.getConexion();
@@ -311,9 +310,8 @@ public class ClaseDAO {
         return partidas;
 
     }
-    
-    // Método usado por historial
 
+    // Método usado por historial
     public ArrayList<Partida> obtenerPartidas(String nombreUsuario, String nombreJugador) {
 
         Connection accesoBD = conexion.getConexion();

@@ -12,23 +12,23 @@ import java.util.Random;
  * @author alumno
  */
 public class Nivel {
-    
+
     private int cod_nivel;
     private int cod_partida;
     private String tipo;
     private int nro_nivel;
     private String estado;
-    
+
     ClaseDAO dao = new ClaseDAO();
 
     public Nivel(int cod_partida) {
-       
+
         this.cod_nivel = dao.ConsultarCodigoNivel();
         this.cod_partida = cod_partida;
         this.tipo = "NORMAL";
         this.nro_nivel = 1;
         this.estado = "SUPERADO";
-       
+
     }
 
     public int getCod_nivel() {
@@ -70,50 +70,50 @@ public class Nivel {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-        @Override
+
+    @Override
     public String toString() {
         return "Niveles{" + "cod_nivel=" + cod_nivel + ", cod_partida=" + cod_partida + ", tipo=" + tipo + ", nro_nivel=" + nro_nivel + ", estado=" + estado + '}';
     }
- 
-    public int getTiempo(int nivel){
-        
-       int tiempo = 0;
-       
-       if(nivel == 1 || nivel%3 == 1){
-           
-           tiempo = 60;
-           
-       }else if (nivel == 2 || nivel%3 == 2){
-           
-           tiempo = 55;
-           
-       }else{
-           
-           tiempo = 50;
-           
-       }
-        
+
+    public int getTiempo(int nivel) {
+
+        int tiempo = 0;
+
+        if (nivel == 1 || nivel % 3 == 1) {
+
+            tiempo = 60;
+
+        } else if (nivel == 2 || nivel % 3 == 2) {
+
+            tiempo = 55;
+
+        } else {
+
+            tiempo = 50;
+
+        }
+
         return tiempo;
     }
 
-    public String aleatorizadorTipoNivel (){
-        
+    public String aleatorizadorTipoNivel() {
+
         Random aleatorio = new Random();
-        
-        int num = aleatorio.nextInt(10-1)+1;
-        
-        if(num <= 2){
-            
+
+        int num = aleatorio.nextInt(10 - 1) + 1;
+
+        if (num <= 2) {
+
             this.tipo = "MADNESS";
-            
-        }else{
-            
+
+        } else {
+
             this.tipo = "NORMAL";
-            
+
         }
-        
+
         return this.tipo;
     }
-    
+
 }

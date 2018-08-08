@@ -46,23 +46,23 @@ public class Controlador_Ranking implements ActionListener {
         this.vr.jComboBox_Dificultad.addItem("DIFICIL");
 
     }
-    
-    public void actualizarTabla(String modo, String dificultad){
-        
+
+    public void actualizarTabla(String modo, String dificultad) {
+
         modeloTabla.setRowCount(0);
-        
-        ArrayList <Partida> partidas = dao.obtenerPuntuaciones(modo, dificultad);
-        String [] fila;
-        
+
+        ArrayList<Partida> partidas = dao.obtenerPuntuaciones(modo, dificultad);
+        String[] fila;
+
         for (Partida p : partidas) {
-            
-            fila = new String [2];
+
+            fila = new String[2];
             fila[0] = p.getNombre_jugador();
             fila[1] = Integer.toString(p.getPuntuacion());
             modeloTabla.addRow(fila);
-            
+
         }
-        
+
     }
 
     @Override
@@ -86,17 +86,16 @@ public class Controlador_Ranking implements ActionListener {
             vr.dispose();
 
         }
-        
-        if(ae.getSource() == this.vr.jButton_Consultar){
-            
+
+        if (ae.getSource() == this.vr.jButton_Consultar) {
+
             String modo = this.vr.jComboBox_Modo.getSelectedItem().toString();
             String dificultad = this.vr.jComboBox_Dificultad.getSelectedItem().toString();
-            
-            actualizarTabla(modo,dificultad);
-            
-            
+
+            actualizarTabla(modo, dificultad);
+
         }
- 
+
     }
 
 }

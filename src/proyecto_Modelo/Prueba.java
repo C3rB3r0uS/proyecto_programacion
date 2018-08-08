@@ -23,9 +23,9 @@ import proyecto_Vista.Ventana_Seleccion;
  * @author alumno
  */
 public class Prueba {
-    
-    public static void main(String[] args) throws ScriptException {     
-              
+
+    public static void main(String[] args) throws ScriptException {
+
 //        System.out.println("1. " + op.valorMaximo("STRINGS", "FACIL", 1)); // 10
 //        System.out.println("2. " + op.valorMaximo("STRINGS", "FACIL", 4)); // 100
 //        System.out.println("3. " + op.valorMaximo("STRINGS", "NORMAL", 4)); //1000
@@ -35,30 +35,21 @@ public class Prueba {
 //        System.out.println("7. " + op.valorMaximo("ARCADE", "NORMAL", 1)); // 100
 //        System.out.println("8. " + op.valorMaximo("ARCADE", "NORMAL", 4)); //1000
 //        System.out.println("9. " + op.valorMaximo("ARCADE", "FACIL", 7)); // 10000
-       
-
         //*** DIFICULTAD FACIL ***
-
 //        System.out.println("1. " + op.generarOperacion("ARCADE", "FACIL", 1));
 //        System.out.println("2. " + op.generarOperacion("ARCADE", "FACIL", 4));
 //        System.out.println("3. " + op.generarOperacion("TIME TRIAL", "FACIL", 1));
 //        System.out.println("4. " + op.generarOperacion("TIME TRIAL", "FACIL", 4));
 //        System.out.println(op.generarOperacion("STRINGS", "FACIL", 1));
 //        System.out.println(op.generarOperacion("STRINGS", "FACIL", 4));
-        
         //*** DIFICULTAD MEDIA ***
-        
 //        System.out.println("1. " + op.generarOperacion("ARCADE", "NORMAL", 1));
 //        System.out.println("2. " + op.generarOperacion("TIME TRIAL", "NORMAL", 4));
 //        System.out.println(op.generarOperacion("STRINGS", "DIFICIL", 1));
 //        System.out.println(op.generarOperacion("STRINGS", "NORMAL", 4));
-
         // *** DIFICULTAD DIFICIL ***
-        
 //                System.out.println("3. " + op.generarOperacion("STRINGS", "DIFICIL", 1));
 //                System.out.println("3. " + op.generarOperacion("STRINGS", "DIFICIL", 4));
-              
-
         /*Case 3: division
         Entra al do-while
         java.lang.Double cannot be cast to java.lang.Integer
@@ -66,27 +57,19 @@ public class Prueba {
         El resultado es:0
         El resultado es: 0
         1. 99 / 5*/
-        
 //        int i = 0;
-    
         // IMPRIMTE ENTRE 1 Y 9
-        
 //        do{
 //         int operando2 = (int)(Math.random()*9)+1;
 //         System.out.println("operando2 = " + operando2);
 //         i++;
 //        }while(i < 50);
-
-
         //IMPRIME ENTRE 2 Y 10
-
 //        do{
 //         int operando2 = (int)(Math.random()*9)+2;
 //         System.out.println("operando2 = " + operando2);
 //         i++;
 //        }while(i < 50);
-
-
 //        int maximo = 1000;
 //        int aux = 0;
 //        String operacion = "";
@@ -102,16 +85,13 @@ public class Prueba {
 //        
 //        System.out.println("aux = " + aux);
 //        System.out.println(operacion);
-        
-
         ClaseDAO d = new ClaseDAO();
 //        d.insertarPartida(1, "TIME TRIAL", "FACIL", "9/8/17",8, "HOLAATODOS", "HOLAATODOS");
 //  
 //        System.out.println("El siguiente codpartida es: " + d.ConsultarCodigoPartida());
 //         d.insertarNiveles(1, 1, "NORMAL", 1, "SUPERADO");
-            d.insertarOperaciones(1, 1, 1, "1+2", 3, "RESUELTA");
-        
-        
+        d.insertarOperaciones(1, 1, 1, "1+2", 3, "RESUELTA");
+
 //        System.out.println("Código de partida: " + d.ConsultarCodigoPartida());
 //        System.out.println("Código de nivel: " + d.ConsultarCodigoNiveles());
 //        System.out.println("Código de operación: " + d.consultarCodigoOperaciones());
@@ -120,14 +100,10 @@ public class Prueba {
 //        
 //        System.out.println("Resultado disponibilidad de nombre usuario: " + d.consultarDisponibilidadNombreUsuario("PEDROB"));
 //         System.out.println("Resultado disponibilidad de nombre ingame: " + d.consultarDisponibilidadNombreIngame("C3RB3R0US"));
-  
-        
 //        boolean respuesta = d.ConsultarUserPass("PEDROB", "A4B7C899091");
 //        System.out.println("La respuesta es: " + respuesta);
-
 //            Jugador j = d.obtenerDatosJugador("PEDROB", "A4B7C899091");
 //            System.out.println(j);
-
 //        LocalDate fechaActual = LocalDate.now();
 //        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
 //        
@@ -141,19 +117,15 @@ public class Prueba {
 //                System.out.println("random = " + random);
 //            
 //        }
-        
 //        Ventana_Seleccion vs = new Ventana_Seleccion ();
 //        Controlador_seleccion cs = new Controlador_seleccion (vs, j);
 //        vs.setVisible(true);
-
 //    Ventana_Creacion_Cuenta vcc = new Ventana_Creacion_Cuenta();
 //    Controlador_creacion_cuenta crc = new Controlador_creacion_cuenta(vcc);
 //    vcc.setVisible(true);
-
 //        Ventana_Log_in vli = new Ventana_Log_in();
 //        Controlador_Log_In cli = new Controlador_Log_In(vli);
 //        vli.setVisible(true);
-
 //    Partida p = new Partida ("TIME TRIAL","FACIL","PEDROB", "C3RB3R0US");
 //        System.out.println("Cod partida: " + p.getCod_partida());
 //        System.out.println("Modo de juego: " + p.getModo_de_juego());
@@ -162,7 +134,6 @@ public class Prueba {
 //        System.out.println("Puntuacion: " + p.getPuntuacion());
 //        System.out.println("Nombre usuario: " + p.getNombre_usuario());
 //        System.out.println("Nombre jugador: " + p.getNombre_jugador());
-
 //    Operaciones o = new Operaciones (1,1);
 //    System.out.println("Tiempo nivel 1: " + o.getTiempoMaximo(1));
 //    System.out.println("Tiempo nivel 2: " + o.getTiempoMaximo(2));
@@ -173,7 +144,6 @@ public class Prueba {
 //    System.out.println("Tiempo nivel 6: " + o.getTiempoMaximo(6));
 //    System.out.println("Tiempo nivel 7: " + o.getTiempoMaximo(7));
 //        System.out.println("Tiempo nivel 8: " + o.getTiempoMaximo(8));
-
 //        String a = "1234";
 //        int b = Integer.parseInt(a);
 //        
@@ -182,7 +152,6 @@ public class Prueba {
 //    
 //        System.out.println("El valor de b es: " + b);
 //        System.out.println("El valor de g es: " + g);
-
 //    int inicio = 60;
 //        System.out.println("inicio antes: " + inicio);
 //        
@@ -193,7 +162,6 @@ public class Prueba {
 //        }
 //        
 //        System.out.println("inicio después: " + inicio);
-
 //    Partida p = new Partida ("NORMAL", "PEDROB","PEDROB");
 //    
 ////        System.out.println(p.toString());
@@ -204,7 +172,6 @@ public class Prueba {
 //      Operacion o = new Operacion (1,1);
 //      
 //        System.out.println(o.generarOperacion("TIME TRIAL", "NORMAL", 1));
-        
     }
-    
+
 }

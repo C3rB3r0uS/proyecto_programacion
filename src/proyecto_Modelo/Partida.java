@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
  * @author alumno
  */
 public class Partida {
-    
+
     private static int cod_partida;
     private String modo_de_juego;
     private String dificultad;
@@ -21,24 +21,24 @@ public class Partida {
     private int puntuacion;
     private String nombre_usuario;
     private String nombre_jugador;
-    
+
     ClaseDAO dao = new ClaseDAO();
     LocalDate fechaActual;
 
     public Partida(String dificultad, String nombre_usuario, String nombre_jugador) {
-        
+
         this.cod_partida = dao.ConsultarCodigoPartida();
         this.modo_de_juego = "TIME TRIAL";
         this.dificultad = dificultad;
-        
+
         LocalDate fechaActual = LocalDate.now();
-        DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.fecha_realizacion = (fechaActual).format(dtf);
-        
+
         this.puntuacion = 0;
         this.nombre_usuario = nombre_usuario;
         this.nombre_jugador = nombre_jugador;
-      
+
     }
 
     public String getFecha_realizacion() {
@@ -48,7 +48,7 @@ public class Partida {
     public void setFecha_realizacion(String fecha_realizacion) {
         this.fecha_realizacion = fecha_realizacion;
     }
-    
+
     public int getCod_partida() {
         return cod_partida;
     }
@@ -72,7 +72,7 @@ public class Partida {
     public void setDificultad(String dificultad) {
         this.dificultad = dificultad;
     }
-    
+
     public int getPuntuacion() {
         return puntuacion;
     }
@@ -102,6 +102,4 @@ public class Partida {
         return "Partida{" + "modo_de_juego=" + modo_de_juego + ", dificultad=" + dificultad + ", fecha_realizacion=" + fecha_realizacion + ", puntuacion=" + puntuacion + ", nombre_usuario=" + nombre_usuario + ", nombre_jugador=" + nombre_jugador + ", fechaActual=" + fechaActual + '}';
     }
 
-    
-    
 }

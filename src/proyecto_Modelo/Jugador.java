@@ -10,7 +10,7 @@ package proyecto_Modelo;
  * @author alumno
  */
 public class Jugador {
-    
+
     private String nombre_usuario;
     private String nombre_jugador;
     private String contrasenia;
@@ -18,13 +18,13 @@ public class Jugador {
     private String pais;
 
     public Jugador(String nombre_usuario, String nombre_jugador, String contrasenia, String nom_apellidos, String pais) {
-        
+
         this.nombre_usuario = nombre_usuario;
         this.nombre_jugador = nombre_jugador;
         this.contrasenia = contrasenia;
         this.nom_apellidos = nom_apellidos;
         this.pais = pais;
-        
+
     }
 
     public String getNombre_usuario() {
@@ -71,5 +71,5 @@ public class Jugador {
     public String toString() {
         return "Jugador{" + "nombre_usuario=" + nombre_usuario + ", nombre_jugador=" + nombre_jugador + ", contrasenia=" + contrasenia + ", nom_apellidos=" + nom_apellidos + ", pais=" + pais + '}';
     }
-    
+
 }

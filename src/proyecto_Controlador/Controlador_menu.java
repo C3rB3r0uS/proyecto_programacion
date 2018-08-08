@@ -20,10 +20,10 @@ import proyecto_Vista.Ventana_Seleccion;
  * @author Equipo
  */
 public class Controlador_menu implements ActionListener {
-    
+
     Ventana_Menu vm;
     Jugador jugador;
-    
+
     public Controlador_menu(Ventana_Menu vm, Jugador j) {
 
         this.vm = vm;
@@ -71,7 +71,7 @@ public class Controlador_menu implements ActionListener {
         if (ae.getSource() == this.vm.jButton_Ranking) {
 
             Ventana_Ranking vr = new Ventana_Ranking();
-            Controlador_Ranking cr = new Controlador_Ranking(this.jugador,vr);
+            Controlador_Ranking cr = new Controlador_Ranking(this.jugador, vr);
             vr.jLabel_LogAs.setText("LOG: " + this.jugador.getNombre_jugador());
             vr.setVisible(true);
             vm.dispose();
@@ -94,5 +94,5 @@ public class Controlador_menu implements ActionListener {
         }
 
     }
-    
+
 }

@@ -45,27 +45,27 @@ public class Controlador_Historial implements ActionListener {
         this.vh.Tabla.setModel(modeloTabla);
 
     }
-    
-    public void actualizarTabla(String nombreUsuario, String nombreJugador){
-        
+
+    public void actualizarTabla(String nombreUsuario, String nombreJugador) {
+
         modeloTabla.setRowCount(0);
-        
-        ArrayList <Partida> partidas = dao.obtenerPartidas(this.jugador.getNombre_usuario(), this.jugador.getNombre_jugador());
-        String [] fila;
-        
+
+        ArrayList<Partida> partidas = dao.obtenerPartidas(this.jugador.getNombre_usuario(), this.jugador.getNombre_jugador());
+        String[] fila;
+
         for (Partida p : partidas) {
-            
-            fila = new String [4];
+
+            fila = new String[4];
 //            fila[0] = p.getCod_partida() + "";
             fila[0] = p.getModo_de_juego();
             fila[1] = p.getDificultad();
             fila[2] = p.getFecha_realizacion();
             fila[3] = p.getPuntuacion() + "";
-            
+
             modeloTabla.addRow(fila);
-            
+
         }
-        
+
     }
 
     @Override
@@ -82,8 +82,8 @@ public class Controlador_Historial implements ActionListener {
             }
 
         }
-        
-         if (ae.getSource() == this.vh.jButton_Volver) {
+
+        if (ae.getSource() == this.vh.jButton_Volver) {
 
             Ventana_Menu vm = new Ventana_Menu();
             Controlador_menu cm = new Controlador_menu(vm, jugador);
@@ -92,14 +92,14 @@ public class Controlador_Historial implements ActionListener {
             vh.dispose();
 
         }
-        
-        if(ae.getSource() == this.vh.jButton_Consultar){
-            
+
+        if (ae.getSource() == this.vh.jButton_Consultar) {
+
             String nombreUsuario = this.jugador.getNombre_usuario();
             String nombreJugador = this.jugador.getNombre_jugador();
-            
+
             actualizarTabla(nombreUsuario, nombreJugador);
-            
+
         }
 
     }
