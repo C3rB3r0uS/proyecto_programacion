@@ -14,7 +14,7 @@ import javax.script.ScriptException;
  *
  * @author alumno
  */
-public class Operaciones {
+public class Operacion {
     
     private int cod_operacion;
     private int cod_nivel;
@@ -25,7 +25,7 @@ public class Operaciones {
     
     ClaseDAO d = new ClaseDAO();
 
-    public Operaciones(int cod_nivel, int cod_partida) {
+    public Operacion(int cod_nivel, int cod_partida) {
         
         this.cod_operacion = d.consultarCodigoOperaciones();
         this.cod_nivel = cod_nivel;

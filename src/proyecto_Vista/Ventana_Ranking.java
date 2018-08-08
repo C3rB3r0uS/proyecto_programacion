@@ -68,7 +68,7 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox_Dificultad, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 300, 40));
 
-        jButton_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Icon.png"))); // NOI18N
+        jButton_Cerrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Equipo\\Documents\\NetBeansProjects\\proyecto_programacion\\src\\imagenes\\Icon.png")); // NOI18N
         jButton_Cerrar.setToolTipText("Cierra la aplicación ");
         jButton_Cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,15 +82,15 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         });
         getContentPane().add(jButton_Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 20));
 
-        jButton_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_consultar.png"))); // NOI18N
-        getContentPane().add(jButton_Consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 600, 240, 75));
+        jButton_Consultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Equipo\\Documents\\NetBeansProjects\\proyecto_programacion\\src\\imagenes\\boton_consultar.png")); // NOI18N
+        getContentPane().add(jButton_Consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 600, 240, 75));
 
         jLabel_Ventana_Actual.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
         jLabel_Ventana_Actual.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Ventana_Actual.setText("RANDOM.MATHS/RANKING");
         getContentPane().add(jLabel_Ventana_Actual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, -1));
 
-        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_volver.png"))); // NOI18N
+        jButton_Volver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Equipo\\Documents\\NetBeansProjects\\proyecto_programacion\\src\\imagenes\\boton_volver.png")); // NOI18N
         jButton_Volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_VolverActionPerformed(evt);
@@ -103,6 +103,7 @@ public class Ventana_Ranking extends javax.swing.JFrame {
         jLabel_LogAs.setText("LOG: ");
         getContentPane().add(jLabel_LogAs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, 460, -1));
 
+        Tabla_Ranking.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         Tabla_Ranking.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

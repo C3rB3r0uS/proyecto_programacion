@@ -71,6 +71,8 @@ public class Controlador_menu implements ActionListener {
         if (ae.getSource() == this.vm.jButton_Ranking) {
 
             Ventana_Ranking vr = new Ventana_Ranking();
+            Controlador_Ranking cr = new Controlador_Ranking(this.jugador,vr);
+            vr.jLabel_LogAs.setText("LOG: " + this.jugador.getNombre_jugador());
             vr.setVisible(true);
             vm.dispose();
 

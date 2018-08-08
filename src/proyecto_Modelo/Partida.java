@@ -23,8 +23,7 @@ public class Partida {
     private String nombre_jugador;
     
     ClaseDAO d = new ClaseDAO();
-     LocalDate fechaActual;
-//     DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    LocalDate fechaActual;
 
     public Partida(String dificultad, String nombre_usuario, String nombre_jugador) {
         
@@ -32,10 +31,9 @@ public class Partida {
         this.modo_de_juego = "TIME TRIAL";
         this.dificultad = dificultad;
         
-         LocalDate fechaActual = LocalDate.now();
+        LocalDate fechaActual = LocalDate.now();
         DateTimeFormatter dtf =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.fecha_realizacion = (fechaActual).format(dtf);
-        
         
         this.puntuacion = 0;
         this.nombre_usuario = nombre_usuario;

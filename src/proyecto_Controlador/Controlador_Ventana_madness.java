@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import proyecto_Modelo.Jugador;
-import proyecto_Modelo.Niveles;
-import proyecto_Modelo.Operaciones;
+import proyecto_Modelo.Nivel;
+import proyecto_Modelo.Operacion;
 import proyecto_Modelo.Partida;
 import proyecto_Vista.Ventana_Menu;
 import proyecto_Vista.Ventana_Partida_madness;
@@ -28,13 +28,13 @@ public class Controlador_Ventana_madness implements ActionListener {
     
     Jugador j;
     Partida p;
-    Niveles n;
-    Operaciones o;
+    Nivel n;
+    Operacion o;
     
     Timer t;
     int inicio;
     
-    public Controlador_Ventana_madness (Ventana_Partida_madness vpm, Jugador j, Partida p, Niveles n, Operaciones o){
+    public Controlador_Ventana_madness (Ventana_Partida_madness vpm, Jugador j, Partida p, Nivel n, Operacion o){
         
         this.vpm = vpm;
         this.j = j;

@@ -105,6 +105,9 @@ public class Prueba {
         
 
         ClaseDAO d = new ClaseDAO();
+        d.insertarPartida(2, "TIME TRIAL", "FACIL", "9/8/17", "PEDROB", "C3RB3R0US");
+        
+        
 //        System.out.println("Código de partida: " + d.ConsultarCodigoPartida());
 //        System.out.println("Código de nivel: " + d.ConsultarCodigoNiveles());
 //        System.out.println("Código de operación: " + d.consultarCodigoOperaciones());
@@ -187,16 +190,16 @@ public class Prueba {
 //        
 //        System.out.println("inicio después: " + inicio);
 
-    Partida p = new Partida ("NORMAL", "PEDROB","PEDROB");
-    
-//        System.out.println(p.toString());
-
-        
-      Niveles n = new Niveles (1);
-      
-      Operaciones o = new Operaciones (1,1);
-      
-        System.out.println(o.generarOperacion("TIME TRIAL", "NORMAL", 1));
+//    Partida p = new Partida ("NORMAL", "PEDROB","PEDROB");
+//    
+////        System.out.println(p.toString());
+//
+//        
+//      Nivel n = new Nivel (1);
+//      
+//      Operacion o = new Operacion (1,1);
+//      
+//        System.out.println(o.generarOperacion("TIME TRIAL", "NORMAL", 1));
         
     }
     

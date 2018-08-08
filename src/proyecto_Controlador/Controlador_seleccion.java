@@ -9,8 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import proyecto_Modelo.Jugador;
-import proyecto_Modelo.Niveles;
-import proyecto_Modelo.Operaciones;
+import proyecto_Modelo.Nivel;
+import proyecto_Modelo.Operacion;
 import proyecto_Modelo.Partida;
 import proyecto_Vista.Ventana_Menu;
 import proyecto_Vista.Ventana_Partida_madness;
@@ -27,7 +27,7 @@ public class Controlador_seleccion implements ActionListener {
     Jugador jugador;
     
     Partida partida;
-    Niveles nivel;
+    Nivel nivel;
     int random;
     
     String modoSeleccionado;
@@ -100,7 +100,7 @@ public class Controlador_seleccion implements ActionListener {
 //                        JOptionPane.showMessageDialog(null, "Modo seleccionado: " + modoSeleccionado + " dificultad seleccionada: " + dificultadSeleccionada);
                    
                         this.partida = new Partida (dificultadSeleccionada,this.getJugador().getNombre_usuario(), this.getJugador().getNombre_jugador());
-                        this.nivel = new Niveles (this.partida.getCod_partida());
+                        this.nivel = new Nivel (this.partida.getCod_partida());
                                    
                         Ventana_Partida_normal vpn = new Ventana_Partida_normal ();
                         Controlador_Ventana_Partida_normal cvpn = new Controlador_Ventana_Partida_normal(vpn, jugador, partida, nivel);

@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author alumno
  */
-public class Niveles {
+public class Nivel {
     
     private int cod_nivel;
     private int cod_partida;
@@ -21,7 +21,7 @@ public class Niveles {
     
     ClaseDAO d = new ClaseDAO();
 
-    public Niveles(int cod_partida) {
+    public Nivel(int cod_partida) {
        
         this.cod_nivel = d.ConsultarCodigoNiveles();
         this.cod_partida = cod_partida;

@@ -102,7 +102,7 @@
     <Component class="javax.swing.JButton" name="jButton_Cerrar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/Icon.png"/>
+          <Image iconType="2" name="C:\Users\Equipo\Documents\NetBeansProjects\proyecto_programacion\src\imagenes\Icon.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Cierra la aplicaci&#xf3;n "/>
       </Properties>
@@ -122,7 +122,7 @@
     <Component class="javax.swing.JButton" name="jButton_Consultar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/boton_consultar.png"/>
+          <Image iconType="2" name="C:\Users\Equipo\Documents\NetBeansProjects\proyecto_programacion\src\imagenes\boton_consultar.png"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -130,7 +130,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="250" y="600" width="240" height="75"/>
+          <AbsoluteConstraints x="220" y="600" width="240" height="75"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -153,7 +153,7 @@
     <Component class="javax.swing.JButton" name="jButton_Volver">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/boton_volver.png"/>
+          <Image iconType="2" name="C:\Users\Equipo\Documents\NetBeansProjects\proyecto_programacion\src\imagenes\boton_volver.png"/>
         </Property>
       </Properties>
       <Events>
@@ -201,6 +201,9 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="Tabla_Ranking">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial" size="14" style="1"/>
+            </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="10">
                 <Column editable="true" title="Title 1" type="java.lang.Object"/>

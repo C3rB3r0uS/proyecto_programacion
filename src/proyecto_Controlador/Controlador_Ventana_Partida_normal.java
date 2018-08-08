@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import proyecto_Modelo.Jugador;
-import proyecto_Modelo.Niveles;
-import proyecto_Modelo.Operaciones;
+import proyecto_Modelo.Nivel;
+import proyecto_Modelo.Operacion;
 import proyecto_Modelo.Partida;
 import proyecto_Vista.Ventana_Menu;
 import proyecto_Vista.Ventana_Partida_normal;
@@ -38,8 +38,8 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
     private Jugador jugador;
     private Partida partida;
-    private Niveles nivel;
-    private Operaciones operaciones;
+    private Nivel nivel;
+    private Operacion operaciones;
 
     private Timer timer;
     private Timer genOpe;
@@ -52,7 +52,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     private int codNivel;
     private int codPartida;
 
-    public Controlador_Ventana_Partida_normal(Ventana_Partida_normal vpn, Jugador j, Partida p, Niveles n) {
+    public Controlador_Ventana_Partida_normal(Ventana_Partida_normal vpn, Jugador j, Partida p, Nivel n) {
 
         this.vpn = vpn;
         this.jugador = j;
@@ -114,7 +114,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
                         if (auxiliar == 0) {
 
-                            operaciones = new Operaciones(codNivel, codPartida);
+                            operaciones = new Operacion(codNivel, codPartida);
 
                             operacionGenerada = operaciones.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), nivel.getNro_nivel());
 
