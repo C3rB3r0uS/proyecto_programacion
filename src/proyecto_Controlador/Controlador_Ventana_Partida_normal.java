@@ -7,8 +7,12 @@ package proyecto_Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import proyecto_Modelo.ClaseDAO;
 import proyecto_Modelo.Jugador;
 import proyecto_Modelo.Nivel;
 import proyecto_Modelo.Operacion;
@@ -40,18 +44,19 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     private Jugador jugador;
     private Partida partida;
     private Nivel nivel;
-    private Operacion operaciones;
+    private Operacion operacion;
+    private ClaseDAO dao = new ClaseDAO ();
 
     private Timer timer;
-    private Timer genOpe; // ¿ Este Timer es necesario ?
     private int inicio;
 
-    private int fallos;
-    private String operacionGenerada;
-    private int resultadoCorrecto;
-    private int respuesta;
-    private int codNivel;
-    private int codPartida;
+    private int fallos = 0;
+    private int puntuacion = 0;
+    private String operacionGenerada = "";
+    private int resultadoCorrecto = 0;
+    private int respuesta = 0;
+    private int codNivel = 0;
+    private int codPartida = 0;
 
     public Controlador_Ventana_Partida_normal(Ventana_Partida_normal vpn, Jugador j, Partida p, Nivel n) {
 
@@ -65,6 +70,8 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
         this.vpn.jButton_Cerrar.addActionListener(this);
         this.vpn.jButton_Enter.setVisible(false);
 
+        this.vpn.JLabel_Operacion.setText("- - - - -");
+        
     }
 
     @Override
@@ -94,95 +101,62 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
             }
 
         }
+        
+//        int fallos = 0;
+//        int puntuacion = 0;
+//        String operacionGenerada = "";
+//        int resultadoCorrecto = 0;
+//        int respuesta = 0;
+
+//        int codNivel = nivel.getCod_nivel();
+//        int codPartida = partida.getCod_partida();
 
         if (ae.getSource() == this.vpn.jButton_Enter) {
 
-            if (timer.isRunning() == true) {
+            operacion = new Operacion(dao.ConsultarCodigoNivel(), dao.ConsultarCodigoPartida());
 
-                genOpe = new Timer(1000, new ActionListener() {
+            operacionGenerada = vpn.JLabel_Operacion.getText();
+            resultadoCorrecto = operacion.getResultado(operacionGenerada);
 
-                    int auxiliar = 0;
-                    int fallos = 0;
-                    int puntuacion = 0;
-                    String operacionGenerada = "";
-                    int resultadoCorrecto = 0;
-                    int respuesta = 0;
+            ScriptEngineManager sem = new ScriptEngineManager();
+            ScriptEngine engine = sem.getEngineByName("JavaScript");
 
-                    int codNivel = nivel.getCod_nivel();
-                    int codPartida = partida.getCod_partida();
+            try {
 
-                    public void actionPerformed(ActionEvent e) {
+                respuesta = (int) engine.eval(operacionGenerada);
 
-                        if (auxiliar == 0) {
-
-                            operaciones = new Operacion(codNivel, codPartida);
-
-                            operacionGenerada = operaciones.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), nivel.getNro_nivel());
-
-                            resultadoCorrecto = operaciones.getResultado(operacionGenerada);
-
-                            vpn.JLabel_Operacion.setText(operacionGenerada);
-
-                            auxiliar = auxiliar + 1;
-
-                            genOpe.stop();
-
-                        }
-
-                        if (auxiliar == 1) {
-
-                            try {
-
-                                respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
-
-                            } catch (NumberFormatException nfe) {
-
-                                vpn.jTextField_Respuesta.setText("");
-                                fallos++;
-                                vpn.jLabel_ContadorFallos.setText(fallos + "");
-
-                            }
-
-                            if (respuesta != resultadoCorrecto) {
-
-                                fallos++;
-                                vpn.jLabel_ContadorFallos.setText(fallos + "");
-
-                            } else {
-
-                                puntuacion++;
-                                vpn.jLabel_ContadorPuntuacion.setText(puntuacion + "");
-
-                            }
-
-                            if (fallos == 3) {
-
-                                fallos = 0;
-                                auxiliar = 0;
-                                vpn.jLabel_ContadorFallos.setText(fallos + "");
-                                genOpe.start();
-
-                            }
-
-                        }
-
-                        if (timer.isRunning() == false) {
-
-                            genOpe.stop();
-                        }
-
-                    }
-
-                });
+            } catch (ScriptException se) {
+                           
+                this.vpn.jTextField_Respuesta.setText("");
 
             }
+            
+            if(respuesta != resultadoCorrecto){
+                
+                fallos = fallos + 1;
+                this.vpn.jLabel_ContadorFallos.setText(fallos + "");
+                this.vpn.jLabel_ContadorFallos.paintImmediately(this.vpn.jLabel_ContadorFallos.getVisibleRect());
+                
+                if(fallos == 3){
+                    
+                    
+                    
+                }
+     
+            }else{
+                
+            }
 
-            genOpe.start();
+         
 
         }
 
         // CUENTA ATRÁS
+        
         if (ae.getSource() == this.vpn.jButton_Start) {
+            
+            operacion = new Operacion (1,1);
+            vpn.JLabel_Operacion.setText(operacion.generarOperacion(partida.getModo_de_juego(),partida.getDificultad(),1));
 
             inicio = 59;
 
@@ -202,7 +176,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                         timer.stop();
 
                     }
-
+                
                 }
 
             });

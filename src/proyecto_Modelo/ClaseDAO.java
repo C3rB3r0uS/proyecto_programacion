@@ -202,7 +202,7 @@ public class ClaseDAO {
 
     }
 
-    public int ConsultarCodigoNiveles() {
+    public int ConsultarCodigoNivel() {
 
         Connection accesoBD = conexion.getConexion();
         int codigo = 0;
@@ -305,8 +305,6 @@ public class ClaseDAO {
 
         }
 
-        JOptionPane.showMessageDialog(null, "Tamaño arrayList: " + partidas.size());
-
         return partidas;
 
     }
@@ -347,8 +345,6 @@ public class ClaseDAO {
 
         }
 
-        JOptionPane.showMessageDialog(null, "Tamaño arrayList: " + partidas.size());
-
         return partidas;
 
     }
@@ -367,7 +363,7 @@ public class ClaseDAO {
             ps.setInt(5, puntuacion);
             ps.setString(6, nombreUsuario);
             ps.setString(7, nombreJugador);
-            
+
             ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Insertado correctamente");
@@ -394,7 +390,7 @@ public class ClaseDAO {
             ps.setString(3, tipo);
             ps.setInt(4, NroNivel);
             ps.setString(5, estado);
-            
+
             ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Insertado correctamente");
@@ -422,7 +418,7 @@ public class ClaseDAO {
             ps.setString(4, operacionGenerada);
             ps.setInt(5, resultado);
             ps.setString(6, estado);
-            
+
             ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Insertado correctamente");

@@ -19,11 +19,11 @@ public class Nivel {
     private int nro_nivel;
     private String estado;
     
-    ClaseDAO d = new ClaseDAO();
+    ClaseDAO dao = new ClaseDAO();
 
     public Nivel(int cod_partida) {
        
-        this.cod_nivel = d.ConsultarCodigoNiveles();
+        this.cod_nivel = dao.ConsultarCodigoNivel();
         this.cod_partida = cod_partida;
         this.tipo = "NORMAL";
         this.nro_nivel = 1;
