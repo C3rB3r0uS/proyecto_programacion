@@ -26,7 +26,7 @@ public class Controlador_Ranking implements ActionListener {
     private Ventana_Ranking vr;
     private DefaultTableModel modeloTabla;
 
-    ClaseDAO dao = new ClaseDAO();
+    private ClaseDAO dao = new ClaseDAO();
 
     public Controlador_Ranking(Jugador j, Ventana_Ranking vr) {
 
@@ -46,6 +46,14 @@ public class Controlador_Ranking implements ActionListener {
         this.vr.jComboBox_Dificultad.addItem("DIFICIL");
 
     }
+    
+    /**
+     *
+     * Resetea la tabla, eliminando todos los datos que hubo previamente para
+     * después, mediante métodos implementados en una clase DAO, actualizar la
+     * tabla con los nuevos datos.
+     *
+     */
 
     public void actualizarTabla(String modo, String dificultad) {
 
@@ -64,6 +72,11 @@ public class Controlador_Ranking implements ActionListener {
         }
 
     }
+    
+     /**
+     * Método actionPerformed que imprime cierto comportamiento a los elementos
+     * JButton existentes en la clase
+     */
 
     @Override
     public void actionPerformed(ActionEvent ae) {

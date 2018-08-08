@@ -23,8 +23,14 @@ public class Operacion {
     private int resultado;
     private String estado;
 
-    ClaseDAO dao = new ClaseDAO();
+    private ClaseDAO dao = new ClaseDAO();
 
+    /**
+     * Constructor de la clase
+     *
+     * @param cod_nivel código de nivel
+     * @param cod_partida código de partida
+     */
     public Operacion(int cod_nivel, int cod_partida) {
 
         this.cod_operacion = dao.consultarCodigoOperaciones();
@@ -36,54 +42,123 @@ public class Operacion {
 
     }
 
+    /**
+     * Método get
+     *
+     * @return código de operación
+     */
     public int getCod_operacion() {
         return cod_operacion;
     }
 
+    /**
+     * Método set que establece el código de operación
+     *
+     * @param cod_operacion código de operación
+     */
     public void setCod_operacion(int cod_operacion) {
         this.cod_operacion = cod_operacion;
     }
 
+    /**
+     * Método get
+     *
+     * @return código de nivel
+     */
     public int getCod_nivel() {
         return cod_nivel;
     }
 
+    /**
+     * Método set que establece el código de nivel
+     *
+     * @param cod_nivel código de nivel
+     */
     public void setCod_nivel(int cod_nivel) {
         this.cod_nivel = cod_nivel;
     }
 
+    /**
+     * Método get
+     *
+     * @return código de partida
+     */
     public int getCod_partida() {
         return cod_partida;
     }
 
+    /**
+     * Método set que establece el código de partida
+     *
+     * @param cod_partida código de partida
+     */
     public void setCod_partida(int cod_partida) {
         this.cod_partida = cod_partida;
     }
 
+    /**
+     * Método get
+     *
+     * @return operación matemática generada
+     */
     public String getOp_generada() {
         return op_generada;
     }
 
+    /**
+     * Método set que establece la operación generada
+     *
+     * @param op_generada operación matemática generada
+     */
     public void setOp_generada(String op_generada) {
         this.op_generada = op_generada;
     }
 
+    /**
+     * Método get
+     *
+     * @return resultado de la operación generada
+     */
     public int getResultado() {
         return resultado;
     }
 
+    /**
+     * Método set que establece el resultado de la operación
+     *
+     * @param resultado resultado de la operación generada
+     */
     public void setResultado(int resultado) {
         this.resultado = resultado;
     }
 
+    /**
+     * Método get
+     *
+     * @return estado de la operación (RESUELTA o NO RESUELTA)
+     */
     public String getEstado() {
         return estado;
     }
 
+    /**
+     * Método set que establece el estado de la operación
+     *
+     * @param estado
+     */
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
+    /**
+     * Método que establece los valores máximos de los valores generados en una
+     * partida dependiendo del modo, dificultad y nivel de la partida
+     *
+     * @param modo modo de juego en el que se desarrolla la partida
+     * @param dificultad dificultad de la partida
+     * @param nivel nivel actual de la partida (ARCADE o STRINGS)
+     * @return valor máximo del valor generado
+     */
     public int getValorMaximo(String modo, String dificultad, int nivel) {
 
         int maximo = 0;
@@ -190,6 +265,15 @@ public class Operacion {
 
     }
 
+    /**
+     * Método que genera una operación matemática dependiendo del modo de juego,
+     * dificultad y nivel actual de la partida
+     *
+     * @param modo
+     * @param dificultad
+     * @param nivel
+     * @return
+     */
     public String generarOperacion(String modo, String dificultad, int nivel) {
 
         // https://stackoverflow.com/questions/3422673/evaluating-a-math-expression-given-in-string-form
@@ -418,6 +502,12 @@ public class Operacion {
 
     }
 
+    /**
+     * Método que evalúa una operación matemática
+     *
+     * @param operacion operación matemática
+     * @return resultado de la operación
+     */
     public int getResultado(String operacion) {
 
         ScriptEngineManager sem = new ScriptEngineManager();

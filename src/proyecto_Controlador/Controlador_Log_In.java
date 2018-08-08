@@ -39,6 +39,10 @@ public class Controlador_Log_In implements ActionListener, MouseListener, KeyLis
 
     }
 
+    /**
+     * Método actionPerformed que imprime cierto comportamiento a los elementos
+     * JButton existentes en la clase
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
 

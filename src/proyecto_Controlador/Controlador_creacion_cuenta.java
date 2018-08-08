@@ -19,7 +19,7 @@ import proyecto_Vista.Ventana_Log_in;
  */
 public class Controlador_creacion_cuenta implements ActionListener {
 
-    Ventana_Creacion_Cuenta vcc;
+    private Ventana_Creacion_Cuenta vcc;
 
     public Controlador_creacion_cuenta(Ventana_Creacion_Cuenta v) {
 
@@ -29,6 +29,11 @@ public class Controlador_creacion_cuenta implements ActionListener {
         v.jButton_Cerrar.addActionListener(this);
 
     }
+    
+    /**
+     * Método actionPerformed que imprime cierto comportamiento a los elementos
+     * JButton existentes en la clase
+     */
 
     @Override
     public void actionPerformed(ActionEvent ae) {

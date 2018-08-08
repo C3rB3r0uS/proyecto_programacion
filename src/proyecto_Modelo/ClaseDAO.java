@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class ClaseDAO {
 
-    Conexion conexion;
+    private Conexion conexion;
 
     public ClaseDAO() {
 
@@ -27,7 +27,16 @@ public class ClaseDAO {
 
     }
 
-    //LOG IN
+    /**
+     * Comprueba en la base de datos que las credenciales introducidas por el
+     * usuario coincidan con alguna de las cuentas almacenadas en la base de
+     * datos.
+     *
+     * @param nombreUser nombre de usuario
+     * @param passUser contraseña del usuario
+     * @return valor booleano que confirme la existencia de la cuenta y los
+     * credenciales almacenados
+     */
     public boolean ConsultarUserPass(String nombreUser, String passUser) {
 
         Connection accesoBD = conexion.getConexion();
@@ -59,6 +68,14 @@ public class ClaseDAO {
 
     }
 
+    /**
+     * Obtiene todos los datos almacenados en la base de datos, perteneciente al
+     * usuario.
+     *
+     * @param nombreUser nombre del usuario
+     * @param passUser contraseña del usuario
+     * @return objeto Jugador con toda la información del usuario
+     */
     public Jugador obtenerDatosJugador(String nombreUser, String passUser) {
 
         Connection accesoBD = conexion.getConexion();
@@ -93,7 +110,14 @@ public class ClaseDAO {
 
     }
 
-    // VENTANA CREACIÓN DE CUENTA
+    /**
+     * Comprueba la disponibilidad del nombre de usuario ingresado por el
+     * usuario del sistema
+     *
+     * @param nombreUsuario nombre de usuario
+     * @return boolean, indicando si ya existe alguna cuenta con el nombre de
+     * usuario introducido por el usuario
+     */
     public boolean consultarDisponibilidadNombreUsuario(String nombreUsuario) {
 
         Connection accesoBD = conexion.getConexion();
@@ -123,6 +147,15 @@ public class ClaseDAO {
 
     }
 
+    /**
+     * Comprueba la disponibilidad del nombre de jugador ingresado por el
+     * usuario del sistema
+     *
+     * @param nombreIngame nombre de Jugador, o nombre por el que se reconocerá
+     * al usuario dentro del sistema
+     * @return boolean, indicando si ya existe alguna cuenta con el nombre de
+     * Jugador introducido por el usuario
+     */
     public boolean consultarDisponibilidadNombreIngame(String nombreIngame) {
 
         Connection accesoBD = conexion.getConexion();
@@ -152,6 +185,18 @@ public class ClaseDAO {
 
     }
 
+    /**
+     * Inserta en la base de datos correspondiente la cuenta con la información
+     * ingresada por el usuario
+     *
+     * @param nombreUsuario nombre de usuario, con el que el usuario podrá hacer
+     * log in en el sistema
+     * @param nombreJugador nombre de jugador, con el que se identificará al
+     * usuario dentro del sistema
+     * @param contrasenia contraseña
+     * @param nom_apellidos nombre y apellidos
+     * @param pais país de residencia
+     */
     public void crearCuenta(String nombreUsuario, String nombreJugador, String contrasenia, String nom_apellidos, String pais) {
 
         Connection accesoBD = conexion.getConexion();
@@ -171,7 +216,11 @@ public class ClaseDAO {
 
     }
 
-    // Obtención de los códigos que identifican a cada partida, nivel u operación
+    /**
+     * Consulta en la base de datos de código de partida.
+     *
+     * @return Siguiente código de partida disponible para su uso
+     */
     public int ConsultarCodigoPartida() {
 
         Connection accesoBD = conexion.getConexion();
@@ -202,6 +251,11 @@ public class ClaseDAO {
 
     }
 
+    /**
+     * Consulta en la base de datos de código de nivel.
+     *
+     * @return Siguiente código de nivel disponible para su uso
+     */
     public int ConsultarCodigoNivel() {
 
         Connection accesoBD = conexion.getConexion();
@@ -232,6 +286,11 @@ public class ClaseDAO {
 
     }
 
+    /**
+     * Consulta en la base de datos de código de operación.
+     *
+     * @return Siguiente código de operación disponible para su uso
+     */
     public int consultarCodigoOperaciones() {
 
         Connection accesoBD = conexion.getConexion();
@@ -262,7 +321,15 @@ public class ClaseDAO {
 
     }
 
-    // Método usado por ranking
+    /**
+     * Obtiene las partidas almacenadas en la base de datos, por orden
+     * descendente, jugadas en un modo y una dificultad específica.
+     *
+     * @param modo modo de juego en el que se realizaron la partida
+     * @param dificultad dificultad en la que se desarrollaron las partidas
+     * @return ArrayList con objetos Partida, que contienen información esencial
+     * para la implementación de la ventana "Ranking".
+     */
     public ArrayList<Partida> obtenerPuntuaciones(String modo, String dificultad) {
 
         Connection accesoBD = conexion.getConexion();
@@ -311,7 +378,15 @@ public class ClaseDAO {
 
     }
 
-    // Método usado por historial
+    /**
+     * Obtiene las partidas jugadas por un usuario concreto almacenadas en la
+     * base de datos
+     *
+     * @param nombreUsuario nombre del usuario que jugó las partidas
+     * @param nombreJugador nombre de jugador que jugó las partidas
+     * @return ArrayList con objetos partida, que contienen información esencial
+     * para la implementación de la ventana "Historial".
+     */
     public ArrayList<Partida> obtenerPartidas(String nombreUsuario, String nombreJugador) {
 
         Connection accesoBD = conexion.getConexion();
@@ -353,6 +428,18 @@ public class ClaseDAO {
 
     }
 
+    /**
+     * Realiza una inserción en la base de datos PARTIDA.
+     *
+     * @param codPartida código de partida único que identifica la partida
+     * jugada
+     * @param modoJuego modo de juego en el que se desarrolla la partida
+     * @param dificultad dificultad en la que se desarrolla la partida
+     * @param fechaRealizacion fecha en la que se realizó la partida
+     * @param puntuacion puntuación conseguida por el usuario
+     * @param nombreUsuario nombre de usuario
+     * @param nombreJugador nombre de jugador
+     */
     public void insertarPartida(int codPartida, String modoJuego, String dificultad, String fechaRealizacion, int puntuacion, String nombreUsuario, String nombreJugador) {
 
         Connection accesoBD = conexion.getConexion();
@@ -370,8 +457,6 @@ public class ClaseDAO {
 
             ps.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Partida insertada correctamente");
-
             conexion.closeConexion(accesoBD);
 
         } catch (SQLException e) {
@@ -384,6 +469,17 @@ public class ClaseDAO {
 
     }
 
+    /**
+     * Realiza una inserción en la base de datos NIVELES.
+     *
+     * @param codNivel código de nivel único que identifica al nivel
+     * @param codPartida código de partida único que identifica la partida
+     * jugada
+     * @param tipo identifica si la partida fue "NORMAL" o "MADNESS"
+     * (implementación futura)
+     * @param NroNivel Número de nivel. Diponible en modos "STRINGS" y "ARCADE"
+     * @param estado Indica si fue o no superado el nivel
+     */
     public void insertarNiveles(int codNivel, int codPartida, String tipo, int NroNivel, String estado) {
 
         Connection accesoBD = conexion.getConexion();
@@ -399,8 +495,6 @@ public class ClaseDAO {
 
             ps.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Nivel Insertado correctamente");
-
             conexion.closeConexion(accesoBD);
 
         } catch (SQLException e) {
@@ -411,6 +505,18 @@ public class ClaseDAO {
 
     }
 
+    /**
+     * Realiza una inserción en la base de datos OPERACIONES.
+     *
+     * @param codOperacion código de operación único que identifica a la
+     * operación generada.
+     * @param codNivel código de nivel único que identifica al nivel
+     * @param codPartida código de partida único que identifica la partida
+     * jugada
+     * @param operacionGenerada operación matemática generada aleatoriamente
+     * @param resultado resultado de la operación generada
+     * @param estado Indica si fue "RESUELTA" o "NO RESUELTA"
+     */
     public void insertarOperaciones(int codOperacion, int codNivel, int codPartida, String operacionGenerada, int resultado, String estado) {
 
         Connection accesoBD = conexion.getConexion();
@@ -426,8 +532,6 @@ public class ClaseDAO {
             ps.setString(6, estado);
 
             ps.executeUpdate();
-
-            JOptionPane.showMessageDialog(null, "Insertado correctamente");
 
             conexion.closeConexion(accesoBD);
 

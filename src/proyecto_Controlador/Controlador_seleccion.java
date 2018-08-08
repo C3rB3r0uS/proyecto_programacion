@@ -23,17 +23,17 @@ import proyecto_Vista.Ventana_Seleccion;
  */
 public class Controlador_seleccion implements ActionListener {
 
-    Ventana_Seleccion vs;
-    Jugador jugador;
+    private Ventana_Seleccion vs;
+    private Jugador jugador;
 
-    Partida partida;
-    Nivel nivel;
-    int random;
+    private Partida partida;
+    private Nivel nivel;
+    private int random;
 
-    String modoSeleccionado;
-    String dificultadSeleccionada;
+    private String modoSeleccionado;
+    private String dificultadSeleccionada;
 
-    int codigo;
+    private int codigo;
 
     public Controlador_seleccion(Ventana_Seleccion vs, Jugador j) {
 
@@ -55,14 +55,11 @@ public class Controlador_seleccion implements ActionListener {
         vs.jComboBox_Dificultad.addItem("DIFICIL");
 
     }
-
-    public Jugador getJugador() {
-        return jugador;
-    }
-
-    public void setJugador(Jugador jugador) {
-        this.jugador = jugador;
-    }
+    
+    /**
+     * Método actionPerformed que imprime cierto comportamiento a los elementos
+     * JButton existentes en la clase
+     */
 
     @Override
     public void actionPerformed(ActionEvent ae) {

@@ -21,8 +21,8 @@ import proyecto_Vista.Ventana_Seleccion;
  */
 public class Controlador_menu implements ActionListener {
 
-    Ventana_Menu vm;
-    Jugador jugador;
+    private Ventana_Menu vm;
+    private Jugador jugador;
 
     public Controlador_menu(Ventana_Menu vm, Jugador j) {
 
@@ -35,6 +35,11 @@ public class Controlador_menu implements ActionListener {
         vm.jButton_Cerrar.addActionListener(this);
 
     }
+    
+    /**
+     * Método actionPerformed que imprime cierto comportamiento a los elementos
+     * JButton existentes en la clase
+     */
 
     @Override
     public void actionPerformed(ActionEvent ae) {

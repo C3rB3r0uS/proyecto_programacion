@@ -7,9 +7,6 @@ package proyecto_Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import proyecto_Modelo.ClaseDAO;
@@ -73,6 +70,11 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
         this.vpn.JLabel_Operacion.setText("- - - - -");
 
     }
+    
+    /**
+     * Método actionPerformed que imprime cierto comportamiento a los elementos
+     * JButton existentes en la clase
+     */
 
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -186,7 +188,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                     if (inicio == -1) {
 
                         //REVISAR
-                        JOptionPane.showMessageDialog(null, "Insertando usuario con NombreUsuario " + jugador.getNombre_usuario() + " y NombreJugador " + jugador.getNombre_jugador());
+                        
                         dao.insertarPartida(partida.getCod_partida(), partida.getModo_de_juego(), partida.getDificultad(), partida.getFecha_realizacion(), Integer.parseInt(vpn.jLabel_ContadorPuntuacion.getText()), jugador.getNombre_usuario(), jugador.getNombre_jugador());
 //                        dao.insertarNiveles(nivel.getCod_nivel(), partida.getCod_partida(), nivel.getTipo(), nivel.getNro_nivel(), nivel.getEstado());
 

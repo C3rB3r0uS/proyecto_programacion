@@ -19,6 +19,11 @@ public class Conexion {
 
     }
 
+    /**
+     * Realiza conexión con la base de datos
+     *
+     * @return Connection
+     */
     public Connection getConexion() {
 
         Connection conn = null;
@@ -46,6 +51,11 @@ public class Conexion {
 
     }
 
+    /**
+     * Cierra la conexión con la base de datos
+     *
+     * @param conn
+     */
     public void closeConexion(Connection conn) {
 
         try {

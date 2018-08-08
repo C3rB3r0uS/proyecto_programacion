@@ -26,7 +26,7 @@ public class Controlador_Historial implements ActionListener {
     private Ventana_Historial vh;
 
     private ClaseDAO dao = new ClaseDAO();
-    DefaultTableModel modeloTabla;
+    private DefaultTableModel modeloTabla;
 
     public Controlador_Historial(Jugador j, Ventana_Historial vh) {
 
@@ -45,6 +45,13 @@ public class Controlador_Historial implements ActionListener {
 
     }
 
+    /**
+     *
+     * Resetea la tabla, eliminando todos los datos que hubo previamente para
+     * después, mediante métodos implementados en una clase DAO, actualizar la
+     * tabla con los nuevos datos.
+     *
+     */
     public void actualizarTabla(String nombreUsuario, String nombreJugador) {
 
         modeloTabla.setRowCount(0);
@@ -66,6 +73,10 @@ public class Controlador_Historial implements ActionListener {
 
     }
 
+    /**
+     * Método actionPerformed que imprime cierto comportamiento a los elementos
+     * JButton existentes en la clase
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
 
