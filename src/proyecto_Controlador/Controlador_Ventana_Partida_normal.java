@@ -139,15 +139,18 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                 
                 if(fallos == 3){
                     
-                    
+                    operacionGenerada = operacion.generarOperacion(partida.getModo_de_juego(),partida.getDificultad(), 1);
+                    vpn.JLabel_Operacion.setText(operacionGenerada);
+                    fallos = 0;
                     
                 }
      
             }else{
                 
+                puntuacion = puntuacion + 1;
+                vpn.jLabel_ContadorPuntuacion.setText(puntuacion + "");
+      
             }
-
-         
 
         }
 
