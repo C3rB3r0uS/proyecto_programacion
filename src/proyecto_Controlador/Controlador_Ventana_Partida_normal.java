@@ -42,7 +42,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     private Operaciones operaciones;
 
     private Timer timer;
-    private Timer genOpe;
+    private Timer genOpe; // ¿ Este Timer es necesario ?
     private int inicio;
 
     private int fallos;
