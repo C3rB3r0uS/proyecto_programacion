@@ -297,8 +297,7 @@ public class ClaseDAO {
 //                 partidas.add(p);
 //                 
 //             }
-
-        conexion.closeConexion(accesoBD);
+            conexion.closeConexion(accesoBD);
 
         } catch (SQLException e) {
 
@@ -311,60 +310,65 @@ public class ClaseDAO {
         return partidas;
 
     }
-    
-    public ArrayList<Partida> obtenerPartidas(String nombreUsuario, String nombreJugador){
-        
+
+    public ArrayList<Partida> obtenerPartidas(String nombreUsuario, String nombreJugador) {
+
         Connection accesoBD = conexion.getConexion();
-        ArrayList<Partida> partidas = new ArrayList ();
-        
-        try{
-            
+        ArrayList<Partida> partidas = new ArrayList();
+
+        try {
+
             PreparedStatement ps = accesoBD.prepareStatement("SELECT * FROM PARTIDA WHERE NOMBRE_USUARIO = ? AND NOMBRE_JUGADOR = ?");
             ps.setString(1, nombreUsuario);
             ps.setString(2, nombreJugador);
-            
+
             ResultSet rs = ps.executeQuery();
-            
+
             Partida p;
             int contador = 1;
-            
-            while(rs.next() && contador <= 10){
-                
-                p = new Partida(rs.getString(3),rs.getString(6),rs.getString(7));
+
+            while (rs.next() && contador <= 10) {
+
+                p = new Partida(rs.getString(3), rs.getString(6), rs.getString(7));
                 p.setModo_de_juego(rs.getString(2));
                 p.setPuntuacion(rs.getInt(5));
-                
+
                 partidas.add(p);
-                
+
                 contador++;
-                
+
             }
-            
+
             conexion.closeConexion(accesoBD);
-            
-        }catch(SQLException e){
-            
+
+        } catch (SQLException e) {
+
             System.out.println("Excepción al obtener partidas: " + e.getMessage());
-            
+
         }
-        
+
+        JOptionPane.showMessageDialog(null, "Tamaño arrayList: " + partidas.size());
+
         return partidas;
-        
+
     }
 
-    public void insertarPartida(int codPartida, String modoJuego, String dificultad, String fechaRealizacion, String nombreUsuario, String nombreJugador) {
+    public void insertarPartida(int codPartida, String modoJuego, String dificultad, String fechaRealizacion, int puntuacion, String nombreUsuario, String nombreJugador) {
 
         Connection accesoBD = conexion.getConexion();
 
         try {
 
-            PreparedStatement ps = accesoBD.prepareStatement("INSERT INTO TABLE PARTIDA VALUES (?,?,?,?,?,?)");
+            PreparedStatement ps = accesoBD.prepareStatement("INSERT INTO PARTIDA VALUES (?,?,?,?,?,?,?)");
             ps.setInt(1, codPartida);
             ps.setString(2, modoJuego);
             ps.setString(3, dificultad);
             ps.setString(4, fechaRealizacion);
-            ps.setString(5, nombreUsuario);
-            ps.setString(6, nombreJugador);
+            ps.setInt(5, puntuacion);
+            ps.setString(6, nombreUsuario);
+            ps.setString(7, nombreJugador);
+            
+            ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Insertado correctamente");
 
@@ -390,6 +394,8 @@ public class ClaseDAO {
             ps.setString(3, tipo);
             ps.setInt(4, NroNivel);
             ps.setString(5, estado);
+            
+            ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Insertado correctamente");
 
@@ -416,6 +422,8 @@ public class ClaseDAO {
             ps.setString(4, operacionGenerada);
             ps.setInt(5, resultado);
             ps.setString(6, estado);
+            
+            ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Insertado correctamente");
 

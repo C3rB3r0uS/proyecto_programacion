@@ -105,7 +105,11 @@ public class Prueba {
         
 
         ClaseDAO d = new ClaseDAO();
-        d.insertarPartida(2, "TIME TRIAL", "FACIL", "9/8/17", "PEDROB", "C3RB3R0US");
+//        d.insertarPartida(1, "TIME TRIAL", "FACIL", "9/8/17",8, "HOLAATODOS", "HOLAATODOS");
+//  
+//        System.out.println("El siguiente codpartida es: " + d.ConsultarCodigoPartida());
+//         d.insertarNiveles(1, 1, "NORMAL", 1, "SUPERADO");
+            d.insertarOperaciones(1, 1, 1, "1+2", 3, "RESUELTA");
         
         
 //        System.out.println("Código de partida: " + d.ConsultarCodigoPartida());

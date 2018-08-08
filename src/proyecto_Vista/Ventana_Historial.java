@@ -68,10 +68,10 @@ public class Ventana_Historial extends javax.swing.JFrame {
         jLabel1.setText("RESULTADOS DE LAS ULTIMAS 10 PARTIDAS ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
 
-        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_volver.png"))); // NOI18N
+        jButton_Volver.setIcon(new javax.swing.ImageIcon("C:\\Users\\Equipo\\Documents\\NetBeansProjects\\proyecto_programacion\\src\\imagenes\\boton_volver.png")); // NOI18N
         getContentPane().add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 570, 240, 75));
 
-        jButton_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton_consultar.png"))); // NOI18N
+        jButton_Consultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Equipo\\Documents\\NetBeansProjects\\proyecto_programacion\\src\\imagenes\\boton_consultar.png")); // NOI18N
         getContentPane().add(jButton_Consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 570, 240, 75));
 
         jLabel_LogAs.setFont(new java.awt.Font("Digital Dare", 1, 24)); // NOI18N
@@ -98,7 +98,7 @@ public class Ventana_Historial extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(Tabla);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 550, 190));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 740, 190));
 
         jLabel_Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.png"))); // NOI18N
         getContentPane().add(jLabel_Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 780));

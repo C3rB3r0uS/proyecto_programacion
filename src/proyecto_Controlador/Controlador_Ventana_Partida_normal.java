@@ -181,9 +181,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
         }
 
-        
         // CUENTA ATRÁS
-
         if (ae.getSource() == this.vpn.jButton_Start) {
 
             inicio = 59;

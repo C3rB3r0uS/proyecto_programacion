@@ -7,10 +7,12 @@ package proyecto_Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import proyecto_Modelo.ClaseDAO;
 import proyecto_Modelo.Jugador;
+import proyecto_Modelo.Partida;
 import proyecto_Vista.Ventana_Historial;
 import proyecto_Vista.Ventana_Menu;
 
@@ -43,6 +45,28 @@ public class Controlador_Historial implements ActionListener {
         this.vh.Tabla.setModel(modeloTabla);
 
     }
+    
+    public void actualizarTabla(String nombreUsuario, String nombreJugador){
+        
+        modeloTabla.setRowCount(0);
+        
+        ArrayList <Partida> partidas = dao.obtenerPartidas(this.jugador.getNombre_usuario(), this.jugador.getNombre_jugador());
+        String [] fila;
+        
+        for (Partida p : partidas) {
+            
+            fila = new String [5];
+            fila[0] = p.getCod_partida() + "";
+            fila[1] = p.getModo_de_juego();
+            fila[2] = p.getDificultad();
+            fila[3] = p.getFecha_realizacion();
+            fila[4] = p.getPuntuacion() + "";
+            
+            modeloTabla.addRow(fila);
+            
+        }
+        
+    }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -71,6 +95,10 @@ public class Controlador_Historial implements ActionListener {
         
         if(ae.getSource() == this.vh.jButton_Consultar){
             
+            String nombreUsuario = this.jugador.getNombre_usuario();
+            String nombreJugador = this.jugador.getNombre_jugador();
+            
+            actualizarTabla(nombreUsuario, nombreJugador);
             
         }
 
