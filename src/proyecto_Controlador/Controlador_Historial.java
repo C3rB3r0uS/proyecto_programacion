@@ -37,7 +37,6 @@ public class Controlador_Historial implements ActionListener {
         this.vh.jButton_Volver.addActionListener(this);
         this.vh.jButton_Consultar.addActionListener(this);
         modeloTabla = new DefaultTableModel();
-//        modeloTabla.addColumn("CÓDIGO DE PARTIDA");
         modeloTabla.addColumn("MODO DE JUEGO");
         modeloTabla.addColumn("DIFICULTAD");
         modeloTabla.addColumn("FECHA DE REALIZACIÓN");
@@ -56,7 +55,6 @@ public class Controlador_Historial implements ActionListener {
         for (Partida p : partidas) {
 
             fila = new String[4];
-//            fila[0] = p.getCod_partida() + "";
             fila[0] = p.getModo_de_juego();
             fila[1] = p.getDificultad();
             fila[2] = p.getFecha_realizacion();
