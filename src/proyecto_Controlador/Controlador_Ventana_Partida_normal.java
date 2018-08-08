@@ -102,51 +102,57 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
 
         }
 
-//        int fallos = 0;
-//        int puntuacion = 0;
-//        String operacionGenerada = "";
-//        int resultadoCorrecto = 0;
-//        int respuesta = 0;
-//        int codNivel = nivel.getCod_nivel();
-//        int codPartida = partida.getCod_partida();
         if (ae.getSource() == this.vpn.jButton_Enter) {
 
-            operacion = new Operacion(dao.ConsultarCodigoNivel(), dao.ConsultarCodigoPartida());
+            if (timer.isRunning() == true) {
 
-            operacionGenerada = vpn.JLabel_Operacion.getText();
-            resultadoCorrecto = operacion.getResultado(operacionGenerada);
+                operacion = new Operacion(dao.ConsultarCodigoNivel(), dao.ConsultarCodigoPartida());
 
-            ScriptEngineManager sem = new ScriptEngineManager();
-            ScriptEngine engine = sem.getEngineByName("JavaScript");
+                // Recojo la operación generada por el botón Start
+                operacionGenerada = vpn.JLabel_Operacion.getText();
 
-            try {
+                // Llamo a la función que evalúa la operación matemática
+                resultadoCorrecto = operacion.getResultado(operacionGenerada);
 
-                respuesta = (int) engine.eval(operacionGenerada);
+                //Utilizo try-catch para recoger el posible error al intentar convertir String en int
+                try {
 
-            } catch (ScriptException se) {
+                    respuesta = Integer.parseInt(vpn.jTextField_Respuesta.getText());
 
-                this.vpn.jTextField_Respuesta.setText("");
+                } catch (NumberFormatException nfe) {
 
-            }
-
-            if (respuesta != resultadoCorrecto) {
-
-                fallos = fallos + 1;
-                this.vpn.jLabel_ContadorFallos.setText(fallos + "");
-                this.vpn.jLabel_ContadorFallos.paintImmediately(this.vpn.jLabel_ContadorFallos.getVisibleRect());
-
-                if (fallos == 3) {
-
-                    operacionGenerada = operacion.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), 1);
-                    vpn.JLabel_Operacion.setText(operacionGenerada);
-                    fallos = 0;
+                    this.vpn.jTextField_Respuesta.setText("");
 
                 }
 
-            } else {
+                if (respuesta != resultadoCorrecto) {
 
-                puntuacion = puntuacion + 1;
-                vpn.jLabel_ContadorPuntuacion.setText(puntuacion + "");
+                    fallos = fallos + 1;
+                    this.vpn.jLabel_ContadorFallos.setText(fallos + "");
+                    this.vpn.jTextField_Respuesta.setText("");
+
+                    if (fallos == 3) {
+
+                        operacionGenerada = operacion.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), 1);
+                        resultadoCorrecto = operacion.getResultado(operacionGenerada);
+                        this.vpn.JLabel_Operacion.setText(operacionGenerada);
+
+                        fallos = 0;
+                        this.vpn.jLabel_ContadorFallos.setText(fallos + "");
+
+                    }
+
+                } else {
+
+                    puntuacion = puntuacion + 1;
+                    this.vpn.jLabel_ContadorPuntuacion.setText(puntuacion + "");
+
+                    operacionGenerada = operacion.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), 1);
+                    resultadoCorrecto = operacion.getResultado(operacionGenerada);
+                    this.vpn.JLabel_Operacion.setText(operacionGenerada);
+                    this.vpn.jTextField_Respuesta.setText("");
+
+                }
 
             }
 
