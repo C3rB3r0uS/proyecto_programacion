@@ -22,12 +22,12 @@ public class Partida {
     private String nombre_usuario;
     private String nombre_jugador;
     
-    ClaseDAO d = new ClaseDAO();
+    ClaseDAO dao = new ClaseDAO();
     LocalDate fechaActual;
 
     public Partida(String dificultad, String nombre_usuario, String nombre_jugador) {
         
-        this.cod_partida = d.ConsultarCodigoPartida();
+        this.cod_partida = dao.ConsultarCodigoPartida();
         this.modo_de_juego = "TIME TRIAL";
         this.dificultad = dificultad;
         

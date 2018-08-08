@@ -261,6 +261,8 @@ public class ClaseDAO {
         return codigo;
 
     }
+    
+    // Método usado por ranking
 
     public ArrayList<Partida> obtenerPuntuaciones(String modo, String dificultad) {
 
@@ -282,6 +284,7 @@ public class ClaseDAO {
             while (rs.next() && contador <= 10) {
 
                 p = new Partida(rs.getString(3), rs.getString(6), rs.getString(7));
+                p.setCod_partida(rs.getInt(1));
                 p.setPuntuacion(rs.getInt(5));
 
                 partidas.add(p);
@@ -308,6 +311,8 @@ public class ClaseDAO {
         return partidas;
 
     }
+    
+    // Método usado por historial
 
     public ArrayList<Partida> obtenerPartidas(String nombreUsuario, String nombreJugador) {
 
@@ -328,6 +333,7 @@ public class ClaseDAO {
             while (rs.next() && contador <= 10) {
 
                 p = new Partida(rs.getString(3), rs.getString(6), rs.getString(7));
+                p.setCod_partida(rs.getInt(1));
                 p.setModo_de_juego(rs.getString(2));
                 p.setPuntuacion(rs.getInt(5));
 
@@ -366,13 +372,15 @@ public class ClaseDAO {
 
             ps.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Insertado correctamente");
+            JOptionPane.showMessageDialog(null, "Partida insertada correctamente");
 
             conexion.closeConexion(accesoBD);
 
         } catch (SQLException e) {
 
             System.out.println("Error al insertar en tabla Partida: " + e.getMessage());
+            System.out.println("Nombre usuario: " + nombreUsuario);
+            System.out.println("Nombre jugador: " + nombreJugador);
 
         }
 
@@ -393,7 +401,7 @@ public class ClaseDAO {
 
             ps.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Insertado correctamente");
+            JOptionPane.showMessageDialog(null, "Nivel Insertado correctamente");
 
             conexion.closeConexion(accesoBD);
 

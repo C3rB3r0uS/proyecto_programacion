@@ -27,7 +27,7 @@ public class Nivel {
         this.cod_partida = cod_partida;
         this.tipo = "NORMAL";
         this.nro_nivel = 1;
-        this.estado = "NO SUPERADO";
+        this.estado = "SUPERADO";
        
     }
 

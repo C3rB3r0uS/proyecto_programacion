@@ -23,11 +23,11 @@ public class Operacion {
     private int resultado;
     private String estado;
     
-    ClaseDAO d = new ClaseDAO();
+    ClaseDAO dao = new ClaseDAO();
 
     public Operacion(int cod_nivel, int cod_partida) {
         
-        this.cod_operacion = d.consultarCodigoOperaciones();
+        this.cod_operacion = dao.consultarCodigoOperaciones();
         this.cod_nivel = cod_nivel;
         this.cod_partida = cod_partida;
         this.op_generada = "";
