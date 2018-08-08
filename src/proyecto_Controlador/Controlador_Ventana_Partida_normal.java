@@ -45,7 +45,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     private Partida partida;
     private Nivel nivel;
     private Operacion operacion;
-    private ClaseDAO dao = new ClaseDAO ();
+    private ClaseDAO dao = new ClaseDAO();
 
     private Timer timer;
     private int inicio;
@@ -71,7 +71,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
         this.vpn.jButton_Enter.setVisible(false);
 
         this.vpn.JLabel_Operacion.setText("- - - - -");
-        
+
     }
 
     @Override
@@ -101,16 +101,14 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
             }
 
         }
-        
+
 //        int fallos = 0;
 //        int puntuacion = 0;
 //        String operacionGenerada = "";
 //        int resultadoCorrecto = 0;
 //        int respuesta = 0;
-
 //        int codNivel = nivel.getCod_nivel();
 //        int codPartida = partida.getCod_partida();
-
         if (ae.getSource() == this.vpn.jButton_Enter) {
 
             operacion = new Operacion(dao.ConsultarCodigoNivel(), dao.ConsultarCodigoPartida());
@@ -126,40 +124,39 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                 respuesta = (int) engine.eval(operacionGenerada);
 
             } catch (ScriptException se) {
-                           
+
                 this.vpn.jTextField_Respuesta.setText("");
 
             }
-            
-            if(respuesta != resultadoCorrecto){
-                
+
+            if (respuesta != resultadoCorrecto) {
+
                 fallos = fallos + 1;
                 this.vpn.jLabel_ContadorFallos.setText(fallos + "");
                 this.vpn.jLabel_ContadorFallos.paintImmediately(this.vpn.jLabel_ContadorFallos.getVisibleRect());
-                
-                if(fallos == 3){
-                    
-                    operacionGenerada = operacion.generarOperacion(partida.getModo_de_juego(),partida.getDificultad(), 1);
+
+                if (fallos == 3) {
+
+                    operacionGenerada = operacion.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), 1);
                     vpn.JLabel_Operacion.setText(operacionGenerada);
                     fallos = 0;
-                    
+
                 }
-     
-            }else{
-                
+
+            } else {
+
                 puntuacion = puntuacion + 1;
                 vpn.jLabel_ContadorPuntuacion.setText(puntuacion + "");
-      
+
             }
 
         }
 
         // CUENTA ATRÁS
-        
         if (ae.getSource() == this.vpn.jButton_Start) {
-            
-            operacion = new Operacion (1,1);
-            vpn.JLabel_Operacion.setText(operacion.generarOperacion(partida.getModo_de_juego(),partida.getDificultad(),1));
+
+            operacion = new Operacion(1, 1);
+            vpn.JLabel_Operacion.setText(operacion.generarOperacion(partida.getModo_de_juego(), partida.getDificultad(), 1));
 
             inicio = 59;
 
@@ -179,7 +176,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
                         timer.stop();
 
                     }
-                
+
                 }
 
             });
