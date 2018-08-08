@@ -30,8 +30,8 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     Por cada acierto, puntuación se incrementa en 1 y es mostrado en la JLABEL correspondiente.
     
     Por cada operación generada se deberá de crear un objeto OPERACIONES ). Será necesario crear método en claseDAO.
-    Este contendrá información sobre esta y los datos que almacene serán utilizados como argumento para insertar esta
-    esta información en una bbdd. También contendrá si la operación ha sido resuelta o no.
+    Éste objeto contendrá información sobre esta operación y los datos que almacene serán utilizados como argumento para insertar esta
+    esta información en una bbdd. También contendrá si la operación ha sido resuelta o no (utilizando para ello un boolean).
     
      */
     private Ventana_Partida_normal vpn;
@@ -42,7 +42,7 @@ public class Controlador_Ventana_Partida_normal implements ActionListener {
     private Operacion operaciones;
 
     private Timer timer;
-    private Timer genOpe;
+    private Timer genOpe; // ¿ Este Timer es necesario ?
     private int inicio;
 
     private int fallos;
