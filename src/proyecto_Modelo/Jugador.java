@@ -20,11 +20,11 @@ public class Jugador {
     /**
      * Constructor de la clase
      *
-     * @param nombre_usuario
-     * @param nombre_jugador
-     * @param contrasenia
-     * @param nom_apellidos
-     * @param pais
+     * @param nombre_usuario nombre de usuario
+     * @param nombre_jugador nombre de jugador
+     * @param contrasenia contraseña
+     * @param nom_apellidos apellidos
+     * @param pais país
      */
     public Jugador(String nombre_usuario, String nombre_jugador, String contrasenia, String nom_apellidos, String pais) {
 

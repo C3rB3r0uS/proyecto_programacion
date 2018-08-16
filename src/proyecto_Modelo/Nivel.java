@@ -48,7 +48,7 @@ public class Nivel {
     /**
      * Método set que establece el código de nivel
      *
-     * @param cod_nivel
+     * @param cod_nivel código de nivel
      */
     public void setCod_nivel(int cod_nivel) {
         this.cod_nivel = cod_nivel;
@@ -120,7 +120,7 @@ public class Nivel {
     /**
      * Método set que establece el estado del nivel
      *
-     * @param estado
+     * @param estado estado (SUPERADO o NO SUPERADO)
      */
     public void setEstado(String estado) {
         this.estado = estado;

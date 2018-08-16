@@ -54,7 +54,7 @@ public class Conexion {
     /**
      * Cierra la conexión con la base de datos
      *
-     * @param conn
+     * @param conn objeto de la clase conn
      */
     public void closeConexion(Connection conn) {
 

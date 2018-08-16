@@ -48,11 +48,12 @@ public class Controlador_Ranking implements ActionListener {
     }
     
     /**
-     *
      * Resetea la tabla, eliminando todos los datos que hubo previamente para
      * después, mediante métodos implementados en una clase DAO, actualizar la
      * tabla con los nuevos datos.
      *
+     * @param modo modo de juego
+     * @param dificultad dificultad de la partida
      */
 
     public void actualizarTabla(String modo, String dificultad) {

@@ -144,7 +144,7 @@ public class Operacion {
     /**
      * Método set que establece el estado de la operación
      *
-     * @param estado
+     * @param estado estado de la operación (RESUELTA o NO RESUELTA)
      */
     public void setEstado(String estado) {
         this.estado = estado;
@@ -269,10 +269,10 @@ public class Operacion {
      * Método que genera una operación matemática dependiendo del modo de juego,
      * dificultad y nivel actual de la partida
      *
-     * @param modo
-     * @param dificultad
-     * @param nivel
-     * @return
+     * @param modo modo de juego
+     * @param dificultad dificultad establecida de la partida
+     * @param nivel nivel en el que se encuentra la partida (ARCADE o STRINGS)
+     * @return operación matemática 
      */
     public String generarOperacion(String modo, String dificultad, int nivel) {
 

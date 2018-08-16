@@ -60,7 +60,7 @@ public class Partida {
     /**
      * Método set que establece la fecha de realización
      *
-     * @param fecha_realizacion
+     * @param fecha_realizacion fecha en la que fue jugada la partida
      */
     public void setFecha_realizacion(String fecha_realizacion) {
         this.fecha_realizacion = fecha_realizacion;
@@ -78,7 +78,7 @@ public class Partida {
     /**
      * Método que establece el código de partida
      *
-     * @param cod_partida
+     * @param cod_partida código de partida
      */
     public void setCod_partida(int cod_partida) {
         this.cod_partida = cod_partida;
@@ -114,7 +114,7 @@ public class Partida {
     /**
      * Método set que establece la dificultad de la partida
      *
-     * @param dificultad
+     * @param dificultad dificultad de la partida
      */
     public void setDificultad(String dificultad) {
         this.dificultad = dificultad;
@@ -132,7 +132,7 @@ public class Partida {
     /**
      * Método set que establece la puntuación del jugador
      *
-     * @param puntuacion
+     * @param puntuacion puntuación
      */
     public void setPuntuacion(int puntuacion) {
         this.puntuacion = puntuacion;
@@ -150,7 +150,7 @@ public class Partida {
     /**
      * Método set que establece el nombre de usuario
      *
-     * @param nombre_usuario
+     * @param nombre_usuario nombre de usuario
      */
     public void setNombre_usuario(String nombre_usuario) {
         this.nombre_usuario = nombre_usuario;
@@ -168,7 +168,7 @@ public class Partida {
     /**
      * Método set que establece el nombre de jugador
      *
-     * @param nombre_jugador
+     * @param nombre_jugador nombre de jugador
      */
     public void setNombre_jugador(String nombre_jugador) {
         this.nombre_jugador = nombre_jugador;

@@ -45,13 +45,13 @@ public class Controlador_Historial implements ActionListener {
 
     }
 
-    /**
-     *
-     * Resetea la tabla, eliminando todos los datos que hubo previamente para
+  /**
+     *Resetea la tabla, eliminando todos los datos que hubo previamente para
      * después, mediante métodos implementados en una clase DAO, actualizar la
      * tabla con los nuevos datos.
-     *
-     */
+   * @param nombreUsuario nombre de usuario
+   * @param nombreJugador nombre de jugador
+   */
     public void actualizarTabla(String nombreUsuario, String nombreJugador) {
 
         modeloTabla.setRowCount(0);
